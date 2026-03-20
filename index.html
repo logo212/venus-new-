@@ -5,8 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-
-<!-- WhatsApp icon -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <title>Venus Fleur</title>
@@ -39,6 +37,7 @@ h1 {
     color: #aaa;
     font-size: 13px;
     letter-spacing: 3px;
+    margin-top: 10px;
 }
 
 /* GRID */
@@ -54,12 +53,18 @@ h1 {
     position: relative;
     border-radius: 18px;
     overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
 .card img {
     width: 100%;
     height: 450px;
     object-fit: cover;
+    transition: 0.6s;
+}
+
+.card:hover img {
+    transform: scale(1.05);
 }
 
 /* overlay */
@@ -90,11 +95,13 @@ h1 {
     color: #c6a75e;
     text-decoration: none;
     margin-top: 10px;
+    transition: 0.3s;
 }
 
 .btn:hover {
     background: #c6a75e;
     color: black;
+    transform: translateY(-2px);
 }
 
 /* PARTY */
@@ -121,6 +128,13 @@ h1 {
     font-size: 34px;
 }
 
+/* TRUST */
+.trust {
+    margin-top: 80px;
+    color: #aaa;
+    font-size: 14px;
+}
+
 /* WHATSAPP */
 .whatsapp {
     position: fixed;
@@ -133,6 +147,17 @@ h1 {
     font-size: 22px;
     text-decoration: none;
 }
+
+/* RESPONSIVE */
+@media(max-width: 768px){
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+}
 </style>
 </head>
 
@@ -142,26 +167,27 @@ h1 {
 
     <h1>VENUS <span class="gold">FLEUR</span></h1>
     <div class="subtitle">LUXURY FLOWER BOXES • DUBAI</div>
+    <div class="subtitle">LIMITED EDITION • SAME DAY DELIVERY</div>
 
     <div class="grid">
 
         <!-- WHITE -->
         <div class="card">
-            <img src="white.png">
+            <img src="white.jpg">
             <div class="card-content">
                 <h3>White Elegance</h3>
                 <p class="price">550 AED</p>
-                <a href="https://wa.me/212712648363?text=Order%20White%20Box" target="_blank" class="btn">ORDER</a>
+                <a href="https://wa.me/212712648363?text=I%20want%20White%20Elegance" target="_blank" class="btn">ORDER</a>
             </div>
         </div>
 
         <!-- BLACK -->
         <div class="card">
-            <img src="black.png">
+            <img src="black.jpg">
             <div class="card-content">
                 <h3>Royal Red</h3>
                 <p class="price">650 AED</p>
-                <a href="https://wa.me/212712648363?text=Order%20Black%20Box" target="_blank" class="btn">ORDER</a>
+                <a href="https://wa.me/212712648363?text=I%20want%20Royal%20Red" target="_blank" class="btn">ORDER</a>
             </div>
         </div>
 
@@ -169,10 +195,15 @@ h1 {
 
     <!-- PARTY -->
     <div class="party">
-        <img src="party.png">
+        <img src="party.jpg">
         <div class="party-text">
             <h2>Moments of Luxury</h2>
         </div>
+    </div>
+
+    <!-- TRUST -->
+    <div class="trust">
+        Trusted by luxury clients in Dubai • Premium preserved roses lasting over 1 year
     </div>
 
 </div>
