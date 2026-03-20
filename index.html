@@ -17,11 +17,18 @@ body {
     color: #eee;
 }
 
+/* FADE IN */
 .container {
     max-width: 950px;
     margin: auto;
     padding: 100px 20px;
     text-align: center;
+    animation: fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
 }
 
 h1 {
@@ -165,7 +172,13 @@ h1 {
 
 <div class="container">
 
+    <!-- LUXURY BADGE -->
+    <div style="color:#c6a75e; font-size:12px; letter-spacing:3px;">
+        PREMIUM COLLECTION
+    </div>
+
     <h1>VENUS <span class="gold">FLEUR</span></h1>
+
     <div class="subtitle">LUXURY FLOWER BOXES • DUBAI</div>
     <div class="subtitle">LIMITED EDITION • SAME DAY DELIVERY</div>
 
@@ -177,6 +190,7 @@ h1 {
             <div class="card-content">
                 <h3>White Elegance</h3>
                 <p class="price">550 AED</p>
+                <p style="color:#e74c3c; font-size:13px;">Only 3 boxes left</p>
                 <a href="https://wa.me/212712648363?text=I%20want%20White%20Elegance" target="_blank" class="btn">ORDER</a>
             </div>
         </div>
@@ -187,6 +201,7 @@ h1 {
             <div class="card-content">
                 <h3>Royal Red</h3>
                 <p class="price">650 AED</p>
+                <p style="color:#e74c3c; font-size:13px;">Only 2 boxes left</p>
                 <a href="https://wa.me/212712648363?text=I%20want%20Royal%20Red" target="_blank" class="btn">ORDER</a>
             </div>
         </div>
@@ -201,9 +216,26 @@ h1 {
         </div>
     </div>
 
+    <!-- GIFT PSYCHOLOGY -->
+    <div style="margin-top:40px; font-size:14px; color:#aaa;">
+        The perfect luxury gift for unforgettable moments
+    </div>
+
     <!-- TRUST -->
     <div class="trust">
-        Trusted by luxury clients in Dubai • Premium preserved roses lasting over 1 year
+        ⭐ Trusted by luxury clients in Dubai  
+        <br>✔ 1 year lasting roses  
+        <br>✔ Same day delivery  
+    </div>
+
+    <!-- FAKE ACTIVITY -->
+    <div style="margin-top:20px; font-size:13px; color:#888;">
+        12 people are viewing this product right now
+    </div>
+
+    <!-- DOMAIN HINT -->
+    <div style="margin-top:60px; font-size:11px; color:#555;">
+        Premium domain VenusFleur.com available
     </div>
 
 </div>
