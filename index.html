@@ -5,10 +5,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- ✅ Vercel Analytics -->
+<!-- Vercel Analytics -->
 <script defer src="https://vercel.com/analytics/script.js"></script>
 
 <title>Luxury Flower Boxes in Dubai | Venus Fleur</title>
+
 <meta name="description" content="Luxury flower boxes in Dubai. Premium preserved roses for gifts, weddings and special occasions. Same-day delivery available.">
 <meta name="keywords" content="flowers Dubai, luxury flowers Dubai, flower box Dubai, roses Dubai, gifts Dubai">
 <meta name="robots" content="index, follow">
@@ -19,6 +20,7 @@
 <style>
 body { margin: 0; font-family: 'Playfair Display', serif; background: #0a0a0a; color: #eee; }
 
+/* LOGO */
 .logo {
  position: fixed;
  top: 25px;
@@ -29,7 +31,7 @@ body { margin: 0; font-family: 'Playfair Display', serif; background: #0a0a0a; c
  z-index: 10;
 }
 
-/* 🔥 NAVBAR */
+/* NAVBAR */
 .navbar {
  position: fixed;
  top: 25px;
@@ -48,27 +50,113 @@ body { margin: 0; font-family: 'Playfair Display', serif; background: #0a0a0a; c
  text-decoration: underline;
 }
 
+/* HERO */
 .hero { position: relative; margin-bottom: 80px; }
-.hero img { width: 100%; height: 600px; object-fit: cover; object-position: center 68%; filter: brightness(0.75); }
-.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.6), transparent); }
-.hero-content { position: absolute; top: 42%; left: 50%; transform: translate(-50%, -50%); text-align: center; z-index: 2; animation: fadeUp 1.2s ease; }
-@keyframes fadeUp { from {opacity:0; transform:translate(-50%, -40%);} to {opacity:1; transform:translate(-50%, -50%);} }
-.hero-content h1 { font-size: 54px; letter-spacing: 6px; }
+
+.hero img {
+ width: 100%;
+ height: 600px;
+ object-fit: cover;
+ object-position: center 68%;
+ filter: brightness(0.75);
+}
+
+.hero::after {
+ content: "";
+ position: absolute;
+ inset: 0;
+ background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+}
+
+.hero-content {
+ position: absolute;
+ top: 42%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ text-align: center;
+ z-index: 2;
+}
+
+.hero-content h1 {
+ font-size: 54px;
+ letter-spacing: 6px;
+}
+
 .gold { color: #c6a75e; }
-.hero-content p { color: #ddd; letter-spacing: 2px; }
 
-.container { max-width: 950px; margin: auto; padding: 0 20px 80px; text-align: center; }
-.story { max-width: 600px; margin: 40px auto; color: #aaa; font-size: 15px; line-height: 1.6; }
+.hero-content p {
+ color: #ddd;
+ letter-spacing: 2px;
+}
 
-.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 60px; }
+/* BUTTONS */
+.hero-btn {
+ display: inline-block;
+ margin-top: 20px;
+ padding: 14px 28px;
+ background: linear-gradient(135deg, #c6a75e, #e6c97a);
+ color: black;
+ text-decoration: none;
+ border-radius: 30px;
+ font-weight: 600;
+ transition: 0.3s;
+ margin-right: 10px;
+}
 
-.card { border-radius: 18px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.6); transition: 0.3s; }
+.hero-btn:hover {
+ transform: translateY(-2px);
+}
+
+/* CONTENT */
+.container {
+ max-width: 950px;
+ margin: auto;
+ padding: 0 20px 80px;
+ text-align: center;
+}
+
+.story {
+ max-width: 600px;
+ margin: 40px auto;
+ color: #aaa;
+ font-size: 15px;
+ line-height: 1.6;
+}
+
+.grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 40px;
+ margin-top: 60px;
+}
+
+.card {
+ border-radius: 18px;
+ overflow: hidden;
+ box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+ transition: 0.3s;
+}
+
 .card:hover { transform: translateY(-5px); }
-.card img { width: 100%; height: 450px; object-fit: cover; transition: 0.5s; }
+
+.card img {
+ width: 100%;
+ height: 450px;
+ object-fit: cover;
+ transition: 0.5s;
+}
+
 .card:hover img { transform: scale(1.05); }
 
-.card-content { padding: 20px; background: #111; }
-.price { color: #c6a75e; margin-top: 8px; }
+.card-content {
+ padding: 20px;
+ background: #111;
+}
+
+.price {
+ color: #c6a75e;
+ margin-top: 8px;
+}
 
 .btn {
  display: inline-block;
@@ -84,8 +172,14 @@ body { margin: 0; font-family: 'Playfair Display', serif; background: #0a0a0a; c
 
 .btn:hover { transform: translateY(-2px); }
 
-.trust { margin-top: 80px; font-size: 14px; color: #aaa; line-height: 1.8; }
+.trust {
+ margin-top: 80px;
+ font-size: 14px;
+ color: #aaa;
+ line-height: 1.8;
+}
 
+/* SOCIAL */
 .whatsapp {
  position: fixed;
  bottom: 25px;
@@ -119,15 +213,17 @@ body { margin: 0; font-family: 'Playfair Display', serif; background: #0a0a0a; c
 
 <div class="logo">VF</div>
 
-<!-- 🔥 NAVIGATION -->
+<!-- NAVBAR -->
 <div class="navbar">
     <a href="index.html">Home</a>
     <a href="flower-delivery-dubai.html">Delivery</a>
     <a href="contact.html">Contact Us</a>
 </div>
 
+<!-- HERO -->
 <div class="hero">
 <img src="hero.jpg" alt="Luxury flower delivery Dubai">
+
 <div class="hero-content">
 <h1>VENUS <span class="gold">FLEUR</span></h1>
 <p>Luxury Flower Delivery • Dubai</p>
@@ -138,6 +234,10 @@ Reserve Yours Now
 
 <a href="flower-delivery-dubai.html" class="hero-btn">
 Discover Delivery Options
+</a>
+
+<a href="contact.html" class="hero-btn">
+Contact Us
 </a>
 
 </div>
