@@ -24,7 +24,6 @@ body {
     color: #eee;
 }
 
-/* LOGO */
 .logo {
     position: fixed;
     top: 25px;
@@ -35,7 +34,6 @@ body {
     z-index: 10;
 }
 
-/* HERO */
 .hero {
     position: relative;
     margin-bottom: 80px;
@@ -48,7 +46,6 @@ body {
     filter: brightness(0.65);
 }
 
-/* overlay gradient (فخامة) */
 .hero::after {
     content: "";
     position: absolute;
@@ -67,8 +64,8 @@ body {
 }
 
 @keyframes fadeUp {
-    from {opacity:0; transform:translate(-50%, -40%);}
-    to {opacity:1; transform:translate(-50%, -50%);}
+    from {opacity:0; transform:translate(-50%, -40%);} 
+    to {opacity:1; transform:translate(-50%, -50%);} 
 }
 
 .hero-content h1 {
@@ -102,7 +99,6 @@ body {
     box-shadow: 0 10px 25px rgba(198,167,94,0.3);
 }
 
-/* CONTAINER */
 .container {
     max-width: 950px;
     margin: auto;
@@ -110,7 +106,6 @@ body {
     text-align: center;
 }
 
-/* STORY */
 .story {
     max-width: 600px;
     margin: 40px auto;
@@ -119,7 +114,6 @@ body {
     line-height: 1.6;
 }
 
-/* GRID */
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -127,7 +121,6 @@ body {
     margin-top: 60px;
 }
 
-/* CARD */
 .card {
     border-radius: 18px;
     overflow: hidden;
@@ -150,7 +143,6 @@ body {
     transform: scale(1.05);
 }
 
-/* CONTENT */
 .card-content {
     padding: 20px;
     background: #111;
@@ -161,11 +153,10 @@ body {
     margin-top: 8px;
 }
 
-/* BUTTON */
 .btn {
-    display: block;
-    margin-top: 15px;
-    padding: 14px;
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 32px;
     background: linear-gradient(135deg, #c6a75e, #e6c97a);
     color: black;
     font-weight: 600;
@@ -178,7 +169,6 @@ body {
     transform: translateY(-2px);
 }
 
-/* TRUST */
 .trust {
     margin-top: 80px;
     font-size: 14px;
@@ -186,7 +176,6 @@ body {
     line-height: 1.8;
 }
 
-/* WHATSAPP */
 .whatsapp {
     position: fixed;
     bottom: 25px;
@@ -198,7 +187,6 @@ body {
     font-size: 22px;
 }
 
-/* MOBILE */
 @media(max-width:768px){
     .grid {
         grid-template-columns: 1fr;
@@ -214,9 +202,8 @@ body {
 
 <div class="logo">VF</div>
 
-<!-- HERO -->
 <div class="hero">
-<img src="hero.jpg">
+<img src="hero.jpg" alt="Luxury flower delivery Dubai">
 
 <div class="hero-content">
 <h1>VENUS <span class="gold">FLEUR</span></h1>
@@ -225,6 +212,11 @@ body {
 <a href="https://wa.me/212712648363?text=Hello,%20I%20want%20to%20order" target="_blank" class="hero-btn">
 Reserve Yours Now
 </a>
+
+<a href="flower-delivery-dubai.html" class="hero-btn">
+Discover Delivery Options
+</a>
+
 </div>
 </div>
 
@@ -235,10 +227,14 @@ A gift that speaks when words are not enough.
 Crafted for unforgettable moments, designed for luxury.
 </div>
 
+<a href="flower-delivery-dubai.html" class="btn">
+Explore Flower Delivery Dubai
+</a>
+
 <div class="grid">
 
 <div class="card">
-<img src="white.jpg">
+<img src="white.jpg" alt="White luxury flower box Dubai">
 <div class="card-content">
 <h3>White Elegance</h3>
 <div class="price">550 AED</div>
@@ -249,7 +245,7 @@ Reserve Yours Now
 </div>
 
 <div class="card">
-<img src="black.jpg">
+<img src="black.jpg" alt="Red rose box Dubai luxury">
 <div class="card-content">
 <h3>Royal Red</h3>
 <div class="price">650 AED</div>
