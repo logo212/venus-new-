@@ -1,302 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="google-site-verification" content="uVP9cwnlbJfFdp4Ad1aRDRIVwW4YDnlAylWghC9wQd4" />
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venus Fleur | Luxury Flower Boxes Dubai</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Plus+Jakarta+Sans:wght@200;300;400;600&display=swap" rel="stylesheet">
 
-<!-- Vercel Analytics -->
-<script defer src="https://vercel.com/analytics/script.js"></script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #050505; color: white; scroll-behavior: smooth; overflow-x: hidden; cursor: none; }
+        .luxury-serif { font-family: 'Playfair Display', serif; }
+        .gold-gradient { background: linear-gradient(135deg, #c6a75e 0%, #e6c97a 50%, #b8860b 100%); }
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .hero-overlay { background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 100%); }
+        
+        /* CUSTOM LUXURY CURSOR */
+        #cursor-dot {
+            position: fixed; width: 6px; height: 6px; background: #c6a75e;
+            border-radius: 50%; pointer-events: none; z-index: 10000;
+            transform: translate(-50%, -50%); transition: transform 0.1s;
+        }
+        #cursor-outline {
+            position: fixed; width: 35px; height: 35px; border: 1px solid #c6a75e;
+            border-radius: 50%; pointer-events: none; z-index: 9999;
+            transform: translate(-50%, -50%); transition: transform 0.2s ease-out;
+        }
+        .cursor-hover { transform: translate(-50%, -50%) scale(1.8) !important; background: rgba(198, 167, 94, 0.1) !important; }
 
-<title>Luxury Flower Boxes in Dubai | Venus Fleur</title>
-
-<meta name="description" content="Luxury flower boxes in Dubai. Premium preserved roses for gifts, weddings and special occasions. Same-day delivery available.">
-<meta name="keywords" content="flowers Dubai, luxury flowers Dubai, flower box Dubai, roses Dubai, gifts Dubai">
-<meta name="robots" content="index, follow">
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-<style>
-body { margin: 0; font-family: 'Playfair Display', serif; background: #0a0a0a; color: #eee; }
-
-/* LOGO */
-.logo {
- position: fixed;
- top: 25px;
- right: 30px;
- color: #c6a75e;
- font-size: 20px;
- letter-spacing: 2px;
- z-index: 10;
-}
-
-/* NAVBAR */
-.navbar {
- position: fixed;
- top: 25px;
- left: 30px;
- z-index: 10;
-}
-
-.navbar a {
- color: #c6a75e;
- margin-right: 15px;
- text-decoration: none;
- font-size: 14px;
-}
-
-.navbar a:hover {
- text-decoration: underline;
-}
-
-/* HERO */
-.hero { position: relative; margin-bottom: 80px; }
-
-.hero img {
- width: 100%;
- height: 600px;
- object-fit: cover;
- object-position: center 68%;
- filter: brightness(0.75);
-}
-
-.hero::after {
- content: "";
- position: absolute;
- inset: 0;
- background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
-}
-
-.hero-content {
- position: absolute;
- top: 42%;
- left: 50%;
- transform: translate(-50%, -50%);
- text-align: center;
- z-index: 2;
-}
-
-.hero-content h1 {
- font-size: 54px;
- letter-spacing: 6px;
-}
-
-.gold { color: #c6a75e; }
-
-.hero-content p {
- color: #ddd;
- letter-spacing: 2px;
-}
-
-/* BUTTONS */
-.hero-btn {
- display: inline-block;
- margin-top: 20px;
- padding: 14px 28px;
- background: linear-gradient(135deg, #c6a75e, #e6c97a);
- color: black;
- text-decoration: none;
- border-radius: 30px;
- font-weight: 600;
- transition: 0.3s;
- margin-right: 10px;
-}
-
-.hero-btn:hover {
- transform: translateY(-2px);
-}
-
-/* CONTENT */
-.container {
- max-width: 950px;
- margin: auto;
- padding: 0 20px 80px;
- text-align: center;
-}
-
-.story {
- max-width: 600px;
- margin: 40px auto;
- color: #aaa;
- font-size: 15px;
- line-height: 1.6;
-}
-
-.grid {
- display: grid;
- grid-template-columns: 1fr 1fr;
- gap: 40px;
- margin-top: 60px;
-}
-
-.card {
- border-radius: 18px;
- overflow: hidden;
- box-shadow: 0 15px 40px rgba(0,0,0,0.6);
- transition: 0.3s;
-}
-
-.card:hover { transform: translateY(-5px); }
-
-.card img {
- width: 100%;
- height: 450px;
- object-fit: cover;
- transition: 0.5s;
-}
-
-.card:hover img { transform: scale(1.05); }
-
-.card-content {
- padding: 20px;
- background: #111;
-}
-
-.price {
- color: #c6a75e;
- margin-top: 8px;
-}
-
-.btn {
- display: inline-block;
- margin-top: 25px;
- padding: 14px 32px;
- background: linear-gradient(135deg, #c6a75e, #e6c97a);
- color: black;
- font-weight: 600;
- text-decoration: none;
- border-radius: 30px;
- transition: 0.3s;
-}
-
-.btn:hover { transform: translateY(-2px); }
-
-.trust {
- margin-top: 80px;
- font-size: 14px;
- color: #aaa;
- line-height: 1.8;
-}
-
-/* SOCIAL */
-.whatsapp {
- position: fixed;
- bottom: 25px;
- right: 25px;
- background: #25D366;
- color: white;
- padding: 15px;
- border-radius: 50%;
- font-size: 22px;
-}
-
-.instagram {
- position: fixed;
- bottom: 90px;
- right: 25px;
- background: #E1306C;
- color: white;
- padding: 15px;
- border-radius: 50%;
- font-size: 22px;
- transition: 0.3s;
-}
-
-.instagram:hover {
- transform: translateY(-3px);
-}
-</style>
+        .logo-container {
+            width: 60px; height: 60px; border-radius: 50%; border: 1px solid rgba(198, 167, 94, 0.3);
+            overflow: hidden; display: flex; align-items: center; justify-content: center; background: #000;
+            font-family: 'Playfair Display', serif; color: #c6a75e; font-weight: bold; font-size: 20px;
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="logo">VF</div>
+    <!-- CUSTOM CURSOR -->
+    <div id="cursor-dot"></div>
+    <div id="cursor-outline"></div>
 
-<!-- NAVBAR -->
-<div class="navbar">
-    <a href="index.html">Home</a>
-    <a href="flower-delivery-dubai.html">Delivery</a>
-    <a href="contact.html">Contact Us</a>
-</div>
+    <!-- FLOATING INSTAGRAM -->
+    <a href="https://www.instagram.com/_venusfleur/" target="_blank" class="fixed bottom-[100px] right-[30px] z-[100] w-[55px] height-[55px] flex items-center justify-center rounded-full gold-gradient shadow-2xl transition hover:scale-110 p-4">
+        <i class="fa-brands fa-instagram text-black text-xl"></i>
+    </a>
 
-<!-- HERO -->
-<div class="hero">
-<img src="hero.jpg" alt="Luxury flower delivery Dubai">
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 px-6 md:px-16 py-4 flex justify-between items-center bg-black/40 backdrop-blur-md border-b border-white/5">
+        <div class="flex items-center space-x-4">
+            <div class="logo-container shadow-lg shadow-[#c6a75e]/10">VF</div>
+            <div class="hidden lg:flex text-[9px] tracking-[0.4em] text-gray-500 uppercase">
+                <span class="text-[#c6a75e]">DUBAI</span> <span class="mx-2">|</span> <span>EST. 2024</span>
+            </div>
+        </div>
+        <div class="hidden md:flex space-x-12 text-[10px] uppercase tracking-[0.4em] font-light">
+            <a href="#" class="hover:text-[#c6a75e] transition">Collection</a>
+            <a href="#" class="hover:text-[#c6a75e] transition">Delivery</a>
+            <a href="#" class="hover:text-[#c6a75e] transition">Contact</a>
+        </div>
+        <a href="https://wa.me/212712648363" target="_blank" class="gold-gradient px-8 py-2.5 text-black text-[9px] font-bold tracking-[0.2em] rounded-sm uppercase">Order Now</a>
+    </nav>
 
-<div class="hero-content">
-<h1>VENUS <span class="gold">FLEUR</span></h1>
-<p>Luxury Flower Delivery • Dubai</p>
+    <!-- HERO SECTION -->
+    <section class="relative h-[90vh] flex items-center overflow-hidden">
+        <img src="hero.jpg" class="absolute inset-0 w-full h-full object-cover z-0" alt="Luxury Flowers Dubai">
+        <div class="absolute inset-0 hero-overlay z-10"></div>
+        <div class="relative z-20 px-6 md:px-24 max-w-5xl" data-aos="fade-right" data-aos-duration="1500">
+            <div class="inline-flex items-center border border-[#c6a75e]/40 px-5 py-1.5 rounded-full mb-8">
+                <span class="w-1.5 h-1.5 bg-[#c6a75e] rounded-full animate-ping mr-3"></span>
+                <span class="text-[9px] tracking-[0.5em] text-[#c6a75e] font-bold uppercase">SAME-DAY DELIVERY AVAILABLE</span>
+            </div>
+            <div class="border-l-2 border-[#c6a75e] pl-10">
+                <h1 class="text-6xl md:text-9xl luxury-serif leading-tight mb-4 uppercase tracking-tighter">Venus <br> <span class="text-[#c6a75e] italic font-light">Fleur</span></h1>
+                <p class="text-white text-sm md:text-xl font-extralight tracking-[0.5em] uppercase opacity-80 mb-12">Luxury Flower Boxes • Dubai</p>
+            </div>
+            <div class="mt-12 pl-10">
+                <a href="https://wa.me/212712648363" target="_blank" class="gold-gradient px-16 py-5 text-black font-bold uppercase text-[10px] tracking-[0.4em] hover:brightness-110 transition shadow-2xl shadow-[#c6a75e]/20">Reserve Yours</a>
+            </div>
+        </div>
+    </section>
 
-<a href="https://wa.me/212712648363?text=Hello,%20I%20want%20to%20order" target="_blank" class="hero-btn">
-Reserve Yours Now
-</a>
+    <!-- USP BAR -->
+    <div class="bg-[#0a0a0a] border-y border-white/5 py-10 px-6 md:px-16 flex flex-wrap justify-center gap-10 md:gap-24 text-[10px] tracking-[0.4em] uppercase text-gray-400 font-light" data-aos="fade-up">
+        <div class="flex items-center"><span class="text-[#c6a75e] mr-3">✦</span> Premium Preserved Roses</div>
+        <div class="flex items-center"><span class="text-[#c6a75e] mr-3">✦</span> Lasts Over 1 Year</div>
+        <div class="flex items-center"><span class="text-[#c6a75e] mr-3">✦</span> Luxury Packaging</div>
+    </div>
 
-<a href="flower-delivery-dubai.html" class="hero-btn">
-Discover Delivery Options
-</a>
+    <!-- COLLECTION SECTION -->
+    <section class="py-32 px-6 md:px-16 bg-[#050505]">
+        <div class="text-center mb-24" data-aos="fade-up">
+            <p class="text-[#c6a75e] text-xs tracking-[0.6em] uppercase mb-4 font-semibold">The Collection</p>
+            <h2 class="text-4xl md:text-6xl luxury-serif italic text-white uppercase leading-tight">Timeless Elegance</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-6xl mx-auto">
+            <!-- Product 1 -->
+            <div class="glass group p-6 rounded-3xl relative" data-aos="fade-up" data-aos-delay="100">
+                <div class="relative overflow-hidden rounded-2xl mb-8"><img src="white.jpg" class="w-full h-[500px] object-cover group-hover:scale-110 transition duration-1000"></div>
+                <div class="px-2 pb-4 text-center">
+                    <h3 class="text-3xl luxury-serif italic mb-2 uppercase tracking-widest">White Elegance</h3>
+                    <div class="text-[#c6a75e] text-xl font-light mb-8">550 AED</div>
+                    <a href="https://wa.me/212712648363" target="_blank" class="block w-full py-5 bg-white/5 hover:bg-white hover:text-black transition uppercase text-[10px] tracking-[0.4em] font-bold border border-white/10 text-center">Order via WhatsApp</a>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="glass group p-6 rounded-3xl relative" data-aos="fade-up" data-aos-delay="300">
+                <div class="relative overflow-hidden rounded-2xl mb-8"><img src="black.jpg" class="w-full h-[500px] object-cover group-hover:scale-110 transition duration-1000"></div>
+                <div class="px-2 pb-4 text-center">
+                    <h3 class="text-3xl luxury-serif italic mb-2 uppercase tracking-widest">Royal Red</h3>
+                    <div class="text-[#c6a75e] text-xl font-light mb-8">650 AED</div>
+                    <a href="https://wa.me/212712648363" target="_blank" class="block w-full py-5 bg-white/5 hover:bg-white hover:text-black transition uppercase text-[10px] tracking-[0.4em] font-bold border border-white/10 text-center">Order via WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<a href="contact.html" class="hero-btn">
-Contact Us
-</a>
+    <!-- REVIEWS -->
+    <section class="py-32 px-6 md:px-16 bg-black border-t border-white/5 text-center">
+        <div class="mb-20" data-aos="fade-up">
+            <div class="flex justify-center items-center space-x-3 mb-6">
+                <i class="fab fa-google text-white text-xl"></i>
+                <span class="text-[10px] tracking-[0.5em] uppercase text-gray-500">Google Rating 5.0/5.0</span>
+            </div>
+            <h2 class="text-3xl luxury-serif italic">The Venus Experience</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-20">
+            <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex justify-center mb-6 text-[#c6a75e] text-[10px] space-x-1.5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <div class="text-white mb-8 text-sm italic font-light leading-relaxed opacity-90">"The most beautiful roses I've ever seen. The packaging is pure luxury."</div>
+                <p class="text-[9px] tracking-[0.4em] text-gray-600 uppercase">— Elena R. <span class="text-green-600 ml-2 font-bold">Verified</span></p>
+            </div>
+            <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                <div class="flex justify-center mb-6 text-[#c6a75e] text-[10px] space-x-1.5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <div class="text-white mb-8 text-sm italic font-light leading-relaxed opacity-90">"Same-day delivery saved my anniversary! The Royal Red box is stunning."</div>
+                <p class="text-[9px] tracking-[0.4em] text-gray-600 uppercase">— Marc D. <span class="text-green-600 ml-2 font-bold">Verified</span></p>
+            </div>
+            <div class="text-center" data-aos="fade-up" data-aos-delay="500">
+                <div class="flex justify-center mb-6 text-[#c6a75e] text-[10px] space-x-1.5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <div class="text-white mb-8 text-sm italic font-light leading-relaxed opacity-90">"Unbeatable quality. My roses still look fresh after 6 months. Amazing service."</div>
+                <p class="text-[9px] tracking-[0.4em] text-gray-600 uppercase">— Layla A. <span class="text-green-600 ml-2 font-bold">Verified</span></p>
+            </div>
+        </div>
+    </section>
 
-</div>
-</div>
+    <!-- FOOTER -->
+    <footer class="py-24 px-6 md:px-16 flex flex-col items-center text-center border-t border-white/5 bg-black">
+        <div class="logo-container mb-12 opacity-90 shadow-2xl shadow-[#c6a75e]/10">VF</div>
+        <div class="flex space-x-12 text-[10px] tracking-[0.4em] text-gray-500 uppercase mb-12 font-light">
+            <a href="https://www.instagram.com/_venusfleur/" target="_blank" class="hover:text-[#c6a75e] transition">Instagram</a>
+            <a href="https://wa.me/212712648363" target="_blank" class="hover:text-[#c6a75e] transition">WhatsApp</a>
+            <a href="#" class="hover:text-[#c6a75e] transition">Contact</a>
+        </div>
+        <div class="text-[9px] tracking-[0.5em] text-gray-700 uppercase font-light">
+            &copy; 2026 VENUS FLEUR DUBAI. ALL RIGHTS RESERVED.
+        </div>
+    </footer>
 
-<div class="container">
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1200, once: true, offset: 100 });
 
-<div class="story">
-A gift that speaks when words are not enough. Crafted for unforgettable moments, designed for luxury.
-</div>
+        // CUSTOM CURSOR LOGIC
+        const dot = document.getElementById('cursor-dot');
+        const outline = document.getElementById('cursor-outline');
 
-<a href="flower-delivery-dubai.html" class="btn">
-Explore Flower Delivery Dubai
-</a>
+        window.addEventListener('mousemove', (e) => {
+            const posX = e.clientX;
+            const posY = e.clientY;
+            dot.style.left = `${posX}px`;
+            dot.style.top = `${posY}px`;
+            outline.animate({ left: `${posX}px`, top: `${posY}px` }, { duration: 500, fill: "forwards" });
+        });
 
-<div class="grid">
-
-<div class="card">
-<img src="white.jpg" alt="White luxury flower box Dubai">
-<div class="card-content">
-<h3>White Elegance</h3>
-<div class="price">550 AED</div>
-<a href="https://wa.me/212712648363?text=Hello,%20I%20want%20White%20Elegance" target="_blank" class="btn">
-Reserve Yours Now
-</a>
-</div>
-</div>
-
-<div class="card">
-<img src="black.jpg" alt="Red rose box Dubai luxury">
-<div class="card-content">
-<h3>Royal Red</h3>
-<div class="price">650 AED</div>
-<a href="https://wa.me/212712648363?text=Hello,%20I%20want%20Royal%20Red" target="_blank" class="btn">
-Reserve Yours Now
-</a>
-</div>
-</div>
-
-</div>
-
-<div class="trust">
-✔ Premium preserved roses lasting over 1 year <br>
-✔ Same-day delivery in Dubai <br>
-✔ Luxury packaging <br>
-✔ Limited daily orders
-</div>
-
-</div>
-
-<!-- Instagram -->
-<a href="https://www.instagram.com/_venusfleur/" target="_blank" class="instagram">
-<i class="fab fa-instagram"></i>
-</a>
-
-<!-- WhatsApp -->
-<a href="https://wa.me/212712648363" target="_blank" class="whatsapp">
-<i class="fab fa-whatsapp"></i>
-</a>
-
+        const interactables = document.querySelectorAll('a, button');
+        interactables.forEach(el => {
+            el.addEventListener('mouseenter', () => outline.classList.add('cursor-hover'));
+            el.addEventListener('mouseleave', () => outline.classList.remove('cursor-hover'));
+        });
+    </script>
 </body>
 </html>
