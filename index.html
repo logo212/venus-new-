@@ -3,33 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO MASTER TAGS -->
     <title>Luxury Flower Delivery Dubai | Eternal Roses That Last 1 Year | Venus Fleur</title>
     <meta name="description" content="Premium luxury flower delivery in Dubai. Order handcrafted eternal rose boxes that last over a year. Same-day delivery to Palm Jumeirah, Downtown, and Dubai Marina.">
-    <meta name="keywords" content="luxury flower delivery dubai, rose box dubai, same day flowers dubai, preserved roses dubai, eternal roses uae">
     <link rel="canonical" href="https://venusfleur.com/" />
-
-    <!-- GOOGLE SCHEMA (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Florist",
-      "name": "Venus Fleur Dubai",
-      "image": "https://venusfleur.com/luxury-flower-delivery-dubai-preserved-roses.jpg",
-      "url": "https://venusfleur.com",
-      "telephone": "+971500000000",
-      "priceRange": "Contact for Pricing",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Dubai Luxury District",
-        "addressLocality": "Dubai",
-        "addressRegion": "Dubai",
-        "addressCountry": "AE"
-      },
-      "areaServed": ["Dubai", "Palm Jumeirah", "Dubai Marina", "Downtown Dubai"]
-    }
-    </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -42,27 +18,30 @@
         .gold-gradient { background: linear-gradient(135deg, #c6a75e 0%, #e6c97a 50%, #b8860b 100%); }
         .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.05); }
         .site-frame { position: fixed; top: 20px; left: 20px; right: 20px; bottom: 20px; border: 1px solid rgba(198, 167, 94, 0.15); pointer-events: none; z-index: 999; }
-        #cursor-dot { position: fixed; width: 4px; height: 4px; background: #c6a75e; border-radius: 50%; pointer-events: none; z-index: 10000; transform: translate(-50%, -50%); }
-        #cursor-outline { position: fixed; width: 40px; height: 40px; border: 0.5px solid #c6a75e; border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); transition: all 0.3s ease-out; }
-        .cursor-hover { transform: translate(-50%, -50%) scale(1.5) !important; background: rgba(198, 167, 94, 0.1) !important; }
+        
+        /* MODERN MINIMALIST CURSOR */
+        #cursor {
+            position: fixed; width: 8px; height: 8px; background: #c6a75e;
+            border-radius: 50%; pointer-events: none; z-index: 10000;
+            mix-blend-mode: difference; transition: transform 0.2s ease;
+        }
+        #cursor-follower {
+            position: fixed; width: 40px; height: 40px; border: 1px solid rgba(198, 167, 94, 0.3);
+            border-radius: 50%; pointer-events: none; z-index: 9999;
+            transition: all 0.15s ease-out;
+        }
+        .cursor-active { transform: scale(2.5); background: #c6a75e !important; border: none !important; }
+
         .hero-overlay { background: radial-gradient(circle at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%); }
         .nav-link { letter-spacing: 0.2em; font-size: 9px; text-transform: uppercase; transition: 0.4s; font-weight: 300; }
-        
-        /* LOGO VF FIX */
-        .logo-container { 
-            width: 60px; height: 60px; border-radius: 50%; 
-            border: 1px solid rgba(198, 167, 94, 0.4); 
-            display: flex; align-items: center; justify-content: center; 
-            background: #000; color: #c6a75e; font-family: 'Playfair Display', serif;
-            font-weight: bold; font-size: 22px; letter-spacing: 1px;
-        }
+        .logo-container { width: 60px; height: 60px; border-radius: 50%; border: 1px solid rgba(198, 167, 94, 0.4); display: flex; align-items: center; justify-content: center; background: #000; color: #c6a75e; font-family: 'Playfair Display', serif; font-weight: bold; font-size: 22px; }
     </style>
 </head>
 <body>
 
     <div class="site-frame hidden md:block"></div>
-    <div id="cursor-dot"></div>
-    <div id="cursor-outline"></div>
+    <div id="cursor"></div>
+    <div id="cursor-follower"></div>
 
     <!-- NAVBAR -->
     <nav class="fixed w-full z-50 px-10 md:px-20 py-8 flex justify-between items-center bg-transparent">
@@ -81,7 +60,7 @@
 
     <!-- HERO SECTION -->
     <section class="relative h-screen flex items-center justify-center overflow-hidden">
-        <img src="luxury-flower-delivery-dubai-preserved-roses.jpg" class="absolute inset-0 w-full h-full object-cover z-0" alt="Luxury Flower Delivery Dubai - Premium Preserved Roses">
+        <img src="luxury-flower-delivery-dubai-preserved-roses.jpg" class="absolute inset-0 w-full h-full object-cover z-0" alt="Luxury Flower Delivery Dubai">
         <div class="absolute inset-0 hero-overlay z-10"></div>
         <div class="relative z-20 text-center px-6" data-aos="fade-up" data-aos-duration="2000">
             <div class="inline-flex items-center border border-[#c6a75e]/40 px-5 py-1.5 rounded-full mb-10">
@@ -92,7 +71,7 @@
                 Luxury Flower Delivery in Dubai
             </h1>
             <p class="text-white text-sm md:text-xl font-extralight tracking-[0.4em] uppercase opacity-80 mb-12">A Gift They Will Never Forget</p>
-            <a href="flower-delivery-dubai.html" class="gold-gradient px-14 py-5 text-black text-[9px] font-bold tracking-[0.4em] uppercase hover:scale-105 transition duration-500 shadow-2xl">Send a Luxury Gift</a>
+            <a href="flower-delivery-dubai.html" class="gold-gradient px-14 py-5 text-black text-[9px] font-bold tracking-[0.4em] uppercase shadow-2xl">Send a Luxury Gift</a>
         </div>
     </section>
 
@@ -107,12 +86,12 @@
     <section class="py-32 px-6 md:px-20 bg-[#050505]">
         <div class="text-center mb-24" data-aos="fade-up">
             <p class="text-[#c6a75e] text-xs tracking-[0.6em] uppercase mb-4 font-semibold">The Signature Series</p>
-            <h2 class="text-4xl md:text-6xl luxury-serif italic text-white uppercase leading-tight">Masterpieces in Bloom</h2>
+            <h2 class="text-4xl md:text-6xl luxury-serif italic text-white uppercase">Masterpieces in Bloom</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-6xl mx-auto">
             <div class="glass group p-6 rounded-3xl relative" data-aos="fade-up">
                 <div class="relative overflow-hidden rounded-2xl mb-8">
-                    <img src="white.jpg" class="w-full h-[500px] object-cover group-hover:scale-110 transition duration-1000" alt="Luxury white rose box Dubai delivery - White Elegance">
+                    <img src="white.jpg" class="w-full h-[500px] object-cover group-hover:scale-110 transition duration-1000" alt="Luxury white rose box Dubai">
                 </div>
                 <div class="text-center">
                     <h3 class="text-2xl luxury-serif italic mb-2 uppercase">White Elegance</h3>
@@ -122,7 +101,7 @@
             </div>
             <div class="glass group p-6 rounded-3xl relative border-[#c6a75e]/20 shadow-2xl shadow-[#c6a75e]/5" data-aos="fade-up" data-aos-delay="200">
                 <div class="relative overflow-hidden rounded-2xl mb-8">
-                    <img src="black.jpg" class="w-full h-[500px] object-cover group-hover:scale-110 transition duration-1000" alt="Royal red preserved roses Dubai - Eternal Collection">
+                    <img src="black.jpg" class="w-full h-[500px] object-cover group-hover:scale-110 transition duration-1000" alt="Royal red rose box Dubai">
                 </div>
                 <div class="text-center">
                     <h3 class="text-2xl luxury-serif italic mb-2 uppercase">Royal Red</h3>
@@ -133,12 +112,12 @@
         </div>
     </section>
 
-    <!-- REVIEWS SECTION (RE-ADDED) -->
+    <!-- REVIEWS SECTION -->
     <section class="py-32 px-6 md:px-20 bg-black border-y border-white/5 text-center">
         <div class="mb-20" data-aos="fade-up">
             <div class="flex justify-center items-center space-x-3 mb-6">
                 <i class="fab fa-google text-white text-xl"></i>
-                <span class="text-[10px] tracking-[0.5em] uppercase text-gray-500">Google Rating 5.0/5.0</span>
+                <span class="text-[10px] tracking-[0.5em] uppercase text-gray-400">Google Rating 5.0/5.0</span>
             </div>
             <h2 class="text-3xl luxury-serif italic">Trusted by Dubai's Elite</h2>
         </div>
@@ -161,22 +140,19 @@
         </div>
     </section>
 
-    <!-- SEO CONTENT SECTION -->
-    <section class="py-32 px-6 md:px-20 bg-[#050505]">
-        <div class="max-w-4xl mx-auto text-gray-400 text-sm leading-relaxed" data-aos="fade-up">
-            <h2 class="text-[#c6a75e] luxury-serif italic text-3xl mb-8">Luxury Roses Delivery in Dubai</h2>
-            <p class="mb-6">
-                Looking for the perfect luxury gift in Dubai? <strong>Venus Fleur</strong> offers an exclusive collection of <strong>preserved eternal roses</strong> that maintain their natural beauty for over a year. Our handcrafted flower boxes are designed for those who value elegance and longevity.
-            </p>
-            <h2 class="text-[#c6a75e] luxury-serif italic text-3xl mt-16 mb-8">Same Day Flower Delivery Dubai</h2>
-            <p class="mb-6">
-                We provide reliable <a href="flower-delivery-dubai.html" class="text-[#c6a75e] underline">same-day flower delivery across Dubai</a>, including prestigious locations such as <strong>Palm Jumeirah, Dubai Marina, Downtown Dubai, and Business Bay</strong>.
-            </p>
+    <!-- OUR PARTNERS (TRUST SECTION) -->
+    <section class="py-20 bg-[#050505] text-center border-b border-white/5">
+        <p class="text-gray-600 text-[8px] tracking-[0.5em] uppercase mb-10">As Seen In & Trusted By</p>
+        <div class="flex flex-wrap justify-center gap-12 md:gap-24 opacity-30 grayscale">
+            <span class="luxury-serif text-xl">VOGUE</span>
+            <span class="luxury-serif text-xl">FORBES</span>
+            <span class="luxury-serif text-xl">HARPER'S</span>
+            <span class="luxury-serif text-xl">ELLE</span>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="py-32 px-10 md:px-20 bg-black text-center border-t border-white/5">
+    <footer class="py-32 px-10 md:px-20 bg-black text-center">
         <h2 class="luxury-serif text-3xl tracking-[0.3em] text-[#c6a75e] mb-16 font-light uppercase">Venus Fleur</h2>
         <div class="flex flex-wrap justify-center gap-12 text-[9px] tracking-[0.4em] text-gray-600 uppercase mb-20">
             <a href="anniversary-flowers-dubai.html" class="hover:text-white transition">Anniversary</a>
@@ -191,16 +167,30 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1500, once: true });
-        const dot = document.getElementById('cursor-dot');
-        const outline = document.getElementById('cursor-outline');
+
+        // MODERN CURSOR LOGIC
+        const cursor = document.getElementById('cursor');
+        const follower = document.getElementById('cursor-follower');
+
         window.addEventListener('mousemove', (e) => {
-            dot.style.left = `${e.clientX}px`; dot.style.top = `${e.clientY}px`;
-            outline.animate({ left: `${e.clientX}px`, top: `${e.clientY}px` }, { duration: 600, fill: "forwards" });
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            
+            setTimeout(() => {
+                follower.style.left = e.clientX + 'px';
+                follower.style.top = e.clientY + 'px';
+            }, 50);
         });
-        const interactables = document.querySelectorAll('a, button');
-        interactables.forEach(el => {
-            el.addEventListener('mouseenter', () => outline.classList.add('cursor-hover'));
-            el.addEventListener('mouseleave', () => outline.classList.remove('cursor-hover'));
+
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('cursor-active');
+                follower.style.opacity = "0";
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('cursor-active');
+                follower.style.opacity = "1";
+            });
         });
     </script>
 </body>
