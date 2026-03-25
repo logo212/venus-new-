@@ -16,10 +16,10 @@
       "@context": "https://schema.org",
       "@type": "Florist",
       "name": "Venus Fleur Dubai",
-      "image": "https://venusfleur.com/hero.jpg",
+      "image": "https://venusfleur.com/luxury-flower-delivery-dubai-preserved-roses.jpg",
       "url": "https://venusfleur.com",
       "telephone": "+971500000000",
-      "priceRange": "AED 550 - AED 2500",
+      "priceRange": "Contact for Pricing",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Dubai Luxury District",
@@ -67,9 +67,11 @@
         .site-frame { position: fixed; top: 20px; left: 20px; right: 20px; bottom: 20px; border: 1px solid rgba(198, 167, 94, 0.15); pointer-events: none; z-index: 999; }
         #cursor-dot { position: fixed; width: 4px; height: 4px; background: #c6a75e; border-radius: 50%; pointer-events: none; z-index: 10000; transform: translate(-50%, -50%); }
         #cursor-outline { position: fixed; width: 40px; height: 40px; border: 0.5px solid #c6a75e; border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); transition: all 0.3s ease-out; }
-        .hero-overlay { background: radial-gradient(circle at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%); }
+        .cursor-hover { transform: translate(-50%, -50%) scale(1.5) !important; background: rgba(198, 167, 94, 0.1) !important; }
+        .hero-overlay { background: radial-gradient(circle at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%); }
         .nav-link { letter-spacing: 0.2em; font-size: 9px; text-transform: uppercase; transition: 0.4s; font-weight: 300; }
         .logo-container { width: 60px; height: 60px; border-radius: 50%; border: 1px solid rgba(198, 167, 94, 0.2); overflow: hidden; display: flex; align-items: center; justify-content: center; background: #000; }
+        .logo-container img { width: 100%; height: 100%; object-fit: cover; }
     </style>
 </head>
 <body>
@@ -92,16 +94,16 @@
         <a href="https://wa.me/971500000000" target="_blank" class="gold-gradient px-8 py-2.5 text-black text-[9px] font-bold tracking-[0.2em] rounded-sm uppercase">WhatsApp</a>
     </nav>
 
-    <!-- HERO SECTION (SEO & EMOTION FIX) -->
+    <!-- HERO SECTION (SEO UPDATED) -->
     <section class="relative h-screen flex items-center justify-center overflow-hidden">
-        <img src="hero.jpg" class="absolute inset-0 w-full h-full object-cover z-0" alt="Luxury Flower Delivery Dubai - Eternal Rose Boxes">
+        <!-- NEW IMAGE FILENAME -->
+        <img src="luxury-flower-delivery-dubai-preserved-roses.jpg" class="absolute inset-0 w-full h-full object-cover z-0" alt="Luxury Flower Delivery Dubai - Premium Preserved Roses">
         <div class="absolute inset-0 hero-overlay z-10"></div>
         <div class="relative z-20 text-center px-6" data-aos="fade-up" data-aos-duration="2000">
             <div class="inline-flex items-center border border-[#c6a75e]/40 px-5 py-1.5 rounded-full mb-10">
                 <span class="w-1.5 h-1.5 bg-[#c6a75e] rounded-full animate-ping mr-3"></span>
                 <span class="text-[8px] tracking-[0.5em] text-[#c6a75e] font-bold uppercase">SAME-DAY DELIVERY IN DUBAI</span>
             </div>
-            <!-- H1 SEO + EMOTION -->
             <h1 class="text-4xl md:text-7xl luxury-serif italic mb-6 leading-tight font-light uppercase tracking-tighter">
                 Luxury Flower Delivery in Dubai
             </h1>
@@ -118,7 +120,7 @@
         <div><span class="text-[#c6a75e] mr-2">✦</span> VIP Delivery to Palm Jumeirah</div>
     </div>
 
-    <!-- COLLECTION -->
+    <!-- COLLECTION (CLEAN VERSION) -->
     <section class="py-32 px-6 md:px-20 bg-[#050505]">
         <div class="text-center mb-24" data-aos="fade-up">
             <p class="text-[#c6a75e] text-xs tracking-[0.6em] uppercase mb-4 font-semibold">The Signature Series</p>
@@ -126,31 +128,29 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-6xl mx-auto">
             <div class="glass group p-6 rounded-3xl relative" data-aos="fade-up">
-                <div class="absolute top-8 left-8 bg-[#c6a75e] text-black text-[8px] font-black px-4 py-1.5 rounded-sm z-30 tracking-widest shadow-xl">SPECIAL: $1 / DAY</div>
                 <div class="relative overflow-hidden rounded-2xl mb-8">
                     <img src="white.jpg" class="w-full h-[500px] object-cover group-hover:scale-110 transition duration-1000" alt="Luxury white rose box Dubai delivery - White Elegance">
                 </div>
                 <div class="text-center">
                     <h3 class="text-2xl luxury-serif italic mb-2 uppercase">White Elegance</h3>
-                    <p class="text-[10px] text-gray-500 tracking-[0.2em] uppercase mb-8">365 days of beauty for less than $1 a day</p>
+                    <p class="text-[10px] text-gray-500 tracking-[0.2em] uppercase mb-8">Premium Preserved Rose Collection</p>
                     <a href="https://wa.me/971500000000" target="_blank" class="block w-full py-4 bg-white/5 hover:bg-white hover:text-black transition uppercase text-[10px] tracking-[0.4em] font-bold border border-white/10 text-center">Order Now</a>
                 </div>
             </div>
             <div class="glass group p-6 rounded-3xl relative border-[#c6a75e]/20 shadow-2xl shadow-[#c6a75e]/5" data-aos="fade-up" data-aos-delay="200">
-                <div class="absolute top-8 left-8 bg-[#c6a75e] text-black text-[8px] font-black px-4 py-1.5 rounded-sm z-30 tracking-widest shadow-xl">SPECIAL: $1 / DAY</div>
                 <div class="relative overflow-hidden rounded-2xl mb-8">
                     <img src="black.jpg" class="w-full h-[500px] object-cover group-hover:scale-110 transition duration-1000" alt="Royal red preserved roses Dubai - Eternal Collection">
                 </div>
                 <div class="text-center">
                     <h3 class="text-2xl luxury-serif italic mb-2 uppercase">Royal Red</h3>
-                    <p class="text-[10px] text-gray-500 tracking-[0.2em] uppercase mb-8">The ultimate romantic gesture that lasts a full year</p>
+                    <p class="text-[10px] text-gray-500 tracking-[0.2em] uppercase mb-8">The Ultimate Romantic Gesture</p>
                     <a href="https://wa.me/971500000000" target="_blank" class="block w-full py-4 bg-white/5 hover:bg-white hover:text-black transition uppercase text-[10px] tracking-[0.4em] font-bold border border-white/10 text-center">Order Now</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SEO CONTENT SECTION (INTERNAL LINKING FIX) -->
+    <!-- SEO CONTENT SECTION -->
     <section class="py-32 px-6 md:px-20 bg-black border-y border-white/5">
         <div class="max-w-4xl mx-auto text-gray-400 text-sm leading-relaxed" data-aos="fade-up">
             <h2 class="text-[#c6a75e] luxury-serif italic text-3xl mb-8">Luxury Roses Delivery in Dubai</h2>
@@ -168,11 +168,11 @@
         </div>
     </section>
 
-    <!-- FAQ SECTION (SEO & CONVERSION FIX) -->
-    <section class="py-32 px-6 md:px-20 bg-[#050505] border-b border-white/5">
+    <!-- FAQ SECTION -->
+    <section class="py-32 px-6 md:px-20 bg-[#050505] border-b border-white/5 text-center">
         <div class="max-w-3xl mx-auto">
-            <h2 class="text-3xl luxury-serif italic text-center mb-20" data-aos="fade-up">Frequently Asked Questions</h2>
-            <div class="space-y-10" data-aos="fade-up">
+            <h2 class="text-3xl luxury-serif italic mb-20" data-aos="fade-up">Frequently Asked Questions</h2>
+            <div class="space-y-10 text-left" data-aos="fade-up">
                 <div class="border-b border-white/5 pb-6">
                     <h4 class="text-[11px] tracking-[0.3em] uppercase mb-3 text-[#c6a75e] font-semibold">How long do preserved roses last?</h4>
                     <p class="text-gray-500 text-xs font-light leading-relaxed">Our eternal roses undergo a specialized preservation process that allows them to last for 1 to 3 years without water or sunlight.</p>
