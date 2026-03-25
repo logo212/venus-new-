@@ -3,35 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venus Fleur | The House of Eternal Roses Dubai</title>
-    <meta name="description" content="Dubai's premier boutique for luxury preserved roses. Experience the art of eternal gifting with our handcrafted floral arrangements.">
+    <title>Venus Fleur | Luxury Flower Delivery Dubai | Eternal Rose Boxes</title>
+    <meta name="description" content="Dubai's premier boutique for luxury preserved roses. Same-day delivery for anniversaries, weddings, and corporate gifts. Experience the art of eternal gifting.">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@200;300;400;600&display=swap" rel="stylesheet">
 
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #050505; color: white; scroll-behavior: smooth; overflow-x: hidden; cursor: none; }
         .luxury-serif { font-family: 'Playfair Display', serif; }
         .gold-gradient { background: linear-gradient(135deg, #c6a75e 0%, #e6c97a 50%, #b8860b 100%); }
-        .glass { background: rgba(255, 255, 255, 0.01); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.03); }
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.05); }
         
         /* THE ELITE FRAME */
-        .site-frame {
-            position: fixed; top: 20px; left: 20px; right: 20px; bottom: 20px;
-            border: 1px solid rgba(198, 167, 94, 0.15);
-            pointer-events: none; z-index: 999;
-        }
+        .site-frame { position: fixed; top: 20px; left: 20px; right: 20px; bottom: 20px; border: 1px solid rgba(198, 167, 94, 0.15); pointer-events: none; z-index: 999; }
 
         /* REFINED CURSOR */
         #cursor-dot { position: fixed; width: 4px; height: 4px; background: #c6a75e; border-radius: 50%; pointer-events: none; z-index: 10000; transform: translate(-50%, -50%); }
         #cursor-outline { position: fixed; width: 40px; height: 40px; border: 0.5px solid #c6a75e; border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); transition: all 0.3s ease-out; }
-        
+        .cursor-hover { transform: translate(-50%, -50%) scale(1.5) !important; background: rgba(198, 167, 94, 0.1) !important; }
+
         .hero-overlay { background: radial-gradient(circle at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%); }
+        .nav-link { letter-spacing: 0.2em; font-size: 9px; text-transform: uppercase; transition: 0.4s; font-weight: 300; }
         
-        .nav-link { letter-spacing: 0.3em; font-size: 9px; text-transform: uppercase; transition: 0.4s; font-weight: 300; }
-        .nav-link:hover { color: #c6a75e; letter-spacing: 0.4em; }
+        .logo-container { width: 60px; height: 60px; border-radius: 50%; border: 1px solid rgba(198, 167, 94, 0.2); overflow: hidden; display: flex; align-items: center; justify-content: center; background: #000; }
+        .logo-container img { width: 100%; height: 100%; object-fit: cover; }
     </style>
 </head>
 <body>
@@ -40,81 +38,142 @@
     <div id="cursor-dot"></div>
     <div id="cursor-outline"></div>
 
+    <!-- FLOATING INSTAGRAM -->
+    <a href="https://www.instagram.com/_venusfleur/" target="_blank" class="fixed bottom-[40px] right-[40px] z-[1000] w-[50px] h-[50px] flex items-center justify-center rounded-full gold-gradient shadow-2xl transition hover:scale-110">
+        <i class="fa-brands fa-instagram text-black text-xl"></i>
+    </a>
+
     <!-- NAVBAR -->
     <nav class="fixed w-full z-50 px-10 md:px-20 py-8 flex justify-between items-center bg-transparent">
-        <a href="index.html" class="luxury-serif text-2xl tracking-[0.2em] font-light text-[#c6a75e]">VENUS FLEUR</a>
+        <div class="flex items-center space-x-6">
+            <a href="index.html" class="logo-container"><img src="logo.png" alt="Venus Fleur"></a>
+            <div class="hidden lg:flex text-[8px] tracking-[0.4em] text-gray-500 uppercase">Dubai | Est. 2024</div>
+        </div>
         
-        <div class="hidden lg:flex space-x-12">
+        <div class="hidden lg:flex space-x-10">
             <a href="index.html" class="nav-link text-[#c6a75e]">Home</a>
+            <div class="group relative">
+                <button class="nav-link">Occasions <i class="fas fa-chevron-down text-[7px] ml-1"></i></button>
+                <div class="absolute top-full left-0 w-40 bg-black border border-white/5 p-4 hidden group-hover:block glass mt-2">
+                    <a href="anniversary-flowers-dubai.html" class="nav-link block py-2">Anniversary</a>
+                    <a href="birthday-flowers-dubai.html" class="nav-link block py-2">Birthdays</a>
+                    <a href="wedding-flowers-dubai.html" class="nav-link block py-2">Weddings</a>
+                    <a href="apology-gifts-dubai.html" class="nav-link block py-2">Apology</a>
+                </div>
+            </div>
             <a href="flower-delivery-dubai.html" class="nav-link">Delivery</a>
             <a href="luxury-floral-guides.html" class="nav-link">Journal</a>
-            <a href="contact.html" class="nav-link">Contact</a>
         </div>
 
-        <a href="https://wa.me/212605785321" class="text-[9px] tracking-[0.3em] uppercase border-b border-[#c6a75e]/40 pb-1 hover:border-[#c6a75e] transition">Concierge</a>
+        <a href="https://wa.me/212605785321" target="_blank" class="gold-gradient px-8 py-2.5 text-black text-[9px] font-bold tracking-[0.2em] rounded-sm uppercase">WhatsApp</a>
     </nav>
 
-    <!-- HERO SECTION (THE STATEMENT) -->
+    <!-- HERO SECTION -->
     <section class="relative h-screen flex items-center justify-center overflow-hidden">
-        <img src="hero.jpg" class="absolute inset-0 w-full h-full object-cover z-0 scale-105" alt="Luxury Flower Delivery Dubai">
+        <img src="hero.jpg" class="absolute inset-0 w-full h-full object-cover z-0" alt="Luxury Flower Delivery Dubai">
         <div class="absolute inset-0 hero-overlay z-10"></div>
         
         <div class="relative z-20 text-center px-6" data-aos="fade-up" data-aos-duration="2000">
-            <p class="text-[#c6a75e] text-[10px] tracking-[0.8em] uppercase mb-10 font-light">Dubai • Paris • London</p>
-            <h1 class="text-5xl md:text-7xl luxury-serif italic mb-12 leading-tight font-light">
-                The Art of <br> <span class="tracking-[0.1em]">Eternal Gifting</span>
-            </h1>
-            <div class="flex justify-center space-x-8">
-                <a href="flower-delivery-dubai.html" class="gold-gradient px-12 py-4 text-black text-[9px] font-bold tracking-[0.4em] uppercase hover:scale-105 transition duration-500 shadow-2xl">Explore Collection</a>
+            <div class="inline-flex items-center border border-[#c6a75e]/40 px-5 py-1.5 rounded-full mb-10">
+                <span class="w-1.5 h-1.5 bg-[#c6a75e] rounded-full animate-ping mr-3"></span>
+                <span class="text-[8px] tracking-[0.5em] text-[#c6a75e] font-bold uppercase">NO DEPOSIT REQUIRED</span>
             </div>
-        </div>
-
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center opacity-40">
-            <div class="w-[1px] h-12 bg-[#c6a75e] animate-bounce"></div>
+            <h1 class="text-5xl md:text-7xl luxury-serif italic mb-12 leading-tight font-light uppercase tracking-tighter">
+                The Art of <br> <span class="text-[#c6a75e]">Eternal Gifting</span>
+            </h1>
+            <a href="flower-delivery-dubai.html" class="gold-gradient px-14 py-5 text-black text-[9px] font-bold tracking-[0.4em] uppercase hover:scale-105 transition duration-500 shadow-2xl">Explore Collection</a>
         </div>
     </section>
 
     <!-- USP BAR -->
-    <div class="bg-black py-20 px-6 md:px-20 border-b border-white/5">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
-            <div data-aos="fade-up">
-                <h4 class="text-[#c6a75e] text-[10px] tracking-[0.4em] uppercase mb-4">Craftsmanship</h4>
-                <p class="text-gray-500 text-xs font-light leading-relaxed">Each box is handcrafted by master florists using the world's finest preserved roses.</p>
+    <div class="bg-[#0a0a0a] border-y border-white/5 py-12 px-6 md:px-20 flex flex-wrap justify-center gap-12 md:gap-24 text-[9px] tracking-[0.4em] uppercase text-gray-400 font-light" data-aos="fade-up">
+        <div><span class="text-[#c6a75e] mr-2">✦</span> Dubai, UAE</div>
+        <div><span class="text-[#c6a75e] mr-2">✦</span> Daily • Weekly • Monthly Deals</div>
+        <div><span class="text-[#c6a75e] mr-2">✦</span> VIP Service & Free Delivery</div>
+    </div>
+
+    <!-- PRODUCT COLLECTION (WITH MARKETING BADGE) -->
+    <section class="py-32 px-6 md:px-20 bg-[#050505]">
+        <div class="text-center mb-24" data-aos="fade-up">
+            <p class="text-[#c6a75e] text-xs tracking-[0.6em] uppercase mb-4 font-semibold">The Signature Series</p>
+            <h2 class="text-4xl md:text-6xl luxury-serif italic text-white uppercase">Masterpieces in Bloom</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-6xl mx-auto">
+            <div class="glass group p-6 rounded-3xl relative" data-aos="fade-up">
+                <div class="absolute top-8 left-8 bg-[#c6a75e] text-black text-[8px] font-black px-4 py-1.5 rounded-sm z-30 tracking-widest shadow-xl">1 USD / DAY</div>
+                <div class="relative overflow-hidden rounded-2xl mb-8"><img src="white.jpg" class="w-full h-[500px] object-cover group-hover:scale-110 transition duration-1000" alt="White Elegance Rose Box"></div>
+                <div class="text-center">
+                    <h3 class="text-2xl luxury-serif italic mb-2 uppercase">White Elegance</h3>
+                    <p class="text-[10px] text-gray-600 tracking-[0.2em] uppercase mb-8">Premium Preserved Roses</p>
+                    <a href="https://wa.me/212605785321" target="_blank" class="block w-full py-4 bg-white/5 hover:bg-white hover:text-black transition uppercase text-[10px] tracking-[0.4em] font-bold border border-white/10 text-center">Inquiry Now</a>
+                </div>
             </div>
-            <div data-aos="fade-up" data-aos-delay="200">
-                <h4 class="text-[#c6a75e] text-[10px] tracking-[0.4em] uppercase mb-4">Eternity</h4>
-                <p class="text-gray-500 text-xs font-light leading-relaxed">Our signature roses maintain their natural beauty for over a year without water.</p>
-            </div>
-            <div data-aos="fade-up" data-aos-delay="400">
-                <h4 class="text-[#c6a75e] text-[10px] tracking-[0.4em] uppercase mb-4">Presence</h4>
-                <p class="text-gray-500 text-xs font-light leading-relaxed">Same-day delivery to Dubai's most prestigious residences and venues.</p>
+            <div class="glass group p-6 rounded-3xl relative border-[#c6a75e]/20" data-aos="fade-up" data-aos-delay="200">
+                <div class="absolute top-8 left-8 bg-[#c6a75e] text-black text-[8px] font-black px-4 py-1.5 rounded-sm z-30 tracking-widest shadow-xl">1 USD / DAY</div>
+                <div class="relative overflow-hidden rounded-2xl mb-8"><img src="black.jpg" class="w-full h-[500px] object-cover group-hover:scale-110 transition duration-1000" alt="Royal Red Rose Box"></div>
+                <div class="text-center">
+                    <h3 class="text-2xl luxury-serif italic mb-2 uppercase">Royal Red</h3>
+                    <p class="text-[10px] text-gray-600 tracking-[0.2em] uppercase mb-8">Eternal Rose Collection</p>
+                    <a href="https://wa.me/212605785321" target="_blank" class="block w-full py-4 bg-white/5 hover:bg-white hover:text-black transition uppercase text-[10px] tracking-[0.4em] font-bold border border-white/10 text-center">Inquiry Now</a>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- REVIEWS SECTION -->
+    <section class="py-32 px-6 md:px-20 bg-black border-y border-white/5 text-center">
+        <div class="mb-20" data-aos="fade-up">
+            <div class="flex justify-center items-center space-x-3 mb-6">
+                <i class="fab fa-google text-white text-xl"></i>
+                <span class="text-[10px] tracking-[0.5em] uppercase text-gray-500">Google Rating 5.0/5.0</span>
+            </div>
+            <h2 class="text-3xl luxury-serif italic">Trusted by Global Elite</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-16 max-w-7xl mx-auto">
+            <div class="text-center" data-aos="fade-up">
+                <div class="flex justify-center mb-6 text-[#c6a75e] text-[9px] space-x-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="text-white mb-8 text-sm italic font-light leading-relaxed opacity-80">"The most beautiful roses I've ever seen. The packaging is pure luxury."</p>
+                <p class="text-[9px] tracking-[0.4em] text-gray-600 uppercase">— Elena R. <span class="text-green-600 ml-2 font-bold">Verified</span></p>
+            </div>
+            <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex justify-center mb-6 text-[#c6a75e] text-[9px] space-x-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="text-white mb-8 text-sm italic font-light leading-relaxed opacity-80">"Same-day delivery saved my anniversary! The Royal Red box is stunning."</p>
+                <p class="text-[9px] tracking-[0.4em] text-gray-600 uppercase">— Marc D. <span class="text-green-600 ml-2 font-bold">Verified</span></p>
+            </div>
+            <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                <div class="flex justify-center mb-6 text-[#c6a75e] text-[9px] space-x-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="text-white mb-8 text-sm italic font-light leading-relaxed opacity-80">"Unbeatable quality. My roses still look fresh after 6 months. Amazing service."</p>
+                <p class="text-[9px] tracking-[0.4em] text-gray-600 uppercase">— Layla A. <span class="text-green-600 ml-2 font-bold">Verified</span></p>
+            </div>
+        </div>
+    </section>
 
     <!-- FOOTER -->
     <footer class="py-32 px-10 md:px-20 bg-[#050505] text-center">
-        <h2 class="luxury-serif text-3xl tracking-[0.3em] text-[#c6a75e] mb-16 font-light">VENUS FLEUR</h2>
+        <h2 class="luxury-serif text-3xl tracking-[0.3em] text-[#c6a75e] mb-16 font-light uppercase">Venus Fleur</h2>
         <div class="flex flex-wrap justify-center gap-12 text-[9px] tracking-[0.4em] text-gray-600 uppercase mb-20">
             <a href="anniversary-flowers-dubai.html" class="hover:text-white transition">Anniversary</a>
             <a href="wedding-flowers-dubai.html" class="hover:text-white transition">Weddings</a>
-            <a href="corporate-flower-gifts-dubai.html" class="hover:text-white transition">Corporate</a>
+            <a href="birthday-flowers-dubai.html" class="hover:text-white transition">Birthdays</a>
+            <a href="apology-gifts-dubai.html" class="hover:text-white transition">Apology</a>
             <a href="contact.html" class="hover:text-white transition">Contact</a>
         </div>
-        <p class="text-[8px] tracking-[0.6em] text-gray-800 uppercase">&copy; 2026 Venus Fleur Dubai. All Rights Reserved.</p>
+        <p class="text-[8px] tracking-[0.6em] text-gray-800 uppercase font-light">&copy; 2026 Venus Fleur Dubai. All Rights Reserved.</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1500, once: true });
-        
         const dot = document.getElementById('cursor-dot');
         const outline = document.getElementById('cursor-outline');
         window.addEventListener('mousemove', (e) => {
-            dot.style.left = `${e.clientX}px`;
-            dot.style.top = `${e.clientY}px`;
+            dot.style.left = `${e.clientX}px`; dot.style.top = `${e.clientY}px`;
             outline.animate({ left: `${e.clientX}px`, top: `${e.clientY}px` }, { duration: 600, fill: "forwards" });
+        });
+        const interactables = document.querySelectorAll('a, button');
+        interactables.forEach(el => {
+            el.addEventListener('mouseenter', () => outline.classList.add('cursor-hover'));
+            el.addEventListener('mouseleave', () => outline.classList.remove('cursor-hover'));
         });
     </script>
 </body>
