@@ -10,7 +10,7 @@
     <meta name="keywords" content="luxury flower delivery dubai, rose box dubai, same day flowers dubai, preserved roses dubai, eternal roses uae">
     <link rel="canonical" href="https://venusfleur.com/" />
 
-    <!-- GOOGLE SCHEMA (JSON-LD) - LOCAL BUSINESS -->
+    <!-- GOOGLE SCHEMA (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -31,29 +31,6 @@
     }
     </script>
 
-    <!-- FAQ SCHEMA (RICH SNIPPETS) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [{
-        "@type": "Question",
-        "name": "How long do preserved roses last?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Our premium preserved roses are designed to last for over a year (365+ days) without water or maintenance."
-        }
-      }, {
-        "@type": "Question",
-        "name": "Do you offer same-day flower delivery in Dubai?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, Venus Fleur offers same-day delivery across Dubai for all orders placed before 6:00 PM GST."
-        }
-      }]
-    }
-    </script>
-
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -70,8 +47,15 @@
         .cursor-hover { transform: translate(-50%, -50%) scale(1.5) !important; background: rgba(198, 167, 94, 0.1) !important; }
         .hero-overlay { background: radial-gradient(circle at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%); }
         .nav-link { letter-spacing: 0.2em; font-size: 9px; text-transform: uppercase; transition: 0.4s; font-weight: 300; }
-        .logo-container { width: 60px; height: 60px; border-radius: 50%; border: 1px solid rgba(198, 167, 94, 0.2); overflow: hidden; display: flex; align-items: center; justify-content: center; background: #000; }
-        .logo-container img { width: 100%; height: 100%; object-fit: cover; }
+        
+        /* LOGO VF FIX */
+        .logo-container { 
+            width: 60px; height: 60px; border-radius: 50%; 
+            border: 1px solid rgba(198, 167, 94, 0.4); 
+            display: flex; align-items: center; justify-content: center; 
+            background: #000; color: #c6a75e; font-family: 'Playfair Display', serif;
+            font-weight: bold; font-size: 22px; letter-spacing: 1px;
+        }
     </style>
 </head>
 <body>
@@ -83,7 +67,8 @@
     <!-- NAVBAR -->
     <nav class="fixed w-full z-50 px-10 md:px-20 py-8 flex justify-between items-center bg-transparent">
         <div class="flex items-center space-x-6">
-            <a href="index.html" class="logo-container"><img src="logo.png" alt="Venus Fleur Dubai Luxury Logo"></a>
+            <a href="index.html" class="logo-container">VF</a>
+            <div class="hidden lg:flex text-[8px] tracking-[0.4em] text-gray-500 uppercase">Dubai | Premium Florals</div>
         </div>
         <div class="hidden lg:flex space-x-10">
             <a href="index.html" class="nav-link text-[#c6a75e]">Home</a>
@@ -94,9 +79,8 @@
         <a href="https://wa.me/971500000000" target="_blank" class="gold-gradient px-8 py-2.5 text-black text-[9px] font-bold tracking-[0.2em] rounded-sm uppercase">WhatsApp</a>
     </nav>
 
-    <!-- HERO SECTION (SEO UPDATED) -->
+    <!-- HERO SECTION -->
     <section class="relative h-screen flex items-center justify-center overflow-hidden">
-        <!-- NEW IMAGE FILENAME -->
         <img src="luxury-flower-delivery-dubai-preserved-roses.jpg" class="absolute inset-0 w-full h-full object-cover z-0" alt="Luxury Flower Delivery Dubai - Premium Preserved Roses">
         <div class="absolute inset-0 hero-overlay z-10"></div>
         <div class="relative z-20 text-center px-6" data-aos="fade-up" data-aos-duration="2000">
@@ -108,7 +92,6 @@
                 Luxury Flower Delivery in Dubai
             </h1>
             <p class="text-white text-sm md:text-xl font-extralight tracking-[0.4em] uppercase opacity-80 mb-12">A Gift They Will Never Forget</p>
-            
             <a href="flower-delivery-dubai.html" class="gold-gradient px-14 py-5 text-black text-[9px] font-bold tracking-[0.4em] uppercase hover:scale-105 transition duration-500 shadow-2xl">Send a Luxury Gift</a>
         </div>
     </section>
@@ -120,11 +103,11 @@
         <div><span class="text-[#c6a75e] mr-2">✦</span> VIP Delivery to Palm Jumeirah</div>
     </div>
 
-    <!-- COLLECTION (CLEAN VERSION) -->
+    <!-- COLLECTION -->
     <section class="py-32 px-6 md:px-20 bg-[#050505]">
         <div class="text-center mb-24" data-aos="fade-up">
             <p class="text-[#c6a75e] text-xs tracking-[0.6em] uppercase mb-4 font-semibold">The Signature Series</p>
-            <h2 class="text-4xl md:text-6xl luxury-serif italic text-white uppercase">Masterpieces in Bloom</h2>
+            <h2 class="text-4xl md:text-6xl luxury-serif italic text-white uppercase leading-tight">Masterpieces in Bloom</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-6xl mx-auto">
             <div class="glass group p-6 rounded-3xl relative" data-aos="fade-up">
@@ -150,8 +133,36 @@
         </div>
     </section>
 
+    <!-- REVIEWS SECTION (RE-ADDED) -->
+    <section class="py-32 px-6 md:px-20 bg-black border-y border-white/5 text-center">
+        <div class="mb-20" data-aos="fade-up">
+            <div class="flex justify-center items-center space-x-3 mb-6">
+                <i class="fab fa-google text-white text-xl"></i>
+                <span class="text-[10px] tracking-[0.5em] uppercase text-gray-500">Google Rating 5.0/5.0</span>
+            </div>
+            <h2 class="text-3xl luxury-serif italic">Trusted by Dubai's Elite</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-16 max-w-7xl mx-auto">
+            <div class="text-center" data-aos="fade-up">
+                <div class="flex justify-center mb-6 text-[#c6a75e] text-[9px] space-x-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="text-white mb-8 text-sm italic font-light leading-relaxed opacity-80">"The most beautiful roses I've ever seen. The packaging is pure luxury."</p>
+                <p class="text-[9px] tracking-[0.4em] text-gray-600 uppercase">— Elena R. <span class="text-green-600 ml-2 font-bold">Verified</span></p>
+            </div>
+            <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex justify-center mb-6 text-[#c6a75e] text-[9px] space-x-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="text-white mb-8 text-sm italic font-light leading-relaxed opacity-80">"Same-day delivery saved my anniversary! The Royal Red box is stunning."</p>
+                <p class="text-[9px] tracking-[0.4em] text-gray-600 uppercase">— Marc D. <span class="text-green-600 ml-2 font-bold">Verified</span></p>
+            </div>
+            <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                <div class="flex justify-center mb-6 text-[#c6a75e] text-[9px] space-x-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="text-white mb-8 text-sm italic font-light leading-relaxed opacity-80">"Unbeatable quality. My roses still look fresh after 6 months. Amazing service."</p>
+                <p class="text-[9px] tracking-[0.4em] text-gray-600 uppercase">— Layla A. <span class="text-green-600 ml-2 font-bold">Verified</span></p>
+            </div>
+        </div>
+    </section>
+
     <!-- SEO CONTENT SECTION -->
-    <section class="py-32 px-6 md:px-20 bg-black border-y border-white/5">
+    <section class="py-32 px-6 md:px-20 bg-[#050505]">
         <div class="max-w-4xl mx-auto text-gray-400 text-sm leading-relaxed" data-aos="fade-up">
             <h2 class="text-[#c6a75e] luxury-serif italic text-3xl mb-8">Luxury Roses Delivery in Dubai</h2>
             <p class="mb-6">
@@ -161,27 +172,6 @@
             <p class="mb-6">
                 We provide reliable <a href="flower-delivery-dubai.html" class="text-[#c6a75e] underline">same-day flower delivery across Dubai</a>, including prestigious locations such as <strong>Palm Jumeirah, Dubai Marina, Downtown Dubai, and Business Bay</strong>.
             </p>
-            <h2 class="text-[#c6a75e] luxury-serif italic text-3xl mt-16 mb-8">Best Anniversary Gifts in Dubai</h2>
-            <p>
-                Celebrate your special moments with <a href="anniversary-flowers-dubai.html" class="text-[#c6a75e] underline">anniversary gifts in Dubai</a> that last. Our signature rose boxes are the preferred choice for luxury gifting, combining timeless beauty with a sophisticated modern presentation.
-            </p>
-        </div>
-    </section>
-
-    <!-- FAQ SECTION -->
-    <section class="py-32 px-6 md:px-20 bg-[#050505] border-b border-white/5 text-center">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="text-3xl luxury-serif italic mb-20" data-aos="fade-up">Frequently Asked Questions</h2>
-            <div class="space-y-10 text-left" data-aos="fade-up">
-                <div class="border-b border-white/5 pb-6">
-                    <h4 class="text-[11px] tracking-[0.3em] uppercase mb-3 text-[#c6a75e] font-semibold">How long do preserved roses last?</h4>
-                    <p class="text-gray-500 text-xs font-light leading-relaxed">Our eternal roses undergo a specialized preservation process that allows them to last for 1 to 3 years without water or sunlight.</p>
-                </div>
-                <div class="border-b border-white/5 pb-6">
-                    <h4 class="text-[11px] tracking-[0.3em] uppercase mb-3 text-[#c6a75e] font-semibold">Do you offer same-day delivery in Dubai?</h4>
-                    <p class="text-gray-500 text-xs font-light leading-relaxed">Yes, we provide complimentary same-day delivery for all orders placed before 6:00 PM GST across Dubai and Sharjah.</p>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -206,6 +196,11 @@
         window.addEventListener('mousemove', (e) => {
             dot.style.left = `${e.clientX}px`; dot.style.top = `${e.clientY}px`;
             outline.animate({ left: `${e.clientX}px`, top: `${e.clientY}px` }, { duration: 600, fill: "forwards" });
+        });
+        const interactables = document.querySelectorAll('a, button');
+        interactables.forEach(el => {
+            el.addEventListener('mouseenter', () => outline.classList.add('cursor-hover'));
+            el.addEventListener('mouseleave', () => outline.classList.remove('cursor-hover'));
         });
     </script>
 </body>
