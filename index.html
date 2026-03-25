@@ -116,4 +116,73 @@
                 </div>
             </a>
             <!-- Anniversaries -->
-            <a h
+            <a href="anniversary-flowers-dubai.html" class="relative group overflow-hidden rounded-3xl h-[500px]" data-aos="fade-up" data-aos-delay="200">
+                <img src="luxury-preserved-roses-dubai.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-1000 opacity-60">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                <div class="absolute bottom-10 left-10">
+                    <h3 class="text-3xl luxury-serif italic text-white mb-2">Anniversaries</h3>
+                    <p class="text-[10px] tracking-[0.3em] uppercase text-[#c6a75e]">Eternal Love</p>
+                </div>
+            </a>
+            <!-- Birthdays -->
+            <a href="birthday-flowers-dubai.html" class="relative group overflow-hidden rounded-3xl h-[500px]" data-aos="fade-up" data-aos-delay="300">
+                <img src="birthday-flower-delivery-dubai.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-1000 opacity-60">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                <div class="absolute bottom-10 left-10">
+                    <h3 class="text-3xl luxury-serif italic text-white mb-2">Birthdays</h3>
+                    <p class="text-[10px] tracking-[0.3em] uppercase text-[#c6a75e]">Surprise Excellence</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER (UPDATED WITH ALL LINKS) -->
+    <footer class="py-24 px-6 md:px-16 border-t border-white/5 bg-black">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16 text-center md:text-left">
+            <div class="col-span-1 md:col-span-1">
+                <div class="logo-container mb-8 mx-auto md:mx-0"><img src="logo.png" alt="Venus Fleur"></div>
+                <p class="text-gray-500 text-xs leading-relaxed">Dubai's premier boutique for eternal roses and luxury floral arrangements.</p>
+            </div>
+            <div>
+                <h4 class="text-[#c6a75e] text-[10px] tracking-[0.3em] uppercase mb-8 font-bold">Occasions</h4>
+                <ul class="text-gray-500 text-[10px] tracking-[0.2em] uppercase space-y-4">
+                    <li><a href="anniversary-flowers-dubai.html" class="hover:text-white transition">Anniversary</a></li>
+                    <li><a href="birthday-flowers-dubai.html" class="hover:text-white transition">Birthdays</a></li>
+                    <li><a href="wedding-flowers-dubai.html" class="hover:text-white transition">Weddings</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-[#c6a75e] text-[10px] tracking-[0.3em] uppercase mb-8 font-bold">Services</h4>
+                <ul class="text-gray-500 text-[10px] tracking-[0.2em] uppercase space-y-4">
+                    <li><a href="corporate-flower-gifts-dubai.html" class="hover:text-white transition">Corporate</a></li>
+                    <li><a href="flower-delivery-dubai.html" class="hover:text-white transition">Delivery</a></li>
+                    <li><a href="luxury-floral-guides.html" class="hover:text-white transition">Floral Guides</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-[#c6a75e] text-[10px] tracking-[0.3em] uppercase mb-8 font-bold">Company</h4>
+                <ul class="text-gray-500 text-[10px] tracking-[0.2em] uppercase space-y-4">
+                    <li><a href="about-us.html" class="hover:text-white transition">Our Story</a></li>
+                    <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+                    <li><a href="https://www.instagram.com/_venusfleur/" class="hover:text-white transition">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-24 pt-8 border-t border-white/5 text-center text-[9px] tracking-[0.5em] text-gray-700 uppercase">
+            &copy; 2026 VENUS FLEUR DUBAI. ALL RIGHTS RESERVED.
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1200, once: true });
+        const dot = document.getElementById('cursor-dot');
+        const outline = document.getElementById('cursor-outline');
+        window.addEventListener('mousemove', (e) => {
+            dot.style.left = `${e.clientX}px`;
+            dot.style.top = `${e.clientY}px`;
+            outline.animate({ left: `${e.clientX}px`, top: `${e.clientY}px` }, { duration: 500, fill: "forwards" });
+        });
+    </script>
+</body>
+</html>
