@@ -8,8 +8,62 @@
     <title>Luxury Flower Delivery Dubai | Eternal Roses That Last 1 Year | Venus Fleur</title>
     <meta name="description" content="Premium luxury flower delivery in Dubai. Order handcrafted eternal rose boxes that last over a year. Same-day delivery to Palm Jumeirah, Downtown, and Dubai Marina.">
     
-    <!-- CANONICAL LINK (ONLY ONE) -->
+    <!-- CANONICAL LINK -->
     <link rel="canonical" href="https://venusfleur.com/" />
+
+    <!-- PINTEREST RICH PINS (PRODUCT META TAGS) -->
+    <meta property="og:type" content="product" />
+    <meta property="og:title" content="Luxury Flower Box | Preserved Roses Dubai" />
+    <meta property="og:description" content="Premium preserved roses that last over a year. Handcrafted luxury flower boxes with same-day delivery in Dubai." />
+    <meta property="og:url" content="https://venusfleur.com/" />
+    <meta property="og:site_name" content="Venus Fleur Dubai" />
+    <meta property="product:price:amount" content="550" />
+    <meta property="product:price:currency" content="AED" />
+    <meta property="og:availability" content="instock" />
+
+    <!-- GOOGLE SCHEMA (JSON-LD) - LOCAL BUSINESS -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Florist",
+      "name": "Venus Fleur Dubai",
+      "image": "https://venusfleur.com/luxury-flower-delivery-dubai-preserved-roses.jpg",
+      "url": "https://venusfleur.com",
+      "telephone": "+971500000000",
+      "priceRange": "Contact for Pricing",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Dubai Luxury District",
+        "addressLocality": "Dubai",
+        "addressRegion": "Dubai",
+        "addressCountry": "AE"
+      },
+      "areaServed": ["Dubai", "Palm Jumeirah", "Dubai Marina", "Downtown Dubai"]
+    }
+    </script>
+
+    <!-- FAQ SCHEMA (RICH SNIPPETS) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "How long do preserved roses last?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our premium preserved roses are designed to last for over a year (365+ days) without water or maintenance."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Do you offer same-day flower delivery in Dubai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Venus Fleur offers same-day delivery across Dubai for all orders placed before 6:00 PM GST."
+        }
+      }]
+    }
+    </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -23,7 +77,6 @@
         .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.05); }
         .site-frame { position: fixed; top: 20px; left: 20px; right: 20px; bottom: 20px; border: 1px solid rgba(198, 167, 94, 0.15); pointer-events: none; z-index: 999; }
         
-        /* MODERN MINIMALIST CURSOR */
         #cursor {
             position: fixed; width: 8px; height: 8px; background: #c6a75e;
             border-radius: 50%; pointer-events: none; z-index: 10000;
@@ -64,7 +117,7 @@
 
     <!-- HERO SECTION -->
     <section class="relative h-screen flex items-center justify-center overflow-hidden">
-        <img src="luxury-flower-delivery-dubai-preserved-roses.jpg" class="absolute inset-0 w-full h-full object-cover z-0" alt="Luxury Flower Delivery Dubai">
+        <img src="luxury-flower-delivery-dubai-preserved-roses.jpg" class="absolute inset-0 w-full h-full object-cover z-0" alt="Luxury Flower Delivery Dubai - Premium Preserved Roses">
         <div class="absolute inset-0 hero-overlay z-10"></div>
         <div class="relative z-20 text-center px-6" data-aos="fade-up" data-aos-duration="2000">
             <div class="inline-flex items-center border border-[#c6a75e]/40 px-5 py-1.5 rounded-full mb-10">
@@ -75,7 +128,7 @@
                 Luxury Flower Delivery in Dubai
             </h1>
             <p class="text-white text-sm md:text-xl font-extralight tracking-[0.4em] uppercase opacity-80 mb-12">A Gift They Will Never Forget</p>
-            <a href="flower-delivery-dubai.html" class="gold-gradient px-14 py-5 text-black text-[9px] font-bold tracking-[0.4em] uppercase shadow-2xl">Send a Luxury Gift</a>
+            <a href="flower-delivery-dubai.html" class="gold-gradient px-14 py-5 text-black text-[9px] font-bold tracking-[0.4em] uppercase hover:scale-105 transition duration-500 shadow-2xl">Send a Luxury Gift</a>
         </div>
     </section>
 
@@ -95,7 +148,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-6xl mx-auto">
             <div class="glass group p-6 rounded-3xl relative" data-aos="fade-up">
                 <div class="relative overflow-hidden rounded-2xl mb-8">
-                    <img src="white.jpg" class="w-full h-[500px] object-cover group-hover:scale-110 transition duration-1000" alt="Luxury white rose box Dubai">
+                    <img src="white.jpg" class="w-full h-[500px] object-cover group-hover:scale-110 transition duration-1000" alt="Luxury white rose box Dubai delivery - White Elegance">
                 </div>
                 <div class="text-center">
                     <h3 class="text-2xl luxury-serif italic mb-2 uppercase">White Elegance</h3>
@@ -105,7 +158,7 @@
             </div>
             <div class="glass group p-6 rounded-3xl relative border-[#c6a75e]/20 shadow-2xl shadow-[#c6a75e]/5" data-aos="fade-up" data-aos-delay="200">
                 <div class="relative overflow-hidden rounded-2xl mb-8">
-                    <img src="black.jpg" class="w-full h-[500px] object-cover group-hover:scale-110 transition duration-1000" alt="Royal red rose box Dubai">
+                    <img src="black.jpg" class="w-full h-[500px] object-cover group-hover:scale-110 transition duration-1000" alt="Royal red preserved roses Dubai - Eternal Collection">
                 </div>
                 <div class="text-center">
                     <h3 class="text-2xl luxury-serif italic mb-2 uppercase">Royal Red</h3>
@@ -144,19 +197,22 @@
         </div>
     </section>
 
-    <!-- OUR PARTNERS (TRUST SECTION) -->
-    <section class="py-20 bg-[#050505] text-center border-b border-white/5">
-        <p class="text-gray-600 text-[8px] tracking-[0.5em] uppercase mb-10">As Seen In & Trusted By</p>
-        <div class="flex flex-wrap justify-center gap-12 md:gap-24 opacity-30 grayscale">
-            <span class="luxury-serif text-xl">VOGUE</span>
-            <span class="luxury-serif text-xl">FORBES</span>
-            <span class="luxury-serif text-xl">HARPER'S</span>
-            <span class="luxury-serif text-xl">ELLE</span>
+    <!-- SEO CONTENT SECTION -->
+    <section class="py-32 px-6 md:px-20 bg-[#050505]">
+        <div class="max-w-4xl mx-auto text-gray-400 text-sm leading-relaxed" data-aos="fade-up">
+            <h2 class="text-[#c6a75e] luxury-serif italic text-3xl mb-8">Luxury Roses Delivery in Dubai</h2>
+            <p class="mb-6">
+                Looking for the perfect luxury gift in Dubai? <strong>Venus Fleur</strong> offers an exclusive collection of <strong>preserved eternal roses</strong> that maintain their natural beauty for over a year. Our handcrafted flower boxes are designed for those who value elegance and longevity.
+            </p>
+            <h2 class="text-[#c6a75e] luxury-serif italic text-3xl mt-16 mb-8">Same Day Flower Delivery Dubai</h2>
+            <p class="mb-6">
+                We provide reliable <a href="flower-delivery-dubai.html" class="text-[#c6a75e] underline">same-day flower delivery across Dubai</a>, including prestigious locations such as <strong>Palm Jumeirah, Dubai Marina, Downtown Dubai, and Business Bay</strong>.
+            </p>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="py-32 px-10 md:px-20 bg-black text-center">
+    <footer class="py-32 px-10 md:px-20 bg-black text-center border-t border-white/5">
         <h2 class="luxury-serif text-3xl tracking-[0.3em] text-[#c6a75e] mb-16 font-light uppercase">Venus Fleur</h2>
         <div class="flex flex-wrap justify-center gap-12 text-[9px] tracking-[0.4em] text-gray-600 uppercase mb-20">
             <a href="anniversary-flowers-dubai.html" class="hover:text-white transition">Anniversary</a>
@@ -171,30 +227,15 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1500, once: true });
-
-        // MODERN CURSOR LOGIC
         const cursor = document.getElementById('cursor');
         const follower = document.getElementById('cursor-follower');
-
         window.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-            
-            setTimeout(() => {
-                follower.style.left = e.clientX + 'px';
-                follower.style.top = e.clientY + 'px';
-            }, 50);
+            cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px';
+            setTimeout(() => { follower.style.left = e.clientX + 'px'; follower.style.top = e.clientY + 'px'; }, 50);
         });
-
         document.querySelectorAll('a, button').forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.classList.add('cursor-active');
-                follower.style.opacity = "0";
-            });
-            el.addEventListener('mouseleave', () => {
-                cursor.classList.remove('cursor-active');
-                follower.style.opacity = "1";
-            });
+            el.addEventListener('mouseenter', () => { cursor.classList.add('cursor-active'); follower.style.opacity = "0"; });
+            el.addEventListener('mouseleave', () => { cursor.classList.remove('cursor-active'); follower.style.opacity = "1"; });
         });
     </script>
 </body>
