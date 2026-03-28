@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dubai Luxury Gifting Guide | Expert Floral Etiquette | Venus Fleur</title>
-    <meta name="description" content="Master the art of luxury gifting in Dubai. Our expert guides cover everything from preserved rose care to high-end floral etiquette for UAE weddings and corporate events.">
-    <link rel="canonical" href="https://venusfleur.com/luxury-floral-guides.html" />
-
+    <title>Luxury Floral Guides Dubai | Expert Gifting & Interior Insights | Venus Fleur</title>
+    <meta name="description" content="Master the art of luxury gifting in Dubai. Explore our expert-led guides on preserved roses, Dubai interior decor, and the psychology of floral colors.">
     
+    <link rel="canonical" href="https://venusfleur.com/luxury-floral-guides.html" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -18,84 +17,82 @@
         .luxury-serif { font-family: 'Playfair Display', serif; }
         .gold-gradient { background: linear-gradient(135deg, #c6a75e 0%, #e6c97a 50%, #b8860b 100%); }
         .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.05); }
-        #cursor-dot { position: fixed; width: 6px; height: 6px; background: #c6a75e; border-radius: 50%; pointer-events: none; z-index: 10000; transform: translate(-50%, -50%); }
-        #cursor-outline { position: fixed; width: 35px; height: 35px; border: 1px solid #c6a75e; border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); transition: transform 0.2s ease-out; }
+        #cursor { position: fixed; width: 8px; height: 8px; background: #c6a75e; border-radius: 50%; pointer-events: none; z-index: 10000; mix-blend-mode: difference; }
+        #cursor-follower { position: fixed; width: 40px; height: 40px; border: 1px solid rgba(198, 167, 94, 0.3); border-radius: 50%; pointer-events: none; z-index: 9999; transition: all 0.15s ease-out; }
     </style>
 </head>
 <body>
-    <div id="cursor-dot"></div><div id="cursor-outline"></div>
+    <div id="cursor"></div><div id="cursor-follower"></div>
 
-    <nav class="fixed w-full z-50 px-10 py-8 flex justify-between items-center bg-transparent">
-        <a href="index.html" class="luxury-serif text-2xl tracking-[0.2em] font-light text-[#c6a75e]">VF</a>
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 px-10 py-8 flex justify-between items-center bg-black/40 backdrop-blur-md border-b border-white/5">
+        <a href="index.html" class="luxury-serif text-2xl text-[#c6a75e]">VF</a>
         <div class="hidden lg:flex space-x-12 text-[9px] tracking-[0.3em] uppercase font-light">
             <a href="index.html" class="hover:text-[#c6a75e] transition">Home</a>
             <a href="flower-delivery-dubai.html" class="hover:text-[#c6a75e] transition">Delivery</a>
             <a href="luxury-floral-guides.html" class="text-[#c6a75e]">Journal</a>
             <a href="contact.html" class="hover:text-[#c6a75e] transition">Contact</a>
         </div>
-        <a href="https://wa.me/971500000000" class="text-[9px] tracking-[0.3em] uppercase border-b border-[#c6a75e]/40 pb-1">Concierge</a>
+        <a href="https://wa.me/971500000000" class="gold-gradient px-8 py-2 text-black text-[9px] font-bold rounded-sm uppercase">Concierge</a>
     </nav>
 
     <!-- HERO -->
-    <section class="py-48 px-6 text-center max-w-4xl mx-auto">
+    <section class="pt-48 pb-20 px-6 text-center max-w-4xl mx-auto">
         <div data-aos="fade-up">
-            <p class="text-[#c6a75e] text-[10px] tracking-[0.8em] uppercase mb-8">The Floral Journal</p>
-            <h1 class="text-5xl md:text-7xl luxury-serif italic mb-12 font-light">Luxury Gifting <br> <span class="text-[#c6a75e]">Intelligence</span></h1>
-            <p class="text-gray-400 text-lg leading-relaxed font-light">
-                A curated collection of expert insights for Dubai's most discerning gift-givers. From the science of preservation to the nuances of UAE floral etiquette.
-            </p>
+            <p class="text-[#c6a75e] text-[10px] tracking-[0.8em] uppercase mb-6">The Floral Journal</p>
+            <h1 class="text-5xl md:text-8xl luxury-serif italic mb-10 font-light uppercase tracking-tighter">Luxury <span class="text-[#c6a75e]">Guides</span></h1>
+            <p class="text-gray-400 text-sm tracking-[0.4em] uppercase max-w-md mx-auto leading-relaxed opacity-60">Expertise, Etiquette, and the Art of Eternity.</p>
         </div>
     </section>
 
-    <!-- AUTHORITY CONTENT (THE SEO ENGINE) -->
+    <!-- GUIDES GRID (THE SEO HUB) -->
     <section class="py-24 px-6 md:px-20 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
             
-            <!-- Category 1: The Science -->
-            <div class="space-y-12" data-aos="fade-up">
-                <h2 class="text-[#c6a75e] text-xs tracking-[0.5em] uppercase border-b border-white/10 pb-4">01. Floral Science</h2>
-                <article class="group">
-                    <h3 class="text-2xl luxury-serif italic mb-4 group-hover:text-[#c6a75e] transition">Why Preserved Roses are Ideal for the Dubai Climate</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-6">
-                        Fresh flowers struggle with the UAE's humidity and heat. Our <strong>preserved roses</strong> undergo a plant-based treatment that makes them immune to the elements, lasting over a year in any Dubai interior...
-                    </p>
-                    <a href="#" class="text-[9px] tracking-[0.3em] uppercase font-bold text-[#c6a75e]">Read Analysis</a>
-                </article>
-            </div>
+            <!-- Article 1 -->
+            <article class="group" data-aos="fade-up">
+                <div class="overflow-hidden rounded-3xl mb-10 h-[350px] glass p-2">
+                    <img src="hero.jpg" class="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition duration-1000 opacity-70">
+                </div>
+                <p class="text-[#c6a75e] text-[9px] tracking-[0.4em] uppercase mb-4">Gifting Etiquette</p>
+                <h2 class="text-2xl luxury-serif italic mb-6 group-hover:text-[#c6a75e] transition leading-tight">The Ultimate Guide to Luxury Gifting in Dubai</h2>
+                <p class="text-gray-500 text-xs leading-relaxed mb-8">Discover the nuances of premium gifting in the UAE, from color symbolism to the rise of eternal florals...</p>
+                <a href="best-luxury-gifts-dubai.html" class="text-[9px] tracking-[0.3em] uppercase font-bold border-b border-[#c6a75e]/30 pb-2 hover:border-[#c6a75e] transition">Read Guide</a>
+            </article>
 
-            <!-- Category 2: Etiquette -->
-            <div class="space-y-12" data-aos="fade-up" data-aos-delay="200">
-                <h2 class="text-[#c6a75e] text-xs tracking-[0.5em] uppercase border-b border-white/10 pb-4">02. Gifting Etiquette</h2>
-                <article class="group">
-                    <h3 class="text-2xl luxury-serif italic mb-4 group-hover:text-[#c6a75e] transition">The Protocol of Corporate Gifting in DIFC & Business Bay</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-6">
-                        In Dubai's business hubs, a gift is a reflection of your brand. Learn the unspoken rules of sending <strong>luxury flower boxes</strong> to VIP clients and partners in the Middle East...
-                    </p>
-                    <a href="#" class="text-[9px] tracking-[0.3em] uppercase font-bold text-[#c6a75e]">Read Protocol</a>
-                </article>
-            </div>
+            <!-- Article 2 -->
+            <article class="group" data-aos="fade-up" data-aos-delay="200">
+                <div class="overflow-hidden rounded-3xl mb-10 h-[350px] glass p-2">
+                    <img src="luxury-preserved-roses-dubai.jpg" class="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition duration-1000 opacity-70">
+                </div>
+                <p class="text-[#c6a75e] text-[9px] tracking-[0.4em] uppercase mb-4">Interior Decor</p>
+                <h2 class="text-2xl luxury-serif italic mb-6 group-hover:text-[#c6a75e] transition leading-tight">The Palm Jumeirah Standard: Eternal Rose Decor</h2>
+                <p class="text-gray-500 text-xs leading-relaxed mb-8">Why Dubai's most prestigious villas are choosing preserved roses for aesthetic longevity and sustainable luxury...</p>
+                <a href="palm-jumeirah-luxury-flower-decor.html" class="text-[9px] tracking-[0.3em] uppercase font-bold border-b border-[#c6a75e]/30 pb-2 hover:border-[#c6a75e] transition">Read Guide</a>
+            </article>
 
-            <!-- Category 3: Occasions -->
-            <div class="space-y-12" data-aos="fade-up" data-aos-delay="400">
-                <h2 class="text-[#c6a75e] text-xs tracking-[0.5em] uppercase border-b border-white/10 pb-4">03. Occasion Guides</h2>
-                <article class="group">
-                    <h3 class="text-2xl luxury-serif italic mb-4 group-hover:text-[#c6a75e] transition">Planning the Perfect Anniversary Surprise in Palm Jumeirah</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-6">
-                        From private yacht deliveries to beachfront villa setups, discover how to integrate <strong>eternal roses</strong> into your most romantic Dubai moments...
-                    </p>
-                    <a href="#" class="text-[9px] tracking-[0.3em] uppercase font-bold text-[#c6a75e]">Read Guide</a>
-                </article>
-            </div>
+            <!-- Article 3 -->
+            <article class="group" data-aos="fade-up" data-aos-delay="400">
+                <div class="overflow-hidden rounded-3xl mb-10 h-[350px] glass p-2">
+                    <img src="black.jpg" class="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition duration-1000 opacity-70">
+                </div>
+                <p class="text-[#c6a75e] text-[9px] tracking-[0.4em] uppercase mb-4">Floral Intelligence</p>
+                <h2 class="text-2xl luxury-serif italic mb-6 group-hover:text-[#c6a75e] transition leading-tight">The Silent Language: Psychology of Roses</h2>
+                <p class="text-gray-500 text-xs leading-relaxed mb-8">An expert analysis of how floral colors impact the subconscious in high-end gifting and corporate relations...</p>
+                <a href="psychology-of-roses-luxury-gifting.html" class="text-[9px] tracking-[0.3em] uppercase font-bold border-b border-[#c6a75e]/30 pb-2 hover:border-[#c6a75e] transition">Read Guide</a>
+            </article>
 
         </div>
     </section>
 
-    <!-- DEEP SEO FOOTER CONTENT (HIDDEN FOR USERS, VISIBLE TO BOTS) -->
-    <section class="py-20 px-6 bg-black/50 text-gray-700 text-[10px] leading-relaxed">
-        <div class="max-w-4xl mx-auto">
-            <p>
-                Venus Fleur is a specialized <strong>luxury florist in Dubai</strong>, providing high-end <strong>flower delivery services</strong> to areas including <strong>Downtown Dubai, Dubai Marina, Jumeirah, and Emirates Hills</strong>. Our expertise in <strong>preserved eternal roses</strong> and <strong>bespoke flower boxes</strong> makes us a leader in the UAE gifting market. We cater to <strong>weddings, corporate events, and private celebrations</strong> with a focus on quality, longevity, and sophisticated design.
+    <!-- EDITORIAL NOTE (TRUST SECTION) -->
+    <section class="py-32 px-6 text-center border-t border-white/5">
+        <div class="max-w-3xl mx-auto" data-aos="fade-up">
+            <i class="fas fa-quote-left text-[#c6a75e] text-2xl mb-8 opacity-30"></i>
+            <p class="text-gray-400 text-lg italic font-light leading-relaxed mb-8">
+                "Our Journal is dedicated to those who view gifting as an art form. We provide the intelligence needed to make every gesture eternal."
             </p>
+            <p class="text-[#c6a75e] text-[10px] tracking-[0.5em] uppercase">— The Editorial Team, Venus Fleur Dubai</p>
         </div>
     </section>
 
@@ -107,10 +104,11 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1500, once: true });
+        const cursor = document.getElementById('cursor');
+        const follower = document.getElementById('cursor-follower');
         window.addEventListener('mousemove', (e) => {
-            document.getElementById('cursor-dot').style.left = `${e.clientX}px`;
-            document.getElementById('cursor-dot').style.top = `${e.clientY}px`;
-            document.getElementById('cursor-outline').animate({ left: `${e.clientX}px`, top: `${e.clientY}px` }, { duration: 600, fill: "forwards" });
+            cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px';
+            setTimeout(() => { follower.style.left = e.clientX + 'px'; follower.style.top = e.clientY + 'px'; }, 50);
         });
     </script>
 </body>
