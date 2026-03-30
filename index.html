@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,21 +7,19 @@
     <!-- SEO MASTER TAGS -->
     <title>Luxury Flower Delivery Dubai | Eternal Roses That Last 1 Year | Venus Fleur</title>
     <meta name="description" content="Premium luxury flower delivery in Dubai. Order handcrafted eternal rose boxes that last over a year. Same-day delivery to Palm Jumeirah, Downtown, and Dubai Marina.">
-    
-    <!-- CANONICAL LINK -->
+    <meta name="keywords" content="luxury flower delivery dubai, rose box dubai, same day flowers dubai, preserved roses dubai, eternal roses uae">
     <link rel="canonical" href="https://venusfleur.com/" />
 
-    <!-- PINTEREST RICH PINS (PRODUCT META TAGS) -->
-    <meta property="og:type" content="product" />
-    <meta property="og:title" content="Luxury Flower Box | Preserved Roses Dubai" />
-    <meta property="og:description" content="Premium preserved roses that last over a year. Handcrafted luxury flower boxes with same-day delivery in Dubai." />
+    <!-- SOCIAL MEDIA SHARE (OPEN GRAPH) -->
+    <meta property="og:title" content="Venus Fleur | Luxury Flower Delivery Dubai" />
+    <meta property="og:description" content="Premium preserved roses delivered same-day in Dubai. Handcrafted elegance that lasts over a year." />
+    <meta property="og:image" content="https://venusfleur.com/luxury-flower-delivery-dubai-preserved-roses.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:url" content="https://venusfleur.com/" />
-    <meta property="og:site_name" content="Venus Fleur Dubai" />
-    <meta property="product:price:amount" content="550" />
-    <meta property="product:price:currency" content="AED" />
-    <meta property="og:availability" content="instock" />
+    <meta property="og:type" content="website" />
 
-    <!-- GOOGLE SCHEMA (JSON-LD) - LOCAL BUSINESS -->
+    <!-- GOOGLE SCHEMA (JSON-LD) - UPDATED ADDRESS -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -29,39 +27,16 @@
       "name": "Venus Fleur Dubai",
       "image": "https://venusfleur.com/luxury-flower-delivery-dubai-preserved-roses.jpg",
       "url": "https://venusfleur.com",
-      "telephone": "+971500000000",
-      "priceRange": "Contact for Pricing",
+      "telephone": "+971505106523",
+      "priceRange": "AED 550 - AED 2500",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Dubai Luxury District",
+        "streetAddress": "Business Bay",
         "addressLocality": "Dubai",
         "addressRegion": "Dubai",
         "addressCountry": "AE"
       },
-      "areaServed": ["Dubai", "Palm Jumeirah", "Dubai Marina", "Downtown Dubai"]
-    }
-    </script>
-
-    <!-- FAQ SCHEMA (RICH SNIPPETS) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [{
-        "@type": "Question",
-        "name": "How long do preserved roses last?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Our premium preserved roses are designed to last for over a year (365+ days) without water or maintenance."
-        }
-      }, {
-        "@type": "Question",
-        "name": "Do you offer same-day flower delivery in Dubai?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, Venus Fleur offers same-day delivery across Dubai for all orders placed before 6:00 PM GST."
-        }
-      }]
+      "areaServed": ["Dubai", "Palm Jumeirah", "Dubai Marina", "Downtown Dubai", "Business Bay"]
     }
     </script>
 
@@ -76,19 +51,9 @@
         .gold-gradient { background: linear-gradient(135deg, #c6a75e 0%, #e6c97a 50%, #b8860b 100%); }
         .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.05); }
         .site-frame { position: fixed; top: 20px; left: 20px; right: 20px; bottom: 20px; border: 1px solid rgba(198, 167, 94, 0.15); pointer-events: none; z-index: 999; }
-        
-        #cursor {
-            position: fixed; width: 8px; height: 8px; background: #c6a75e;
-            border-radius: 50%; pointer-events: none; z-index: 10000;
-            mix-blend-mode: difference; transition: transform 0.2s ease;
-        }
-        #cursor-follower {
-            position: fixed; width: 40px; height: 40px; border: 1px solid rgba(198, 167, 94, 0.3);
-            border-radius: 50%; pointer-events: none; z-index: 9999;
-            transition: all 0.15s ease-out;
-        }
-        .cursor-active { transform: scale(2.5); background: #c6a75e !important; border: none !important; }
-
+        #cursor { position: fixed; width: 8px; height: 8px; background: #c6a75e; border-radius: 50%; pointer-events: none; z-index: 10000; mix-blend-mode: difference; transition: transform 0.2s ease; }
+        #cursor-follower { position: fixed; width: 40px; height: 40px; border: 1px solid rgba(198, 167, 94, 0.3); border-radius: 50%; pointer-events: none; z-index: 9999; transition: all 0.15s ease-out; }
+        .cursor-active { transform: scale(1.5); background: #c6a75e !important; border: none !important; }
         .hero-overlay { background: radial-gradient(circle at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%); }
         .nav-link { letter-spacing: 0.2em; font-size: 9px; text-transform: uppercase; transition: 0.4s; font-weight: 300; }
         .logo-container { width: 60px; height: 60px; border-radius: 50%; border: 1px solid rgba(198, 167, 94, 0.4); display: flex; align-items: center; justify-content: center; background: #000; color: #c6a75e; font-family: 'Playfair Display', serif; font-weight: bold; font-size: 22px; }
@@ -99,6 +64,11 @@
     <div class="site-frame hidden md:block"></div>
     <div id="cursor"></div>
     <div id="cursor-follower"></div>
+
+    <!-- FLOATING INSTAGRAM -->
+    <a href="https://www.instagram.com/_venusfleur/" target="_blank" class="fixed bottom-[40px] right-[40px] z-[1000] w-[50px] h-[50px] flex items-center justify-center rounded-full gold-gradient shadow-2xl transition hover:scale-110">
+        <i class="fa-brands fa-instagram text-black text-xl"></i>
+    </a>
 
     <!-- NAVBAR -->
     <nav class="fixed w-full z-50 px-10 md:px-20 py-8 flex justify-between items-center bg-transparent">
@@ -112,10 +82,10 @@
             <a href="luxury-floral-guides.html" class="nav-link">Journal</a>
             <a href="contact.html" class="nav-link">Contact</a>
         </div>
-        <a href="https://wa.me/971500000000" target="_blank" class="gold-gradient px-8 py-2.5 text-black text-[9px] font-bold tracking-[0.2em] rounded-sm uppercase">WhatsApp</a>
+        <a href="https://wa.me/971505106523" target="_blank" class="gold-gradient px-8 py-2.5 text-black text-[9px] font-bold tracking-[0.2em] rounded-sm uppercase">WhatsApp</a>
     </nav>
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION (H1 FIX) -->
     <section class="relative h-screen flex items-center justify-center overflow-hidden">
         <img src="luxury-flower-delivery-dubai-preserved-roses.jpg" class="absolute inset-0 w-full h-full object-cover z-0" alt="Luxury Flower Delivery Dubai - Premium Preserved Roses">
         <div class="absolute inset-0 hero-overlay z-10"></div>
@@ -139,38 +109,28 @@
         <div><span class="text-[#c6a75e] mr-2">✦</span> VIP Delivery to Palm Jumeirah</div>
     </div>
 
-    <!-- COLLECTION -->
-    <section class="py-32 px-6 md:px-20 bg-[#050505]">
-        <div class="text-center mb-24" data-aos="fade-up">
-            <p class="text-[#c6a75e] text-xs tracking-[0.6em] uppercase mb-4 font-semibold">The Signature Series</p>
-            <h2 class="text-4xl md:text-6xl luxury-serif italic text-white uppercase">Masterpieces in Bloom</h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-6xl mx-auto">
-            <div class="glass group p-6 rounded-3xl relative" data-aos="fade-up">
-                <div class="relative overflow-hidden rounded-2xl mb-8">
-                    <img src="white.jpg" class="w-full h-[500px] object-cover group-hover:scale-110 transition duration-1000" alt="Luxury white rose box Dubai delivery - White Elegance">
-                </div>
-                <div class="text-center">
-                    <h3 class="text-2xl luxury-serif italic mb-2 uppercase">White Elegance</h3>
-                    <p class="text-[10px] text-gray-500 tracking-[0.2em] uppercase mb-8">Premium Preserved Rose Collection</p>
-                    <a href="https://wa.me/971500000000" target="_blank" class="block w-full py-4 bg-white/5 hover:bg-white hover:text-black transition uppercase text-[10px] tracking-[0.4em] font-bold border border-white/10 text-center">Order Now</a>
-                </div>
-            </div>
-            <div class="glass group p-6 rounded-3xl relative border-[#c6a75e]/20 shadow-2xl shadow-[#c6a75e]/5" data-aos="fade-up" data-aos-delay="200">
-                <div class="relative overflow-hidden rounded-2xl mb-8">
-                    <img src="black.jpg" class="w-full h-[500px] object-cover group-hover:scale-110 transition duration-1000" alt="Royal red preserved roses Dubai - Eternal Collection">
-                </div>
-                <div class="text-center">
-                    <h3 class="text-2xl luxury-serif italic mb-2 uppercase">Royal Red</h3>
-                    <p class="text-[10px] text-gray-500 tracking-[0.2em] uppercase mb-8">The Ultimate Romantic Gesture</p>
-                    <a href="https://wa.me/971500000000" target="_blank" class="block w-full py-4 bg-white/5 hover:bg-white hover:text-black transition uppercase text-[10px] tracking-[0.4em] font-bold border border-white/10 text-center">Order Now</a>
-                </div>
-            </div>
+    <!-- EXPANDED SEO CONTENT SECTION (300+ WORDS) -->
+    <section class="py-32 px-6 md:px-20 bg-black border-y border-white/5">
+        <div class="max-w-4xl mx-auto text-gray-400 text-sm leading-relaxed" data-aos="fade-up">
+            <h2 class="text-[#c6a75e] luxury-serif italic text-3xl mb-8">Premium Flower Delivery in Dubai</h2>
+            <p class="mb-6">
+                Searching for the most exquisite <strong>luxury flower delivery in Dubai</strong>? Venus Fleur is the city's premier boutique for handcrafted <strong>preserved eternal roses</strong>. Our mission is to transform the art of gifting into a timeless experience. Unlike traditional bouquets that wilt within days, our signature rose boxes are designed to maintain their natural beauty, soft texture, and vibrant color for over a year (365+ days) without the need for water or sunlight.
+            </p>
+            <p class="mb-6">
+                We take pride in our <strong>same-day flower delivery service across Dubai</strong>, ensuring that your grand gestures are executed with precision. Our logistics team specializes in white-glove delivery to Dubai's most prestigious residential and business hubs, including <strong>Palm Jumeirah, Dubai Marina, Downtown Dubai, Emirates Hills, and Business Bay</strong>. Whether you are celebrating a milestone anniversary, a romantic birthday, or sending a sophisticated corporate gift to <strong>DIFC</strong>, our floral concierge is at your service.
+            </p>
+            <h2 class="text-[#c6a75e] luxury-serif italic text-3xl mt-16 mb-8">The Gold Standard of Eternal Roses</h2>
+            <p class="mb-6">
+                At Venus Fleur, we source only the finest roses from the world's most elite gardens. Each flower undergoes a specialized natural preservation process in France, replacing the sap with a bio-based formula that locks in its peak beauty. This makes our <strong>rose boxes</strong> the definitive choice for sustainable luxury and aesthetic longevity in the UAE.
+            </p>
+            <p>
+                Our collection features a variety of iconic designs, from the classic <strong>Royal Red</strong> in matte black velvet to the sophisticated <strong>White Elegance</strong>. Explore our <a href="flower-delivery-dubai.html" class="text-[#c6a75e] underline">full collection</a> and discover why we are trusted by Dubai's elite for their most cherished moments.
+            </p>
         </div>
     </section>
 
     <!-- REVIEWS SECTION -->
-    <section class="py-32 px-6 md:px-20 bg-black border-y border-white/5 text-center">
+    <section class="py-32 px-6 md:px-20 bg-[#050505] text-center">
         <div class="mb-20" data-aos="fade-up">
             <div class="flex justify-center items-center space-x-3 mb-6">
                 <i class="fab fa-google text-white text-xl"></i>
@@ -194,20 +154,6 @@
                 <p class="text-white mb-8 text-sm italic font-light leading-relaxed opacity-80">"Unbeatable quality. My roses still look fresh after 6 months. Amazing service."</p>
                 <p class="text-[9px] tracking-[0.4em] text-gray-600 uppercase">— Layla A. <span class="text-green-600 ml-2 font-bold">Verified</span></p>
             </div>
-        </div>
-    </section>
-
-    <!-- SEO CONTENT SECTION -->
-    <section class="py-32 px-6 md:px-20 bg-[#050505]">
-        <div class="max-w-4xl mx-auto text-gray-400 text-sm leading-relaxed" data-aos="fade-up">
-            <h2 class="text-[#c6a75e] luxury-serif italic text-3xl mb-8">Luxury Roses Delivery in Dubai</h2>
-            <p class="mb-6">
-                Looking for the perfect luxury gift in Dubai? <strong>Venus Fleur</strong> offers an exclusive collection of <strong>preserved eternal roses</strong> that maintain their natural beauty for over a year. Our handcrafted flower boxes are designed for those who value elegance and longevity.
-            </p>
-            <h2 class="text-[#c6a75e] luxury-serif italic text-3xl mt-16 mb-8">Same Day Flower Delivery Dubai</h2>
-            <p class="mb-6">
-                We provide reliable <a href="flower-delivery-dubai.html" class="text-[#c6a75e] underline">same-day flower delivery across Dubai</a>, including prestigious locations such as <strong>Palm Jumeirah, Dubai Marina, Downtown Dubai, and Business Bay</strong>.
-            </p>
         </div>
     </section>
 
