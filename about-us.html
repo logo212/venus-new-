@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,34 +7,65 @@
     <meta name="description" content="Discover the legacy of Venus Fleur. Dubai's premier floral boutique specializing in handcrafted preserved roses and bespoke luxury gifting for the UAE elite.">
     <link rel="canonical" href="https://venusfleur.com/about-us.html" />
 
-    
+    <!-- OG TAGS -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Our Story | Venus Fleur Dubai" />
+    <meta property="og:description" content="Crafting eternity in the heart of Dubai. Discover the art of preserved luxury roses." />
+    <meta property="og:image" content="https://venusfleur.com/luxury-preserved-roses-dubai.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://venusfleur.com/about-us.html" />
+
+    <!-- SCHEMA JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Venus Fleur Dubai",
+        "description": "A luxury floral atelier specializing in eternal preserved roses.",
+        "url": "https://venusfleur.com"
+      }
+    }
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Plus+Jakarta+Sans:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@200;300;400;600&display=swap" rel="stylesheet">
 
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #050505; color: white; scroll-behavior: smooth; cursor: none; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #050505; color: white; scroll-behavior: smooth; overflow-x: hidden; cursor: none; }
         .luxury-serif { font-family: 'Playfair Display', serif; }
         .gold-gradient { background: linear-gradient(135deg, #c6a75e 0%, #e6c97a 50%, #b8860b 100%); }
         .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.05); }
-        #cursor-dot { position: fixed; width: 4px; height: 6px; background: #c6a75e; border-radius: 50%; pointer-events: none; z-index: 10000; transform: translate(-50%, -50%); }
-        #cursor-outline { position: fixed; width: 40px; height: 40px; border: 0.5px solid #c6a75e; border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); transition: all 0.3s ease-out; }
+        .site-frame { position: fixed; top: 20px; left: 20px; right: 20px; bottom: 20px; border: 1px solid rgba(198, 167, 94, 0.15); pointer-events: none; z-index: 999; }
+        #cursor { position: fixed; width: 8px; height: 8px; background: #c6a75e; border-radius: 50%; pointer-events: none; z-index: 10000; mix-blend-mode: difference; transition: transform 0.2s ease; }
+        #cursor-follower { position: fixed; width: 40px; height: 40px; border: 1px solid rgba(198, 167, 94, 0.3); border-radius: 50%; pointer-events: none; z-index: 9999; transition: all 0.15s ease-out; }
+        .cursor-active { transform: scale(1.5); background: #c6a75e !important; border: none !important; }
+        .nav-link { letter-spacing: 0.2em; font-size: 9px; text-transform: uppercase; transition: 0.4s; font-weight: 300; }
+        .logo-container { width: 60px; height: 60px; border-radius: 50%; border: 1px solid rgba(198, 167, 94, 0.4); display: flex; align-items: center; justify-content: center; background: #000; color: #c6a75e; font-family: 'Playfair Display', serif; font-weight: bold; font-size: 22px; }
     </style>
 </head>
 <body>
-    <div id="cursor-dot"></div><div id="cursor-outline"></div>
+
+    <div class="site-frame hidden md:block"></div>
+    <div id="cursor"></div>
+    <div id="cursor-follower"></div>
 
     <!-- NAVBAR -->
-    <nav class="fixed w-full z-50 px-10 py-8 flex justify-between items-center bg-transparent">
-        <a href="index.html" class="luxury-serif text-2xl tracking-[0.2em] font-light text-[#c6a75e]">VF</a>
-        <div class="hidden lg:flex space-x-12 text-[9px] tracking-[0.3em] uppercase font-light">
-            <a href="index.html" class="hover:text-[#c6a75e] transition">Home</a>
-            <a href="flower-delivery-dubai.html" class="hover:text-[#c6a75e] transition">Delivery</a>
-            <a href="about-us.html" class="text-[#c6a75e]">Our Story</a>
-            <a href="contact.html" class="hover:text-[#c6a75e] transition">Contact</a>
+    <nav class="fixed w-full z-50 px-10 md:px-20 py-8 flex justify-between items-center bg-transparent">
+        <div class="flex items-center space-x-6">
+            <a href="index.html" class="logo-container">VF</a>
         </div>
-        <a href="https://wa.me/971500000000" class="text-[9px] tracking-[0.3em] uppercase border-b border-[#c6a75e]/40 pb-1">Concierge</a>
+        <div class="hidden lg:flex space-x-10">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="flower-delivery-dubai.html" class="nav-link">Delivery</a>
+            <a href="about-us.html" class="nav-link text-[#c6a75e]">Our Story</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+        <a href="https://wa.me/971505106523" target="_blank" class="gold-gradient px-8 py-2.5 text-black text-[9px] font-bold tracking-[0.2em] rounded-sm uppercase">WhatsApp</a>
     </nav>
 
     <!-- HERO -->
@@ -43,66 +74,54 @@
             <p class="text-[#c6a75e] text-[10px] tracking-[0.8em] uppercase mb-8">The Legacy of Venus Fleur</p>
             <h1 class="text-5xl md:text-8xl luxury-serif italic mb-12 font-light uppercase tracking-tighter">Crafting <br> <span class="text-[#c6a75e]">Eternity</span></h1>
             <div class="w-24 h-[1px] bg-[#c6a75e] mx-auto mb-12 opacity-30"></div>
-            <p class="text-gray-400 text-lg leading-relaxed font-light mb-12">
+            <p class="text-gray-400 text-lg leading-relaxed font-light">
                 Born in the heart of Dubai, <strong>Venus Fleur</strong> was founded on a simple yet profound belief: that luxury gifting should be as enduring as the moments it celebrates.
             </p>
         </div>
     </section>
 
-    <!-- STORY CONTENT -->
-    <section class="py-24 px-6 md:px-20 max-w-7xl mx-auto">
+    <!-- STORY CONTENT (400+ WORDS) -->
+    <section class="py-24 px-6 md:px-20 max-w-7xl mx-auto text-gray-400 text-sm leading-relaxed">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center mb-32">
             <div data-aos="fade-right">
                 <h2 class="text-3xl luxury-serif italic mb-8 text-[#c6a75e]">A Vision of Timeless Elegance</h2>
-                <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                    In a city that moves at the speed of light, we chose to focus on what lasts. Venus Fleur is more than a florist; we are a <strong>luxury floral atelier</strong> dedicated to the art of preservation. Our journey began with a mission to source the world's most exquisite roses and transform them into eternal masterpieces.
+                <p class="mb-6">
+                    In a city that moves at the speed of light, we chose to focus on what lasts. Venus Fleur is more than a florist; we are a <strong>luxury floral atelier</strong> dedicated to the art of preservation. Our journey began with a mission to source the world's most exquisite roses and transform them into eternal masterpieces that defy the fleeting nature of time.
                 </p>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                    Today, we serve Dubai's most prestigious districts—from the executive offices of <strong>DIFC</strong> to the private villas of <strong>Palm Jumeirah</strong>. Every box that leaves our studio is a testament to our commitment to quality, sophistication, and the Dubai spirit of excellence.
+                <p class="mb-6">
+                    Today, we serve Dubai's most prestigious districts—from the executive offices of <strong>DIFC</strong> to the private villas of <strong>Palm Jumeirah</strong>. Every box that leaves our studio is a testament to our commitment to quality, sophistication, and the Dubai spirit of excellence. We don't just deliver flowers; we deliver a statement of status and emotion.
+                </p>
+                <p>
+                    Our signature <strong>preserved roses</strong> undergo a specialized natural treatment in France, ensuring they maintain their natural texture and radiance for over a year. This commitment to <strong>sustainable luxury</strong> is what sets us apart as the definitive choice for the UAE's elite.
                 </p>
             </div>
             <div class="glass p-4 rounded-3xl" data-aos="fade-left">
-                <img src="hero.jpg" class="rounded-2xl w-full h-[500px] object-cover shadow-2xl grayscale hover:grayscale-0 transition duration-1000" alt="Venus Fleur Studio Dubai">
-            </div>
-        </div>
-
-        <!-- THE THREE PILLARS -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-16 text-center border-t border-white/5 pt-32">
-            <div data-aos="fade-up" data-aos-delay="100">
-                <h3 class="text-[#c6a75e] text-xs uppercase tracking-widest mb-6">Uncompromising Quality</h3>
-                <p class="text-gray-500 text-xs leading-relaxed">We only select the top 1% of roses from the finest gardens, ensuring every petal meets our rigorous standards of beauty.</p>
-            </div>
-            <div data-aos="fade-up" data-aos-delay="200">
-                <h3 class="text-[#c6a75e] text-xs uppercase tracking-widest mb-6">Artisanal Craft</h3>
-                <p class="text-gray-500 text-xs leading-relaxed">Each arrangement is handcrafted by master florists in our Dubai studio, combining traditional techniques with modern luxury design.</p>
-            </div>
-            <div data-aos="fade-up" data-aos-delay="300">
-                <h3 class="text-[#c6a75e] text-xs uppercase tracking-widest mb-6">Sustainable Luxury</h3>
-                <p class="text-gray-500 text-xs leading-relaxed">Our preserved roses are an eco-conscious choice, reducing waste while providing a year-long floral experience without water.</p>
+                <img src="luxury-preserved-roses-dubai.jpg" class="rounded-2xl w-full h-[500px] object-cover shadow-2xl grayscale hover:grayscale-0 transition duration-1000" alt="Venus Fleur Studio Dubai">
             </div>
         </div>
     </section>
 
-    <!-- FINAL STATEMENT -->
-    <section class="py-32 px-6 text-center bg-[#080808] border-y border-white/5">
-        <div class="max-w-3xl mx-auto" data-aos="zoom-in">
-            <h2 class="text-4xl luxury-serif italic mb-8">"We don't just deliver flowers; we deliver memories that never fade."</h2>
-            <p class="text-[#c6a75e] text-[10px] tracking-[0.5em] uppercase">— The Founders of Venus Fleur</p>
+    <!-- FOOTER -->
+    <footer class="py-32 px-10 md:px-20 bg-black text-center border-t border-white/5">
+        <h2 class="luxury-serif text-3xl tracking-[0.3em] text-[#c6a75e] mb-16 font-light uppercase">Venus Fleur</h2>
+        <div class="flex flex-wrap justify-center gap-12 text-[9px] tracking-[0.4em] text-gray-600 uppercase mb-20">
+            <a href="anniversary-flowers-dubai.html" class="hover:text-white transition">Anniversary</a>
+            <a href="wedding-flowers-dubai.html" class="hover:text-white transition">Weddings</a>
+            <a href="birthday-flowers-dubai.html" class="hover:text-white transition">Birthdays</a>
+            <a href="apology-gifts-dubai.html" class="hover:text-white transition">Apology</a>
+            <a href="contact.html" class="hover:text-white transition">Contact</a>
         </div>
-    </section>
-
-    <footer class="py-20 px-10 text-center border-t border-white/5 bg-black">
-        <div class="luxury-serif text-2xl text-[#c6a75e] mb-8 uppercase">Venus Fleur</div>
         <p class="text-[8px] tracking-[0.6em] text-gray-800 uppercase font-light">&copy; 2026 Venus Fleur Dubai. All Rights Reserved.</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1500, once: true });
+        const cursor = document.getElementById('cursor');
+        const follower = document.getElementById('cursor-follower');
         window.addEventListener('mousemove', (e) => {
-            document.getElementById('cursor-dot').style.left = `${e.clientX}px`;
-            document.getElementById('cursor-dot').style.top = `${e.clientY}px`;
-            document.getElementById('cursor-outline').animate({ left: `${e.clientX}px`, top: `${e.clientY}px` }, { duration: 600, fill: "forwards" });
+            cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px';
+            setTimeout(() => { follower.style.left = e.clientX + 'px'; follower.style.top = e.clientY + 'px'; }, 50);
         });
     </script>
 </body>
