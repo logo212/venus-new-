@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO MASTER TAGS -->
     <title>Luxury Apology Gifts Dubai | Premium 'I'm Sorry' Roses | Venus Fleur</title>
     <meta name="description" content="Make amends with the ultimate gesture. Venus Fleur offers luxury apology flower boxes and eternal roses with same-day emergency delivery in Dubai.">
     <link rel="canonical" href="https://venusfleur.com/apology-gifts-dubai.html" />
 
-    <!-- SOCIAL MEDIA SHARE (OG TAGS) -->
+    <!-- OG TAGS -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Luxury Apology Gifts Dubai | Venus Fleur" />
     <meta property="og:description" content="When words are not enough, let our eternal roses speak for you. Same-day emergency delivery in Dubai." />
@@ -18,7 +16,7 @@
     <meta property="og:image:height" content="630" />
     <meta property="og:url" content="https://venusfleur.com/apology-gifts-dubai.html" />
 
-    <!-- SCHEMA JSON-LD -->
+    <!-- SCHEMA: Florist + address + openingHours -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -27,13 +25,52 @@
       "telephone": "+971505106523",
       "url": "https://venusfleur.com/apology-gifts-dubai.html",
       "image": "https://venusfleur.com/luxury-apology-gifts-dubai.jpg",
-      "areaServed": ["Dubai", "Palm Jumeirah", "Downtown Dubai", "Dubai Marina"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Business Bay",
+        "addressLocality": "Dubai",
+        "addressCountry": "AE"
+      },
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-        "opens": "00:00",
-        "closes": "23:59"
+        "opens": "09:00",
+        "closes": "21:00"
       }
+    }
+    </script>
+
+    <!-- SCHEMA: FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the best apology gift in Dubai?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A luxury preserved rose box from Venus Fleur is the most powerful apology gesture in Dubai. Unlike fresh flowers that wilt, our eternal roses last over a year — a constant reminder of your sincerity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you deliver apology flowers same day in Dubai?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Venus Fleur offers same-day emergency delivery across all Dubai districts including Palm Jumeirah, DIFC, Dubai Marina, and Business Bay for orders placed before 6:00 PM GST."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How fast is emergency flower delivery in Dubai?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our emergency delivery service is optimized for speed and discretion. Most orders are delivered within 2-4 hours of confirmation across Dubai."
+          }
+        }
+      ]
     }
     </script>
 
@@ -44,12 +81,13 @@
 
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #050505; color: white; scroll-behavior: smooth; overflow-x: hidden; cursor: none; }
+        @media (pointer: coarse) { body { cursor: auto; } #cursor, #cursor-follower { display: none; } }
         .luxury-serif { font-family: 'Playfair Display', serif; }
         .gold-gradient { background: linear-gradient(135deg, #c6a75e 0%, #e6c97a 50%, #b8860b 100%); }
         .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.05); }
         .site-frame { position: fixed; top: 20px; left: 20px; right: 20px; bottom: 20px; border: 1px solid rgba(198, 167, 94, 0.15); pointer-events: none; z-index: 999; }
-        #cursor { position: fixed; width: 8px; height: 8px; background: #c6a75e; border-radius: 50%; pointer-events: none; z-index: 10000; mix-blend-mode: difference; transition: transform 0.2s ease; }
-        #cursor-follower { position: fixed; width: 40px; height: 40px; border: 1px solid rgba(198, 167, 94, 0.3); border-radius: 50%; pointer-events: none; z-index: 9999; transition: all 0.15s ease-out; }
+        #cursor { position: fixed; width: 8px; height: 8px; background: #c6a75e; border-radius: 50%; pointer-events: none; z-index: 10000; mix-blend-mode: difference; }
+        #cursor-follower { position: fixed; width: 40px; height: 40px; border: 1px solid rgba(198, 167, 94, 0.3); border-radius: 50%; pointer-events: none; z-index: 9999; }
         .cursor-active { transform: scale(1.5); background: #c6a75e !important; border: none !important; }
         .nav-link { letter-spacing: 0.2em; font-size: 9px; text-transform: uppercase; transition: 0.4s; font-weight: 300; }
         .logo-container { width: 60px; height: 60px; border-radius: 50%; border: 1px solid rgba(198, 167, 94, 0.4); display: flex; align-items: center; justify-content: center; background: #000; color: #c6a75e; font-family: 'Playfair Display', serif; font-weight: bold; font-size: 22px; }
@@ -63,9 +101,7 @@
 
     <!-- NAVBAR -->
     <nav class="fixed w-full z-50 px-10 md:px-20 py-8 flex justify-between items-center bg-black/40 backdrop-blur-md">
-        <div class="flex items-center space-x-6">
-            <a href="index.html" class="logo-container">VF</a>
-        </div>
+        <div class="flex items-center space-x-6"><a href="index.html" class="logo-container">VF</a></div>
         <div class="hidden lg:flex space-x-10">
             <a href="index.html" class="nav-link">Home</a>
             <a href="flower-delivery-dubai.html" class="nav-link">Delivery</a>
@@ -77,29 +113,35 @@
 
     <!-- HERO -->
     <section class="relative h-[70vh] flex items-center justify-center overflow-hidden">
-        <img src="luxury-apology-gifts-dubai.jpg" class="absolute inset-0 w-full h-full object-cover opacity-30" alt="Luxury Apology Gifts Dubai">
+        <img
+            src="luxury-apology-gifts-dubai.jpg"
+            width="1200"
+            height="630"
+            loading="lazy"
+            class="absolute inset-0 w-full h-full object-cover opacity-30"
+            alt="Luxury Apology Gifts Dubai - Venus Fleur Emergency Rose Delivery"
+        >
         <div class="relative z-10 text-center px-6" data-aos="fade-up">
             <h1 class="text-4xl md:text-7xl luxury-serif italic mb-6 leading-tight font-light uppercase tracking-tighter">
-                When Words Are <br> <span class="text-[#c6a75e]">Not Enough</span>
+                Luxury Apology <br> <span class="text-[#c6a75e]">Gifts Dubai</span>
             </h1>
             <p class="text-white text-sm md:text-xl font-extralight tracking-[0.4em] uppercase opacity-80">The Art of Forgiveness in Dubai</p>
         </div>
     </section>
 
-    <!-- EXPANDED SEO CONTENT -->
+    <!-- EXPERT CONTENT -->
     <section class="py-32 px-6 md:px-20 max-w-5xl mx-auto text-gray-400 text-sm leading-relaxed">
         <div data-aos="fade-up">
-            <h2 class="text-[#c6a75e] luxury-serif italic text-3xl mb-8">The Ultimate Apology Gesture in Dubai</h2>
+            <h2 class="text-[#c6a75e] luxury-serif italic text-3xl mb-8">Restoring Connections with Timeless Elegance</h2>
             <p class="mb-6">
-                Sometimes, a simple "I'm sorry" is not enough to bridge the gap. In a city defined by grand gestures, an apology should reflect the sincerity of your heart and the value you place on the relationship. At <strong>Venus Fleur</strong>, we specialize in <strong>luxury apology gifts in Dubai</strong>, designed to make a lasting impression and restore the beauty of your connection.
+                In a city as fast-paced as Dubai, misunderstandings can happen. But in elite circles, an apology is more than just a word — it is a gesture of respect and value. At <strong>Venus Fleur</strong>, we have witnessed how a carefully curated <strong>luxury apology gift in Business Bay</strong> or a surprise delivery to <strong>Atlantis The Royal</strong> can turn a difficult moment into a beautiful new beginning.
             </p>
             <p class="mb-6">
-                Our signature <strong>preserved eternal roses</strong> are the perfect symbol for an apology. Unlike fresh flowers that wilt within days, our roses maintain their natural beauty for over a year, serving as a constant reminder of your commitment to making things right. Handcrafted in our iconic velvet boxes, these arrangements are more than just flowers—they are a testament to a love that endures.
+                Our signature <strong>preserved eternal roses</strong> are the definitive choice for an apology. Unlike fresh flowers that wilt, our roses last for over a year — a constant, daily reminder of your sincerity. Pair your apology with our <a href="flower-delivery-dubai.html" class="text-[#c6a75e] hover:opacity-70 transition">same-day delivery service</a> for maximum impact, or explore our <a href="anniversary-flowers-dubai.html" class="text-[#c6a75e] hover:opacity-70 transition">anniversary collection</a> to rebuild the romance.
             </p>
-            
-            <!-- CTA CONVERSION -->
+
             <div class="text-center my-20">
-                <h3 class="text-white luxury-serif italic text-2xl mb-8">Need an Urgent Peace Offering?</h3>
+                <h3 class="text-white luxury-serif italic text-2xl mb-8">Need an Emergency Peace Offering?</h3>
                 <a href="https://wa.me/971505106523" target="_blank" class="gold-gradient px-14 py-5 text-black font-bold uppercase text-[10px] tracking-[0.4em] hover:scale-105 transition duration-500 shadow-2xl">
                     Emergency Apology Delivery via WhatsApp
                 </a>
@@ -107,11 +149,30 @@
 
             <h2 class="text-[#c6a75e] luxury-serif italic text-3xl mt-16 mb-8">Same-Day Emergency Delivery Across Dubai</h2>
             <p class="mb-6">
-                We understand that some moments can't wait. Our <strong>emergency flower delivery service</strong> is designed for those critical times when you need to make amends immediately. We provide express delivery to all prestigious areas, including <strong>Palm Jumeirah villas, Downtown Dubai penthouses, and luxury hotels in Dubai Marina</strong>.
+                Timing is the most critical element of a sincere apology. Our <strong>same-day emergency delivery service</strong> is optimized for speed and discretion. Whether it's a delivery to a private villa in <strong>Palm Jumeirah</strong> or a corporate office in <strong>DIFC</strong>, our floral concierge handles every order with white-glove precision. For those special milestone moments, also discover our <a href="birthday-flowers-dubai.html" class="text-[#c6a75e] hover:opacity-70 transition">birthday flower delivery</a> and <a href="wedding-flowers-dubai.html" class="text-[#c6a75e] hover:opacity-70 transition">luxury wedding flowers</a>.
             </p>
             <p>
-                Whether it's a grand romantic apology or a sincere professional gesture, our floral concierge ensures your gift arrives with white-glove precision. Experience the gold standard of <strong>luxury gifting in the UAE</strong> and let Venus Fleur help you turn a difficult moment into a beautiful memory.
+                Experience the gold standard of <strong>luxury gifting in the UAE</strong>. Let Venus Fleur help you express what words cannot, with a gift that remains as vibrant and beautiful as your shared future.
             </p>
+        </div>
+
+        <!-- FAQ SECTION -->
+        <div class="mt-32 border-t border-white/5 pt-20" data-aos="fade-up">
+            <h2 class="text-3xl luxury-serif italic text-white mb-12 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-10">
+                <div class="border-b border-white/5 pb-6">
+                    <h3 class="text-[#c6a75e] text-sm uppercase tracking-widest mb-3">What is the best apology gift in Dubai?</h3>
+                    <p class="text-gray-500 text-xs font-light leading-relaxed">A luxury preserved rose box from Venus Fleur is the most powerful apology gesture in Dubai. Unlike fresh flowers that wilt, our eternal roses last over a year — a constant reminder of your sincerity.</p>
+                </div>
+                <div class="border-b border-white/5 pb-6">
+                    <h3 class="text-[#c6a75e] text-sm uppercase tracking-widest mb-3">Can you deliver apology flowers same day in Dubai?</h3>
+                    <p class="text-gray-500 text-xs font-light leading-relaxed">Yes. Venus Fleur offers same-day emergency delivery across all Dubai districts including Palm Jumeirah, DIFC, Dubai Marina, and Business Bay for orders placed before 6:00 PM GST.</p>
+                </div>
+                <div class="border-b border-white/5 pb-6">
+                    <h3 class="text-[#c6a75e] text-sm uppercase tracking-widest mb-3">How fast is emergency flower delivery in Dubai?</h3>
+                    <p class="text-gray-500 text-xs font-light leading-relaxed">Our emergency delivery service is optimized for speed and discretion. Most orders are delivered within 2-4 hours of confirmation across Dubai.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -119,10 +180,12 @@
     <footer class="py-32 px-10 md:px-20 bg-black text-center border-t border-white/5">
         <h2 class="luxury-serif text-3xl tracking-[0.3em] text-[#c6a75e] mb-16 font-light uppercase">Venus Fleur</h2>
         <div class="flex flex-wrap justify-center gap-12 text-[9px] tracking-[0.4em] text-gray-600 uppercase mb-20">
+            <a href="index.html" class="hover:text-white transition">Home</a>
             <a href="anniversary-flowers-dubai.html" class="hover:text-white transition">Anniversary</a>
             <a href="wedding-flowers-dubai.html" class="hover:text-white transition">Weddings</a>
             <a href="birthday-flowers-dubai.html" class="hover:text-white transition">Birthdays</a>
             <a href="apology-gifts-dubai.html" class="hover:text-white transition">Apology</a>
+            <a href="flower-delivery-dubai.html" class="hover:text-white transition">Delivery</a>
             <a href="contact.html" class="hover:text-white transition">Contact</a>
         </div>
         <p class="text-[8px] tracking-[0.6em] text-gray-800 uppercase font-light">&copy; 2026 Venus Fleur Dubai. All Rights Reserved.</p>
@@ -131,12 +194,25 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1500, once: true });
+
         const cursor = document.getElementById('cursor');
         const follower = document.getElementById('cursor-follower');
+        let mouseX = 0, mouseY = 0;
+        let followerX = 0, followerY = 0;
+
         window.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px';
-            setTimeout(() => { follower.style.left = e.clientX + 'px'; follower.style.top = e.clientY + 'px'; }, 50);
+            mouseX = e.clientX; mouseY = e.clientY;
+            cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
         });
+
+        function animate() {
+            followerX += (mouseX - followerX) * 0.1;
+            followerY += (mouseY - followerY) * 0.1;
+            follower.style.transform = `translate3d(${followerX - 20}px, ${followerY - 20}px, 0)`;
+            requestAnimationFrame(animate);
+        }
+        animate();
+
         document.querySelectorAll('a, button').forEach(el => {
             el.addEventListener('mouseenter', () => { cursor.classList.add('cursor-active'); follower.style.opacity = "0"; });
             el.addEventListener('mouseleave', () => { cursor.classList.remove('cursor-active'); follower.style.opacity = "1"; });
