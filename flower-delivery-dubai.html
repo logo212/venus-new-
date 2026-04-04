@@ -7,7 +7,6 @@
     <meta name="description" content="Reliable same-day flower delivery in Dubai. We deliver luxury preserved roses to Palm Jumeirah, Dubai Marina, and Downtown. Handcrafted elegance for every occasion.">
     <link rel="canonical" href="https://venusfleur.com/flower-delivery-dubai.html" />
 
-    <!-- OG TAGS -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Same Day Flower Delivery Dubai | Venus Fleur" />
     <meta property="og:description" content="Luxury flower boxes delivered same-day across Dubai. Premium preserved roses that last over a year." />
@@ -16,7 +15,6 @@
     <meta property="og:image:height" content="630" />
     <meta property="og:url" content="https://venusfleur.com/flower-delivery-dubai.html" />
 
-    <!-- SCHEMA: Florist (avec openingHours restauré) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -25,6 +23,11 @@
       "telephone": "+971505106523",
       "url": "https://venusfleur.com/flower-delivery-dubai.html",
       "image": "https://venusfleur.com/luxury-flower-delivery-dubai-preserved-roses.jpg",
+      "hasMap": "https://www.google.com/maps?cid=5515316483584348490",
+      "sameAs": [
+        "https://www.instagram.com/_venusfleur/",
+        "https://g.page/r/CUrPNVPDSYpMEAI/review"
+      ],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Business Bay",
@@ -40,40 +43,6 @@
     }
     </script>
 
-    <!-- SCHEMA: FAQ (featured snippets Google) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How fast is same-day flower delivery in Dubai?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We guarantee same-day delivery for all orders placed before 6:00 PM GST. Our express network ensures your luxury box arrives within hours across Dubai."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you deliver to Palm Jumeirah and Dubai Marina?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, we provide specialized delivery to all prestigious residential areas, including Palm Jumeirah villas, Dubai Marina penthouses, and Emirates Hills."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I schedule a specific delivery time?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Absolutely. Our floral concierge can coordinate specific delivery slots to ensure your surprise arrives at the perfect moment."
-          }
-        }
-      ]
-    }
-    </script>
-
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -81,16 +50,12 @@
 
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #050505; color: white; scroll-behavior: smooth; overflow-x: hidden; cursor: none; }
-
-        /* MOBILE CURSOR FIX */
-        @media (pointer: coarse) { body { cursor: auto; } #cursor, #cursor-follower { display: none; } }
-
         .luxury-serif { font-family: 'Playfair Display', serif; }
         .gold-gradient { background: linear-gradient(135deg, #c6a75e 0%, #e6c97a 50%, #b8860b 100%); }
         .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.05); }
         .site-frame { position: fixed; top: 20px; left: 20px; right: 20px; bottom: 20px; border: 1px solid rgba(198, 167, 94, 0.15); pointer-events: none; z-index: 999; }
         #cursor { position: fixed; width: 8px; height: 8px; background: #c6a75e; border-radius: 50%; pointer-events: none; z-index: 10000; mix-blend-mode: difference; transition: transform 0.2s ease; }
-        #cursor-follower { position: fixed; width: 40px; height: 40px; border: 1px solid rgba(198, 167, 94, 0.3); border-radius: 50%; pointer-events: none; z-index: 9999; }
+        #cursor-follower { position: fixed; width: 40px; height: 40px; border: 1px solid rgba(198, 167, 94, 0.3); border-radius: 50%; pointer-events: none; z-index: 9999; transition: all 0.15s ease-out; }
         .cursor-active { transform: scale(1.5); background: #c6a75e !important; border: none !important; }
         .nav-link { letter-spacing: 0.2em; font-size: 9px; text-transform: uppercase; transition: 0.4s; font-weight: 300; }
         .logo-container { width: 60px; height: 60px; border-radius: 50%; border: 1px solid rgba(198, 167, 94, 0.4); display: flex; align-items: center; justify-content: center; background: #000; color: #c6a75e; font-family: 'Playfair Display', serif; font-weight: bold; font-size: 22px; }
@@ -102,9 +67,10 @@
     <div id="cursor"></div>
     <div id="cursor-follower"></div>
 
-    <!-- NAVBAR -->
     <nav class="fixed w-full z-50 px-10 md:px-20 py-8 flex justify-between items-center bg-black/40 backdrop-blur-md">
-        <div class="flex items-center space-x-6"><a href="index.html" class="logo-container">VF</a></div>
+        <div class="flex items-center space-x-6">
+            <a href="index.html" class="logo-container">VF</a>
+        </div>
         <div class="hidden lg:flex space-x-10">
             <a href="index.html" class="nav-link">Home</a>
             <a href="flower-delivery-dubai.html" class="nav-link text-[#c6a75e]">Delivery</a>
@@ -114,16 +80,8 @@
         <a href="https://wa.me/971505106523" target="_blank" class="gold-gradient px-8 py-2.5 text-black text-[9px] font-bold tracking-[0.2em] rounded-sm uppercase">WhatsApp</a>
     </nav>
 
-    <!-- HERO -->
     <section class="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <img
-            src="luxury-flower-delivery-dubai-preserved-roses.jpg"
-            width="1200"
-            height="630"
-            loading="lazy"
-            class="absolute inset-0 w-full h-full object-cover opacity-30"
-            alt="Same Day Flower Delivery Dubai - Venus Fleur Luxury Preserved Roses"
-        >
+        <img src="luxury-flower-delivery-dubai-preserved-roses.jpg" class="absolute inset-0 w-full h-full object-cover opacity-30" alt="Same Day Flower Delivery Dubai">
         <div class="relative z-10 text-center px-6" data-aos="fade-up">
             <h1 class="text-4xl md:text-7xl luxury-serif italic mb-6 leading-tight font-light uppercase tracking-tighter">
                 Same Day Flower <br> <span class="text-[#c6a75e]">Delivery Dubai</span>
@@ -132,7 +90,6 @@
         </div>
     </section>
 
-    <!-- EXPERT CONTENT -->
     <section class="py-32 px-6 md:px-20 max-w-5xl mx-auto text-gray-400 text-sm leading-relaxed">
         <div data-aos="fade-up">
             <h2 class="text-[#c6a75e] luxury-serif italic text-3xl mb-8">The Logistics of Luxury: How We Deliver in Dubai</h2>
@@ -140,22 +97,7 @@
                 Delivering <strong>luxury flowers in Dubai</strong> requires more than just a vehicle; it requires a deep understanding of the city's unique environment. At <strong>Venus Fleur</strong>, we have mastered the logistics of floral transport in the UAE. Our delivery process is designed to protect our delicate <strong>preserved rose boxes</strong> from the extreme external temperatures, ensuring they arrive at your villa in <strong>Palm Jumeirah</strong> or your office in <strong>DIFC</strong> in pristine condition.
             </p>
             <p class="mb-6">
-                We utilize climate-controlled transport for all our <strong>same-day flower deliveries</strong>. This is critical because the transition from Dubai's outdoor heat to indoor air conditioning can be traumatic for organic materials. By maintaining a stable micro-climate during transit, we guarantee that the quality of our <a href="index.html" class="text-[#c6a75e] hover:opacity-70 transition">luxury preserved roses</a> is never compromised.
-            </p>
-
-            <h2 class="text-[#c6a75e] luxury-serif italic text-3xl mt-16 mb-8">Serving Dubai's Most Prestigious Districts</h2>
-            <p class="mb-6">
-                Our floral concierge team is specialized in white-glove delivery to the city's most exclusive hubs. Whether you need <a href="anniversary-flowers-dubai.html" class="text-[#c6a75e] hover:opacity-70 transition">anniversary flowers</a>, <a href="birthday-flowers-dubai.html" class="text-[#c6a75e] hover:opacity-70 transition">birthday arrangements</a>, or a heartfelt <a href="apology-gifts-dubai.html" class="text-[#c6a75e] hover:opacity-70 transition">apology gift</a>, we provide guaranteed <strong>same-day delivery</strong> to:
-            </p>
-            <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-[10px] tracking-[0.3em] uppercase text-gray-500 mb-12">
-                <li><span class="text-[#c6a75e]">✦</span> Palm Jumeirah Villas & Resorts</li>
-                <li><span class="text-[#c6a75e]">✦</span> Emirates Hills Private Estates</li>
-                <li><span class="text-[#c6a75e]">✦</span> Downtown Dubai & Burj Khalifa</li>
-                <li><span class="text-[#c6a75e]">✦</span> Dubai Marina & JBR Penthouses</li>
-                <li><span class="text-[#c6a75e]">✦</span> Business Bay & DIFC Corporate Suites</li>
-            </ul>
-            <p class="mb-6">
-                Whether you are planning a surprise at a luxury hotel or sending a corporate gesture to a high-rise office, Venus Fleur is the definitive choice for <strong>premium floral logistics in the UAE</strong>. For bespoke arrangements, explore our <a href="wedding-flowers-dubai.html" class="text-[#c6a75e] hover:opacity-70 transition">wedding flowers</a> collection.
+                We utilize climate-controlled transport for all our <strong>same-day flower deliveries</strong>. This is critical because the transition from Dubai's outdoor heat to indoor air conditioning can be traumatic for organic materials. By maintaining a stable micro-climate during transit, we guarantee that the "Eternal" quality of our roses is never compromised.
             </p>
 
             <div class="text-center my-20">
@@ -164,32 +106,27 @@
                     Order Now via WhatsApp
                 </a>
             </div>
-        </div>
 
-        <!-- FAQ SECTION -->
-        <div class="mt-32 border-t border-white/5 pt-20" data-aos="fade-up">
-            <h2 class="text-3xl luxury-serif italic text-white mb-12 text-center">Frequently Asked Questions</h2>
-            <div class="space-y-10">
-                <div class="border-b border-white/5 pb-6">
-                    <h3 class="text-[#c6a75e] text-sm uppercase tracking-widest mb-3">How fast is same-day flower delivery in Dubai?</h3>
-                    <p class="text-gray-500 text-xs font-light leading-relaxed">We guarantee same-day delivery for all orders placed before 6:00 PM GST. Our express network ensures your luxury box arrives within hours across Dubai.</p>
-                </div>
-                <div class="border-b border-white/5 pb-6">
-                    <h3 class="text-[#c6a75e] text-sm uppercase tracking-widest mb-3">Do you deliver to Palm Jumeirah and Dubai Marina?</h3>
-                    <p class="text-gray-500 text-xs font-light leading-relaxed">Yes, we provide specialized delivery to all prestigious residential areas, including Palm Jumeirah villas, Dubai Marina penthouses, and Emirates Hills.</p>
-                </div>
-                <div class="border-b border-white/5 pb-6">
-                    <h3 class="text-[#c6a75e] text-sm uppercase tracking-widest mb-3">Can I schedule a specific delivery time?</h3>
-                    <p class="text-gray-500 text-xs font-light leading-relaxed">Absolutely. Our floral concierge can coordinate specific delivery slots to ensure your surprise arrives at the perfect moment.</p>
-                </div>
-            </div>
+            <h2 class="text-[#c6a75e] luxury-serif italic text-3xl mt-16 mb-8">Serving Dubai's Most Prestigious Districts</h2>
+            <p class="mb-6">
+                Our floral concierge team is specialized in white-glove delivery to the city's most exclusive hubs. We provide guaranteed <strong>same-day delivery</strong> to:
+            </p>
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-[10px] tracking-[0.3em] uppercase text-gray-500 mb-12">
+                <li><span class="text-[#c6a75e]">✦</span> Palm Jumeirah Villas & Resorts</li>
+                <li><span class="text-[#c6a75e]">✦</span> Emirates Hills Private Estates</li>
+                <li><span class="text-[#c6a75e]">✦</span> Downtown Dubai & Burj Khalifa</li>
+                <li><span class="text-[#c6a75e]">✦</span> Dubai Marina & JBR Penthouses</li>
+                <li><span class="text-[#c6a75e]">✦</span> Business Bay & DIFC Corporate Suites</li>
+            </ul>
+            <p>
+                Whether you are planning a surprise at a luxury hotel or sending a corporate gesture to a high-rise office, Venus Fleur is the definitive choice for <strong>premium floral logistics in the UAE</strong>.
+            </p>
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="py-32 px-10 md:px-20 bg-black text-center border-t border-white/5">
         <h2 class="luxury-serif text-3xl tracking-[0.3em] text-[#c6a75e] mb-16 font-light uppercase">Venus Fleur</h2>
-        <div class="flex flex-wrap justify-center gap-12 text-[9px] tracking-[0.4em] text-gray-600 uppercase mb-20">
+        <div class="flex flex-wrap justify-center gap-12 text-[9px] tracking-[0.4em] text-gray-600 uppercase mb-8">
             <a href="index.html" class="hover:text-white transition">Home</a>
             <a href="anniversary-flowers-dubai.html" class="hover:text-white transition">Anniversary</a>
             <a href="wedding-flowers-dubai.html" class="hover:text-white transition">Weddings</a>
@@ -198,28 +135,19 @@
             <a href="flower-delivery-dubai.html" class="hover:text-white transition">Delivery</a>
             <a href="contact.html" class="hover:text-white transition">Contact</a>
         </div>
+        <a href="https://g.page/r/CUrPNVPDSYpMEAI/review" target="_blank" class="text-[#c6a75e] text-[9px] tracking-[0.4em] uppercase hover:opacity-70 transition mb-8 block">⭐ Rate us on Google</a>
         <p class="text-[8px] tracking-[0.6em] text-gray-800 uppercase font-light">&copy; 2026 Venus Fleur Dubai. All Rights Reserved.</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1500, once: true });
-
         const cursor = document.getElementById('cursor');
         const follower = document.getElementById('cursor-follower');
-        let rafId;
-
-        // requestAnimationFrame — smoother than setTimeout
         window.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-            cancelAnimationFrame(rafId);
-            rafId = requestAnimationFrame(() => {
-                follower.style.left = e.clientX + 'px';
-                follower.style.top = e.clientY + 'px';
-            });
+            cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px';
+            setTimeout(() => { follower.style.left = e.clientX + 'px'; follower.style.top = e.clientY + 'px'; }, 50);
         });
-
         document.querySelectorAll('a, button').forEach(el => {
             el.addEventListener('mouseenter', () => { cursor.classList.add('cursor-active'); follower.style.opacity = "0"; });
             el.addEventListener('mouseleave', () => { cursor.classList.remove('cursor-active'); follower.style.opacity = "1"; });
