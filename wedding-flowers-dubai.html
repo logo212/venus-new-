@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO MASTER TAGS -->
     <title>Luxury Wedding Flowers Dubai | Bespoke Bridal Florals | Venus Fleur</title>
     <meta name="description" content="Transform your Dubai wedding with Venus Fleur. We specialize in luxury bridal bouquets, event floral design, and eternal rose installations for prestigious venues.">
     <link rel="canonical" href="https://venusfleur.com/wedding-flowers-dubai.html" />
 
-    <!-- SOCIAL MEDIA SHARE (OG TAGS) -->
+    <!-- OG TAGS -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Luxury Wedding Flowers Dubai | Venus Fleur" />
     <meta property="og:description" content="Bespoke floral design for Dubai's most iconic weddings. Eternal roses that stay perfect throughout your celebration." />
     <meta property="og:image" content="https://venusfleur.com/luxury-wedding-flowers-dubai.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:url" content="https://venusfleur.com/wedding-flowers-dubai.html" />
 
-    <!-- ADVANCED SCHEMA JSON-LD -->
+    <!-- SCHEMA: Florist + openingHours -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -25,17 +26,53 @@
       "telephone": "+971505106523",
       "url": "https://venusfleur.com/wedding-flowers-dubai.html",
       "image": "https://venusfleur.com/luxury-wedding-flowers-dubai.jpg",
-      "areaServed": [
-        {"@type": "City", "name": "Dubai"},
-        {"@type": "City", "name": "Palm Jumeirah"},
-        {"@type": "City", "name": "Jumeirah Bay"}
-      ],
+      "areaServed": ["Dubai", "Palm Jumeirah", "Jumeirah Bay"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Business Bay",
+        "addressLocality": "Dubai",
+        "addressCountry": "AE"
+      },
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
         "opens": "09:00",
         "closes": "21:00"
       }
+    }
+    </script>
+
+    <!-- SCHEMA: FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do you provide floral decor for wedding venues in Dubai?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we offer full-service floral design for venues across Dubai, including hotels, private villas, and outdoor desert ceremonies."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use preserved roses for my bridal bouquet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. Preserved roses are a popular choice for Dubai brides as they remain perfect in the heat and serve as a beautiful keepsake after the wedding."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How far in advance should I book my wedding flowers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We recommend booking your consultation at least 4-6 weeks in advance to ensure availability and personalized curation for your special day."
+          }
+        }
+      ]
     }
     </script>
 
@@ -46,12 +83,16 @@
 
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #050505; color: white; scroll-behavior: smooth; overflow-x: hidden; cursor: none; }
+
+        /* MOBILE CURSOR FIX */
+        @media (pointer: coarse) { body { cursor: auto; } #cursor, #cursor-follower { display: none; } }
+
         .luxury-serif { font-family: 'Playfair Display', serif; }
         .gold-gradient { background: linear-gradient(135deg, #c6a75e 0%, #e6c97a 50%, #b8860b 100%); }
         .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.05); }
         .site-frame { position: fixed; top: 20px; left: 20px; right: 20px; bottom: 20px; border: 1px solid rgba(198, 167, 94, 0.15); pointer-events: none; z-index: 999; }
         #cursor { position: fixed; width: 8px; height: 8px; background: #c6a75e; border-radius: 50%; pointer-events: none; z-index: 10000; mix-blend-mode: difference; transition: transform 0.2s ease; }
-        #cursor-follower { position: fixed; width: 40px; height: 40px; border: 1px solid rgba(198, 167, 94, 0.3); border-radius: 50%; pointer-events: none; z-index: 9999; transition: all 0.15s ease-out; }
+        #cursor-follower { position: fixed; width: 40px; height: 40px; border: 1px solid rgba(198, 167, 94, 0.3); border-radius: 50%; pointer-events: none; z-index: 9999; }
         .cursor-active { transform: scale(1.5); background: #c6a75e !important; border: none !important; }
         .nav-link { letter-spacing: 0.2em; font-size: 9px; text-transform: uppercase; transition: 0.4s; font-weight: 300; }
         .logo-container { width: 60px; height: 60px; border-radius: 50%; border: 1px solid rgba(198, 167, 94, 0.4); display: flex; align-items: center; justify-content: center; background: #000; color: #c6a75e; font-family: 'Playfair Display', serif; font-weight: bold; font-size: 22px; }
@@ -65,9 +106,7 @@
 
     <!-- NAVBAR -->
     <nav class="fixed w-full z-50 px-10 md:px-20 py-8 flex justify-between items-center bg-black/40 backdrop-blur-md">
-        <div class="flex items-center space-x-6">
-            <a href="index.html" class="logo-container">VF</a>
-        </div>
+        <div class="flex items-center space-x-6"><a href="index.html" class="logo-container">VF</a></div>
         <div class="hidden lg:flex space-x-10">
             <a href="index.html" class="nav-link">Home</a>
             <a href="flower-delivery-dubai.html" class="nav-link">Delivery</a>
@@ -79,7 +118,14 @@
 
     <!-- HERO -->
     <section class="relative h-[70vh] flex items-center justify-center overflow-hidden">
-        <img src="luxury-wedding-flowers-dubai.jpg" class="absolute inset-0 w-full h-full object-cover opacity-30" alt="Luxury Wedding Flowers Dubai - Bespoke Floral Design">
+        <img
+            src="luxury-wedding-flowers-dubai.jpg"
+            width="1200"
+            height="630"
+            loading="lazy"
+            class="absolute inset-0 w-full h-full object-cover opacity-30"
+            alt="Luxury Wedding Flowers Dubai - Bespoke Bridal Floral Design Venus Fleur"
+        >
         <div class="relative z-10 text-center px-6" data-aos="fade-up">
             <h1 class="text-4xl md:text-7xl luxury-serif italic mb-6 leading-tight font-light uppercase tracking-tighter">
                 Luxury Wedding <br> <span class="text-[#c6a75e]">Flowers Dubai</span>
@@ -88,40 +134,58 @@
         </div>
     </section>
 
-    <!-- EXPANDED SEO CONTENT -->
+    <!-- EXPERT CONTENT -->
     <section class="py-32 px-6 md:px-20 max-w-5xl mx-auto text-gray-400 text-sm leading-relaxed">
         <div data-aos="fade-up">
             <h2 class="text-[#c6a75e] luxury-serif italic text-3xl mb-8">Exquisite Floral Design for Dubai's Most Iconic Weddings</h2>
             <p class="mb-6">
                 A wedding in Dubai is a celebration of grandeur and timeless elegance. At <strong>Venus Fleur</strong>, we specialize in providing the most sophisticated <strong>wedding flowers in Dubai</strong>, catering to the city's most prestigious venues. From the breathtaking ballrooms of <strong>Atlantis The Royal</strong> to the private beachfront villas of <strong>Palm Jumeirah</strong>, our floral arrangements are designed to leave a lasting impression.
             </p>
-            <p class="mb-12">
-                We understand that every detail matters. Our master florists collaborate with you to curate <strong>bespoke bridal bouquets</strong> and grand venue installations using our signature <strong>preserved eternal roses</strong>. These roses maintain their natural beauty throughout your entire celebration and serve as a stunning memento for years to come, symbolizing a love that never fades.
+            <p class="mb-6">
+                We understand that every detail matters. Our master florists collaborate with you to curate <strong>bespoke bridal bouquets</strong> and grand venue installations using our signature <strong>preserved eternal roses</strong>. These roses maintain their natural beauty throughout your entire celebration — explore our full collection of <a href="index.html" class="text-[#c6a75e] hover:opacity-70 transition">luxury preserved roses</a> to find your perfect arrangement.
             </p>
-            
-            <!-- CTA CONVERSION FIX -->
+            <p class="mb-12">
+                Beyond the bouquet, we design complete floral environments. Whether you need an intimate <a href="anniversary-flowers-dubai.html" class="text-[#c6a75e] hover:opacity-70 transition">anniversary floral setup</a> or a grand wedding installation, our team handles every detail. After your celebration, we also offer <a href="flower-delivery-dubai.html" class="text-[#c6a75e] hover:opacity-70 transition">same-day flower delivery in Dubai</a> for thank-you gifts to your guests.
+            </p>
+
             <div class="text-center my-20">
                 <h3 class="text-white luxury-serif italic text-2xl mb-8">Plan Your Dream Wedding Decor</h3>
                 <a href="https://wa.me/971505106523" target="_blank" class="gold-gradient px-14 py-5 text-black font-bold uppercase text-[10px] tracking-[0.4em] hover:scale-105 transition duration-500 shadow-2xl">
                     Book Your Consultation via WhatsApp
                 </a>
             </div>
+        </div>
 
-            <h2 class="text-[#c6a75e] luxury-serif italic text-3xl mt-16 mb-8">Serving Dubai's Elite Venues</h2>
-            <p class="mb-6">
-                Our expertise extends to the most exclusive residential and event hubs in the UAE. We provide specialized <strong>wedding flower delivery</strong> to <strong>Emirates Hills, Jumeirah Bay Island, and Downtown Dubai</strong>. Whether you are planning an intimate ceremony or a red-carpet gala, Venus Fleur is the definitive choice for <strong>luxury floral artistry in Dubai</strong>.
-            </p>
+        <!-- FAQ SECTION -->
+        <div class="mt-32 border-t border-white/5 pt-20" data-aos="fade-up">
+            <h2 class="text-3xl luxury-serif italic text-white mb-12 text-center">Wedding Floral FAQ</h2>
+            <div class="space-y-10">
+                <div class="border-b border-white/5 pb-6">
+                    <h3 class="text-[#c6a75e] text-sm uppercase tracking-widest mb-3">Do you provide floral decor for wedding venues in Dubai?</h3>
+                    <p class="text-gray-500 text-xs font-light leading-relaxed">Yes, we offer full-service floral design for venues across Dubai, including hotels, private villas, and outdoor desert ceremonies.</p>
+                </div>
+                <div class="border-b border-white/5 pb-6">
+                    <h3 class="text-[#c6a75e] text-sm uppercase tracking-widest mb-3">Can I use preserved roses for my bridal bouquet?</h3>
+                    <p class="text-gray-500 text-xs font-light leading-relaxed">Absolutely. Preserved roses are a popular choice for Dubai brides as they remain perfect in the heat and serve as a beautiful keepsake after the wedding.</p>
+                </div>
+                <div class="border-b border-white/5 pb-6">
+                    <h3 class="text-[#c6a75e] text-sm uppercase tracking-widest mb-3">How far in advance should I book my wedding flowers?</h3>
+                    <p class="text-gray-500 text-xs font-light leading-relaxed">We recommend booking your consultation at least 4-6 weeks in advance to ensure availability and personalized curation for your special day.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- FOOTER (INTERNAL LINKING FIX) -->
+    <!-- FOOTER -->
     <footer class="py-32 px-10 md:px-20 bg-black text-center border-t border-white/5">
         <h2 class="luxury-serif text-3xl tracking-[0.3em] text-[#c6a75e] mb-16 font-light uppercase">Venus Fleur</h2>
         <div class="flex flex-wrap justify-center gap-12 text-[9px] tracking-[0.4em] text-gray-600 uppercase mb-20">
+            <a href="index.html" class="hover:text-white transition">Home</a>
             <a href="anniversary-flowers-dubai.html" class="hover:text-white transition">Anniversary</a>
             <a href="wedding-flowers-dubai.html" class="hover:text-white transition">Weddings</a>
             <a href="birthday-flowers-dubai.html" class="hover:text-white transition">Birthdays</a>
             <a href="apology-gifts-dubai.html" class="hover:text-white transition">Apology</a>
+            <a href="flower-delivery-dubai.html" class="hover:text-white transition">Delivery</a>
             <a href="contact.html" class="hover:text-white transition">Contact</a>
         </div>
         <p class="text-[8px] tracking-[0.6em] text-gray-800 uppercase font-light">&copy; 2026 Venus Fleur Dubai. All Rights Reserved.</p>
@@ -130,12 +194,22 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1500, once: true });
+
         const cursor = document.getElementById('cursor');
         const follower = document.getElementById('cursor-follower');
+        let rafId;
+
+        // requestAnimationFrame — smoother than setTimeout
         window.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px';
-            setTimeout(() => { follower.style.left = e.clientX + 'px'; follower.style.top = e.clientY + 'px'; }, 50);
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            cancelAnimationFrame(rafId);
+            rafId = requestAnimationFrame(() => {
+                follower.style.left = e.clientX + 'px';
+                follower.style.top = e.clientY + 'px';
+            });
         });
+
         document.querySelectorAll('a, button').forEach(el => {
             el.addEventListener('mouseenter', () => { cursor.classList.add('cursor-active'); follower.style.opacity = "0"; });
             el.addEventListener('mouseleave', () => { cursor.classList.remove('cursor-active'); follower.style.opacity = "1"; });
