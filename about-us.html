@@ -16,7 +16,7 @@
     <meta property="og:image:height" content="630" />
     <meta property="og:url" content="https://venusfleur.com/about-us.html" />
 
-    <!-- SCHEMA JSON-LD -->
+    <!-- SCHEMA: AboutPage + Organization -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -24,8 +24,21 @@
       "mainEntity": {
         "@type": "Organization",
         "name": "Venus Fleur Dubai",
-        "description": "A luxury floral atelier specializing in eternal preserved roses.",
-        "url": "https://venusfleur.com"
+        "description": "A luxury floral atelier specializing in eternal preserved roses and bespoke gifting for Dubai's elite.",
+        "url": "https://venusfleur.com",
+        "telephone": "+971505106523",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Business Bay",
+          "addressLocality": "Dubai",
+          "addressCountry": "AE"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "09:00",
+          "closes": "21:00"
+        }
       }
     }
     </script>
@@ -37,12 +50,13 @@
 
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #050505; color: white; scroll-behavior: smooth; overflow-x: hidden; cursor: none; }
+        @media (pointer: coarse) { body { cursor: auto; } #cursor, #cursor-follower { display: none; } }
         .luxury-serif { font-family: 'Playfair Display', serif; }
         .gold-gradient { background: linear-gradient(135deg, #c6a75e 0%, #e6c97a 50%, #b8860b 100%); }
         .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.05); }
         .site-frame { position: fixed; top: 20px; left: 20px; right: 20px; bottom: 20px; border: 1px solid rgba(198, 167, 94, 0.15); pointer-events: none; z-index: 999; }
-        #cursor { position: fixed; width: 8px; height: 8px; background: #c6a75e; border-radius: 50%; pointer-events: none; z-index: 10000; mix-blend-mode: difference; transition: transform 0.2s ease; }
-        #cursor-follower { position: fixed; width: 40px; height: 40px; border: 1px solid rgba(198, 167, 94, 0.3); border-radius: 50%; pointer-events: none; z-index: 9999; transition: all 0.15s ease-out; }
+        #cursor { position: fixed; width: 8px; height: 8px; background: #c6a75e; border-radius: 50%; pointer-events: none; z-index: 10000; mix-blend-mode: difference; }
+        #cursor-follower { position: fixed; width: 40px; height: 40px; border: 1px solid rgba(198, 167, 94, 0.3); border-radius: 50%; pointer-events: none; z-index: 9999; }
         .cursor-active { transform: scale(1.5); background: #c6a75e !important; border: none !important; }
         .nav-link { letter-spacing: 0.2em; font-size: 9px; text-transform: uppercase; transition: 0.4s; font-weight: 300; }
         .logo-container { width: 60px; height: 60px; border-radius: 50%; border: 1px solid rgba(198, 167, 94, 0.4); display: flex; align-items: center; justify-content: center; background: #000; color: #c6a75e; font-family: 'Playfair Display', serif; font-weight: bold; font-size: 22px; }
@@ -55,10 +69,8 @@
     <div id="cursor-follower"></div>
 
     <!-- NAVBAR -->
-    <nav class="fixed w-full z-50 px-10 md:px-20 py-8 flex justify-between items-center bg-transparent">
-        <div class="flex items-center space-x-6">
-            <a href="index.html" class="logo-container">VF</a>
-        </div>
+    <nav class="fixed w-full z-50 px-10 md:px-20 py-8 flex justify-between items-center bg-black/40 backdrop-blur-md">
+        <div class="flex items-center space-x-6"><a href="index.html" class="logo-container">VF</a></div>
         <div class="hidden lg:flex space-x-10">
             <a href="index.html" class="nav-link">Home</a>
             <a href="flower-delivery-dubai.html" class="nav-link">Delivery</a>
@@ -72,7 +84,9 @@
     <section class="py-48 px-6 text-center max-w-4xl mx-auto">
         <div data-aos="fade-up">
             <p class="text-[#c6a75e] text-[10px] tracking-[0.8em] uppercase mb-8">The Legacy of Venus Fleur</p>
-            <h1 class="text-5xl md:text-8xl luxury-serif italic mb-12 font-light uppercase tracking-tighter">Crafting <br> <span class="text-[#c6a75e]">Eternity</span></h1>
+            <h1 class="text-5xl md:text-8xl luxury-serif italic mb-12 font-light uppercase tracking-tighter">
+                Luxury Florist <br> <span class="text-[#c6a75e]">Dubai</span>
+            </h1>
             <div class="w-24 h-[1px] bg-[#c6a75e] mx-auto mb-12 opacity-30"></div>
             <p class="text-gray-400 text-lg leading-relaxed font-light">
                 Born in the heart of Dubai, <strong>Venus Fleur</strong> was founded on a simple yet profound belief: that luxury gifting should be as enduring as the moments it celebrates.
@@ -80,7 +94,7 @@
         </div>
     </section>
 
-    <!-- STORY CONTENT (400+ WORDS) -->
+    <!-- STORY CONTENT -->
     <section class="py-24 px-6 md:px-20 max-w-7xl mx-auto text-gray-400 text-sm leading-relaxed">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center mb-32">
             <div data-aos="fade-right">
@@ -89,15 +103,33 @@
                     In a city that moves at the speed of light, we chose to focus on what lasts. Venus Fleur is more than a florist; we are a <strong>luxury floral atelier</strong> dedicated to the art of preservation. Our journey began with a mission to source the world's most exquisite roses and transform them into eternal masterpieces that defy the fleeting nature of time.
                 </p>
                 <p class="mb-6">
-                    Today, we serve Dubai's most prestigious districts—from the executive offices of <strong>DIFC</strong> to the private villas of <strong>Palm Jumeirah</strong>. Every box that leaves our studio is a testament to our commitment to quality, sophistication, and the Dubai spirit of excellence. We don't just deliver flowers; we deliver a statement of status and emotion.
+                    Today, we serve Dubai's most prestigious districts — from the executive offices of <strong>DIFC</strong> to the private villas of <strong>Palm Jumeirah</strong>. Every box that leaves our studio is a testament to our commitment to quality, sophistication, and the Dubai spirit of excellence. We don't just deliver flowers; we deliver a statement of status and emotion.
+                </p>
+                <p class="mb-6">
+                    Whether you need <a href="flower-delivery-dubai.html" class="text-[#c6a75e] hover:opacity-70 transition">same-day flower delivery in Dubai</a>, a grand <a href="wedding-flowers-dubai.html" class="text-[#c6a75e] hover:opacity-70 transition">wedding floral installation</a>, a heartfelt <a href="birthday-flowers-dubai.html" class="text-[#c6a75e] hover:opacity-70 transition">birthday surprise</a>, or a sophisticated <a href="corporate-flower-gifts-dubai.html" class="text-[#c6a75e] hover:opacity-70 transition">corporate gifting solution</a> — Venus Fleur is Dubai's definitive answer to luxury floristry.
                 </p>
                 <p>
-                    Our signature <strong>preserved roses</strong> undergo a specialized natural treatment in France, ensuring they maintain their natural texture and radiance for over a year. This commitment to <strong>sustainable luxury</strong> is what sets us apart as the definitive choice for the UAE's elite.
+                    For those delicate moments that require the perfect gesture, explore our <a href="apology-gifts-dubai.html" class="text-[#c6a75e] hover:opacity-70 transition">luxury apology gifts</a> or our <a href="anniversary-flowers-dubai.html" class="text-[#c6a75e] hover:opacity-70 transition">anniversary flower collection</a> — each crafted to speak when words fall short.
                 </p>
             </div>
             <div class="glass p-4 rounded-3xl" data-aos="fade-left">
-                <img src="luxury-preserved-roses-dubai.jpg" class="rounded-2xl w-full h-[500px] object-cover shadow-2xl grayscale hover:grayscale-0 transition duration-1000" alt="Venus Fleur Studio Dubai">
+                <img
+                    src="luxury-preserved-roses-dubai.jpg"
+                    width="1200"
+                    height="630"
+                    loading="lazy"
+                    class="rounded-2xl w-full h-[500px] object-cover shadow-2xl grayscale hover:grayscale-0 transition duration-1000"
+                    alt="Venus Fleur Luxury Florist Dubai - Preserved Roses Atelier"
+                >
             </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center mt-8 mb-32" data-aos="fade-up">
+            <h3 class="text-white luxury-serif italic text-2xl mb-8">Experience the Venus Fleur Difference</h3>
+            <a href="https://wa.me/971505106523" target="_blank" class="gold-gradient px-14 py-5 text-black font-bold uppercase text-[10px] tracking-[0.4em] hover:scale-105 transition duration-500 shadow-2xl">
+                Contact Our Floral Concierge
+            </a>
         </div>
     </section>
 
@@ -105,10 +137,12 @@
     <footer class="py-32 px-10 md:px-20 bg-black text-center border-t border-white/5">
         <h2 class="luxury-serif text-3xl tracking-[0.3em] text-[#c6a75e] mb-16 font-light uppercase">Venus Fleur</h2>
         <div class="flex flex-wrap justify-center gap-12 text-[9px] tracking-[0.4em] text-gray-600 uppercase mb-20">
+            <a href="index.html" class="hover:text-white transition">Home</a>
             <a href="anniversary-flowers-dubai.html" class="hover:text-white transition">Anniversary</a>
             <a href="wedding-flowers-dubai.html" class="hover:text-white transition">Weddings</a>
             <a href="birthday-flowers-dubai.html" class="hover:text-white transition">Birthdays</a>
             <a href="apology-gifts-dubai.html" class="hover:text-white transition">Apology</a>
+            <a href="flower-delivery-dubai.html" class="hover:text-white transition">Delivery</a>
             <a href="contact.html" class="hover:text-white transition">Contact</a>
         </div>
         <p class="text-[8px] tracking-[0.6em] text-gray-800 uppercase font-light">&copy; 2026 Venus Fleur Dubai. All Rights Reserved.</p>
@@ -117,11 +151,28 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1500, once: true });
+
         const cursor = document.getElementById('cursor');
         const follower = document.getElementById('cursor-follower');
+        let mouseX = 0, mouseY = 0;
+        let followerX = 0, followerY = 0;
+
         window.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px';
-            setTimeout(() => { follower.style.left = e.clientX + 'px'; follower.style.top = e.clientY + 'px'; }, 50);
+            mouseX = e.clientX; mouseY = e.clientY;
+            cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+        });
+
+        function animate() {
+            followerX += (mouseX - followerX) * 0.1;
+            followerY += (mouseY - followerY) * 0.1;
+            follower.style.transform = `translate3d(${followerX - 20}px, ${followerY - 20}px, 0)`;
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => { cursor.classList.add('cursor-active'); follower.style.opacity = "0"; });
+            el.addEventListener('mouseleave', () => { cursor.classList.remove('cursor-active'); follower.style.opacity = "1"; });
         });
     </script>
 </body>
