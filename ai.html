@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Venus Fleur AI — Love Tools</title>
+<meta name="description" content="AI Love Message Writer & Toxic Relationship Predictor by Venus Fleur">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+  :root {
+    --black: #080808;
+    --deep: #0e0e0e;
+    --card: #131313;
+    --border: #2a2a2a;
+    --gold: #c9a84c;
+    --gold-light: #e2c97e;
+    --gold-dim: rgba(201,168,76,0.15);
+    --white: #f5f0e8;
+    --white-dim: rgba(245,240,232,0.5);
+    --white-muted: rgba(245,240,232,0.25);
+    --rose: #c97070;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: 
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(201,168,76,0.07) 0%, transparent 60%),
+      url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  header {
+    text-align: center;
+    padding: 60px 20px 40px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .brand-line {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    opacity: 0.8;
+  }
+
+  .main-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 8vw, 80px);
+    font-weight: 300;
+    letter-spacing: -1px;
+    line-height: 1;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  .main-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .subtitle {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--white-dim);
+    margin-top: 16px;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0 auto 50px;
+    max-width: 300px;
+  }
+  .divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .divider-diamond {
+    width: 6px; height: 6px;
+    background: var(--gold);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin: 0 auto 50px;
+    max-width: 500px;
+    border: 1px solid var(--border);
+    position: relative;
+    z-index: 1;
+  }
+
+  .tab-btn {
+    flex: 1;
+    padding: 16px 24px;
+    background: transparent;
+    border: none;
+    color: var(--white-dim);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+  }
+
+  .tab-btn.active {
+    color: var(--gold);
+    background: var(--gold-dim);
+  }
+
+  .tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .tab-btn:first-child { border-right: 1px solid var(--border); }
+
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .tool-panel { display: none; animation: fadeIn 0.5s ease; }
+  .tool-panel.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .tool-header { text-align: center; margin-bottom: 40px; }
+
+  .tool-tag {
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.7;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .tool-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.1;
+  }
+
+  .tool-desc {
+    font-size: 11px;
+    color: var(--white-muted);
+    margin-top: 10px;
+    letter-spacing: 1px;
+    line-height: 1.8;
+  }
+
+  .form-group { margin-bottom: 24px; }
+
+  .form-label {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+    opacity: 0.8;
+  }
+
+  .form-input, .form-select {
+    width: 100%;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    padding: 16px 20px;
+    outline: none;
+    transition: border-color 0.3s;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .form-input:focus, .form-select:focus { border-color: var(--gold); }
+  .form-input::placeholder { color: var(--white-muted); }
+
+  .select-wrap { position: relative; }
+  .select-wrap::after {
+    content: '◆';
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gold);
+    font-size: 8px;
+    pointer-events: none;
+  }
+
+  .form-select option { background: var(--deep); color: var(--white); }
+
+  .lang-toggle {
+    display: flex;
+    gap: 0;
+    margin-bottom: 28px;
+    border: 1px solid var(--border);
+    width: fit-content;
+  }
+
+  .lang-btn {
+    padding: 10px 20px;
+    background: transparent;
+    border: none;
+    color: var(--white-dim);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .lang-btn.active { background: var(--gold-dim); color: var(--gold); }
+  .lang-btn:first-child { border-right: 1px solid var(--border); }
+
+  .btn-generate {
+    width: 100%;
+    padding: 20px;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    margin-top: 8px;
+  }
+
+  .btn-generate::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gold);
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+    z-index: 0;
+  }
+
+  .btn-generate:hover::before { transform: translateX(0); }
+  .btn-generate:hover { color: var(--black); }
+  .btn-generate span { position: relative; z-index: 1; }
+  .btn-generate:disabled { opacity: 0.4; cursor: not-allowed; }
+  .btn-generate:disabled::before { display: none; }
+
+  .loading { text-align: center; padding: 50px; display: none; }
+
+  .loading-dots { display: flex; justify-content: center; gap: 8px; margin-bottom: 20px; }
+
+  .loading-dots span {
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: pulse 1.4s ease infinite;
+  }
+
+  .loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+  .loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+  @keyframes pulse {
+    0%, 60%, 100% { opacity: 0.2; transform: scale(0.8); }
+    30% { opacity: 1; transform: scale(1); }
+  }
+
+  .loading-text {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.6;
+  }
+
+  .output-section { display: none; margin-top: 50px; }
+
+  .message-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 50px 40px;
+    position: relative;
+    text-align: center;
+  }
+
+  .message-card::before {
+    content: '';
+    position: absolute;
+    top: 8px; left: 8px;
+    right: -8px; bottom: -8px;
+    border: 1px solid var(--gold);
+    opacity: 0.2;
+    pointer-events: none;
+  }
+
+  .message-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 60px; height: 1px;
+    background: var(--gold);
+  }
+
+  .card-occasion-label {
+    font-size: 8px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 8px;
+  }
+
+  .card-recipient {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: var(--white-dim);
+    margin-bottom: 30px;
+    font-style: italic;
+  }
+
+  .card-message-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(18px, 3vw, 24px);
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--white);
+    font-style: italic;
+  }
+
+  .card-brand {
+    margin-top: 35px;
+    font-size: 8px;
+    letter-spacing: 5px;
+    color: var(--gold);
+    opacity: 0.5;
+    text-transform: uppercase;
+  }
+
+  .toxic-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 40px;
+    position: relative;
+    text-align: center;
+  }
+
+  .toxic-header-label {
+    font-size: 8px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.6;
+    margin-bottom: 6px;
+  }
+
+  .toxic-names {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 4vw, 32px);
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+  }
+
+  .toxic-names .heart { color: var(--rose); }
+
+  .toxic-verdict {
+    background: rgba(201,168,76,0.05);
+    border: 1px solid rgba(201,168,76,0.2);
+    padding: 24px 28px;
+    margin-bottom: 24px;
+  }
+
+  .verdict-label {
+    font-size: 8px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.6;
+    margin-bottom: 10px;
+  }
+
+  .verdict-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(16px, 2.5vw, 20px);
+    font-style: italic;
+    color: var(--white);
+    line-height: 1.6;
+  }
+
+  .toxic-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .stat-box {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--border);
+    padding: 18px 14px;
+    text-align: center;
+  }
+
+  .stat-label {
+    font-size: 7px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--white-muted);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .stat-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--gold);
+    display: block;
+    line-height: 1;
+  }
+
+  .stat-sub {
+    font-size: 9px;
+    color: var(--white-muted);
+    margin-top: 4px;
+    display: block;
+  }
+
+  .toxic-warning {
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: var(--white-muted);
+    text-transform: uppercase;
+    margin-top: 8px;
+    opacity: 0.5;
+  }
+
+  .toxic-brand {
+    margin-top: 20px;
+    font-size: 8px;
+    letter-spacing: 5px;
+    color: var(--gold);
+    opacity: 0.4;
+    text-transform: uppercase;
+  }
+
+  .action-buttons { display: flex; gap: 12px; margin-top: 24px; }
+
+  .btn-action {
+    flex: 1;
+    padding: 16px;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--white-dim);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .btn-action:hover { border-color: var(--gold); color: var(--gold); }
+
+  .btn-action.primary {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: var(--gold-dim);
+  }
+
+  .btn-action.primary:hover { background: var(--gold); color: var(--black); }
+
+  .reset-link { text-align: center; margin-top: 30px; }
+
+  .reset-link button {
+    background: none;
+    border: none;
+    color: var(--white-muted);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  .reset-link button:hover { color: var(--gold); }
+
+  .toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: var(--card);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 14px 30px;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: transform 0.4s ease;
+    z-index: 999;
+    white-space: nowrap;
+  }
+
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid var(--border);
+    font-size: 8px;
+    letter-spacing: 3px;
+    color: var(--white-muted);
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (max-width: 480px) {
+    .message-card, .toxic-card { padding: 36px 24px; }
+    .action-buttons { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <p class="brand-line">Venus Fleur — Powered by AI</p>
+  <h1 class="main-title">The <em>Love</em> Oracle</h1>
+  <div class="divider"><div class="divider-diamond"></div></div>
+  <p class="subtitle">Craft messages. Reveal truths.</p>
+</header>
+
+<div class="tabs">
+  <button class="tab-btn active" onclick="switchTab('writer')">💌 Message Writer</button>
+  <button class="tab-btn" onclick="switchTab('predictor')">🔮 Toxic Predictor</button>
+</div>
+
+<div class="container">
+
+  <!-- TOOL 1: MESSAGE WRITER -->
+  <div class="tool-panel active" id="panel-writer">
+    <div class="tool-header">
+      <span class="tool-tag">Tool 01 — AI Powered</span>
+      <h2 class="tool-title">Message<br>Writer</h2>
+      <p class="tool-desc">A bespoke message, crafted for the one you love.<br>Choose your occasion. Let the words find their way.</p>
+    </div>
+
+    <div id="writer-form">
+      <div style="margin-bottom:20px;">
+        <span class="form-label">Language — اللغة</span>
+        <div class="lang-toggle">
+          <button class="lang-btn active" onclick="setLang(this,'EN')">EN</button>
+          <button class="lang-btn" onclick="setLang(this,'AR')">AR</button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Their Name — اسمهم</label>
+        <input type="text" class="form-input" id="w-recipient" placeholder="Sarah...">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Occasion — المناسبة</label>
+        <div class="select-wrap">
+          <select class="form-select" id="w-occasion">
+            <option value="Birthday">🎂 Birthday — عيد ميلاد</option>
+            <option value="Sorry">🙏 Sorry — اعتذار</option>
+            <option value="Anniversary">💍 Anniversary — ذكرى</option>
+            <option value="Love">❤️ Love — حب</option>
+            <option value="Miss You">🌙 Miss You — مشتاق</option>
+            <option value="Good Morning">🌅 Good Morning — صباح الخير</option>
+            <option value="Good Night">🌙 Good Night — تصبح على خير</option>
+            <option value="Thank You">🌹 Thank You — شكر</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="btn-generate" id="w-btn" onclick="generateMessage()">
+        <span>✦ Generate Message — توليد رسالة</span>
+      </button>
+    </div>
+
+    <div class="loading" id="w-loading">
+      <div class="loading-dots"><span></span><span></span><span></span></div>
+      <p class="loading-text">Crafting your words...</p>
+    </div>
+
+    <div class="output-section" id="w-output">
+      <div class="message-card" id="w-card">
+        <p class="card-occasion-label" id="w-card-occasion">Birthday</p>
+        <p class="card-recipient" id="w-card-recipient">For Sarah</p>
+        <p class="card-message-text" id="w-card-message"></p>
+        <p class="card-brand">Venus Fleur — AI Love Messages</p>
+      </div>
+      <div class="action-buttons">
+        <button class="btn-action" onclick="copyMessage()">📋 Copy</button>
+        <button class="btn-action primary" onclick="saveCard('w-card')">📸 Save Card</button>
+      </div>
+      <div class="reset-link">
+        <button onclick="resetWriter()">← Write Another</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOOL 2: TOXIC PREDICTOR -->
+  <div class="tool-panel" id="panel-predictor">
+    <div class="tool-header">
+      <span class="tool-tag">Tool 02 — Brutally Honest AI</span>
+      <h2 class="tool-title">Toxic<br>Predictor</h2>
+      <p class="tool-desc">Enter two names. The AI sees all.<br>It may flatter. It may destroy. You've been warned.</p>
+    </div>
+
+    <div id="predictor-form">
+      <div style="margin-bottom:20px;">
+        <span class="form-label">Language — اللغة</span>
+        <div class="lang-toggle">
+          <button class="lang-btn active" onclick="setLang2(this,'EN')">EN</button>
+          <button class="lang-btn" onclick="setLang2(this,'AR')">AR</button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Your Name — اسمك</label>
+        <input type="text" class="form-input" id="p-name1" placeholder="Mohammed...">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Their Name — اسمهم</label>
+        <input type="text" class="form-input" id="p-name2" placeholder="Sarah...">
+      </div>
+
+      <button class="btn-generate" id="p-btn" onclick="generatePrediction()">
+        <span>🔮 Reveal the Truth — اكشف الحقيقة</span>
+      </button>
+    </div>
+
+    <div class="loading" id="p-loading">
+      <div class="loading-dots"><span></span><span></span><span></span></div>
+      <p class="loading-text" id="p-loading-text">Reading your fate...</p>
+    </div>
+
+    <div class="output-section" id="p-output">
+      <div class="toxic-card" id="p-card">
+        <p class="toxic-header-label">🔮 Future Relationship Report</p>
+        <p class="toxic-names" id="p-names">Mohammed <span class="heart">❤️</span> Sarah</p>
+        <div class="toxic-verdict">
+          <p class="verdict-label">AI Verdict</p>
+          <p class="verdict-text" id="p-verdict"></p>
+        </div>
+        <div class="toxic-stats">
+          <div class="stat-box">
+            <span class="stat-label">Chaos Level</span>
+            <span class="stat-value" id="p-chaos">--</span>
+            <span class="stat-sub">out of 100</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-label">Next Drama</span>
+            <span class="stat-value" id="p-drama">--</span>
+            <span class="stat-sub">days</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-label">Ex Return %</span>
+            <span class="stat-value" id="p-ex">--</span>
+            <span class="stat-sub">probability</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-label">Survival Rate</span>
+            <span class="stat-value" id="p-survival">--</span>
+            <span class="stat-sub">this year</span>
+          </div>
+        </div>
+        <p class="toxic-warning" id="p-twist">⚠️ For entertainment only</p>
+        <p class="toxic-brand">Venus Fleur — AI Toxic Oracle</p>
+      </div>
+      <div class="action-buttons">
+        <button class="btn-action primary" onclick="saveCard('p-card')">📸 Save & Share</button>
+      </div>
+      <div class="reset-link">
+        <button onclick="resetPredictor()">← Try Again</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<footer>Venus Fleur © 2025 — AI Love Tools — venusfleur.com/ai</footer>
+
+<script>
+const GEMINI_KEY = 'AIzaSyC_REPLACE_WITH_YOUR_KEY';
+const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_KEY}`;
+
+let writerLang = 'EN';
+let predictorLang = 'EN';
+
+function setLang(btn, lang) {
+  writerLang = lang;
+  btn.closest('.lang-toggle').querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function setLang2(btn, lang) {
+  predictorLang = lang;
+  btn.closest('.lang-toggle').querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function switchTab(tab) {
+  document.querySelectorAll('.tab-btn').forEach((b, i) => {
+    b.classList.toggle('active', (i === 0 && tab === 'writer') || (i === 1 && tab === 'predictor'));
+  });
+  document.querySelectorAll('.tool-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById(`panel-${tab}`).classList.add('active');
+}
+
+async function callGemini(prompt) {
+  const res = await fetch(GEMINI_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      contents: [{ parts: [{ text: prompt }] }],
+      generationConfig: { temperature: 1.1, maxOutputTokens: 400 }
+    })
+  });
+  const data = await res.json();
+  if (data.candidates && data.candidates[0]) {
+    return data.candidates[0].content.parts[0].text.trim();
+  }
+  throw new Error('No response');
+}
+
+async function generateMessage() {
+  const recipient = document.getElementById('w-recipient').value.trim();
+  const occasion = document.getElementById('w-occasion').value;
+  if (!recipient) { showToast('Please enter a name ✦'); return; }
+
+  const btn = document.getElementById('w-btn');
+  btn.disabled = true;
+  document.getElementById('writer-form').style.opacity = '0.3';
+  document.getElementById('w-loading').style.display = 'block';
+  document.getElementById('w-output').style.display = 'none';
+
+  const langInstruction = writerLang === 'AR'
+    ? 'اكتب الرسالة باللغة العربية الفصحى أو الدارجة المغربية.'
+    : 'Write the message in English.';
+
+  const prompt = `You are a luxury romantic message writer for Venus Fleur, a premium flower brand.
+Write a short, heartfelt, poetic message (40-70 words) for the occasion: ${occasion}.
+The message is for someone named "${recipient}".
+${langInstruction}
+Make it emotional, elegant, and memorable. No hashtags, no emojis, no quotation marks. Just pure poetry.
+Return ONLY the message text, nothing else.`;
+
+  try {
+    const message = await callGemini(prompt);
+    document.getElementById('w-card-occasion').textContent = occasion.toUpperCase();
+    document.getElementById('w-card-recipient').textContent = writerLang === 'AR' ? `إلى ${recipient}` : `For ${recipient}`;
+    document.getElementById('w-card-message').textContent = message;
+    document.getElementById('w-output').style.display = 'block';
+  } catch(e) {
+    showToast('Something went wrong. Try again.');
+    btn.disabled = false;
+    document.getElementById('writer-form').style.opacity = '1';
+  } finally {
+    document.getElementById('w-loading').style.display = 'none';
+  }
+}
+
+async function generatePrediction() {
+  const name1 = document.getElementById('p-name1').value.trim();
+  const name2 = document.getElementById('p-name2').value.trim();
+  if (!name1 || !name2) { showToast('Enter both names ✦'); return; }
+
+  const btn = document.getElementById('p-btn');
+  btn.disabled = true;
+  document.getElementById('predictor-form').style.opacity = '0.3';
+  document.getElementById('p-loading').style.display = 'block';
+  document.getElementById('p-output').style.display = 'none';
+
+  const loadingTexts = [
+    'Reading your fate...', 'Consulting the oracle...',
+    'Accessing forbidden records...', 'Analyzing relationship DNA...',
+    'الذكاء الاصطناعي يشوف...', 'جاري كشف الأسرار...'
+  ];
+  let li = 0;
+  const loadInterval = setInterval(() => {
+    document.getElementById('p-loading-text').textContent = loadingTexts[li % loadingTexts.length];
+    li++;
+  }, 1200);
+
+  const langInstruction = predictorLang === 'AR'
+    ? 'أجب بالدارجة المغربية أو العربية. كن مضحكًا وصادمًا.'
+    : 'Respond in English.';
+
+  const styles = ['brutal', 'mysterious', 'plot_twist', 'fake_scientific', 'savage'];
+  const style = styles[Math.floor(Math.random() * styles.length)];
+
+  const styleGuide = {
+    brutal: "Be brutally honest and savage. Don't hold back.",
+    mysterious: "Be cryptic and mysterious like a fortune teller.",
+    plot_twist: "Include a shocking unexpected plot twist about their relationship.",
+    fake_scientific: "Sound like a fake scientist analyzing their relationship data.",
+    savage: `Mention that someone with a name starting with '${name2[0]}' keeps thinking about their ex.`
+  };
+
+  const prompt = `You are a toxic, brutally honest AI relationship oracle. You predict the future of relationships in a funny, shocking, and viral way.
+
+${name1} and ${name2} asked you about their relationship future.
+Style: ${styleGuide[style]}
+${langInstruction}
+
+Respond ONLY with a valid JSON object, no markdown, no explanation:
+{
+  "verdict": "one shocking sentence verdict (max 20 words)",
+  "chaos": number between 45 and 99,
+  "drama_days": number between 1 and 30,
+  "ex_return": number between 40 and 95,
+  "survival": number between 10 and 85,
+  "twist": "one extra savage/funny/shocking detail (max 15 words)"
+}`;
+
+  try {
+    let raw = await callGemini(prompt);
+    raw = raw.replace(/```json|```/g, '').trim();
+    const data = JSON.parse(raw);
+
+    document.getElementById('p-names').innerHTML = `${name1} <span class="heart">❤️</span> ${name2}`;
+    document.getElementById('p-verdict').textContent = data.verdict;
+    document.getElementById('p-chaos').textContent = data.chaos + '%';
+    document.getElementById('p-drama').textContent = data.drama_days;
+    document.getElementById('p-ex').textContent = data.ex_return + '%';
+    document.getElementById('p-survival').textContent = data.survival + '%';
+    document.getElementById('p-twist').textContent = '⚠️ ' + data.twist;
+    document.getElementById('p-output').style.display = 'block';
+  } catch(e) {
+    showToast('The oracle is confused. Try again 🔮');
+    btn.disabled = false;
+    document.getElementById('predictor-form').style.opacity = '1';
+  } finally {
+    clearInterval(loadInterval);
+    document.getElementById('p-loading').style.display = 'none';
+  }
+}
+
+function copyMessage() {
+  const text = document.getElementById('w-card-message').textContent;
+  navigator.clipboard.writeText(text).then(() => showToast('Copied to clipboard ✦'));
+}
+
+async function saveCard(cardId) {
+  showToast('Preparing image...');
+  const card = document.getElementById(cardId);
+  try {
+    const canvas = await html2canvas(card, {
+      backgroundColor: '#131313',
+      scale: 2,
+      useCORS: true,
+      logging: false
+    });
+    const link = document.createElement('a');
+    link.download = `venusfleur-${cardId === 'w-card' ? 'message' : 'prediction'}-${Date.now()}.png`;
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+    showToast('Saved! Ready to share 📸');
+  } catch(e) {
+    showToast('Save failed. Try screenshot.');
+  }
+}
+
+function resetWriter() {
+  document.getElementById('w-output').style.display = 'none';
+  document.getElementById('writer-form').style.opacity = '1';
+  document.getElementById('w-btn').disabled = false;
+  document.getElementById('w-recipient').value = '';
+}
+
+function resetPredictor() {
+  document.getElementById('p-output').style.display = 'none';
+  document.getElementById('predictor-form').style.opacity = '1';
+  document.getElementById('p-btn').disabled = false;
+  document.getElementById('p-name1').value = '';
+  document.getElementById('p-name2').value = '';
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+</script>
+</body>
+</html>
