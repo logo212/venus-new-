@@ -763,21 +763,15 @@ function switchTab(tab) {
 }
 
 async function callGemini(prompt) {
-  const res = await fetch(GEMINI_URL, {
+  const res = await fetch('/api/generate', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      contents: [{ parts: [{ text: prompt }] }],
-      generationConfig: { temperature: 1.1, maxOutputTokens: 400 }
-    })
+    body: JSON.stringify({ prompt })
   });
   const data = await res.json();
-  if (data.candidates && data.candidates[0]) {
-    return data.candidates[0].content.parts[0].text.trim();
-  }
+  if (data.result) return data.result;
   throw new Error('No response');
 }
-
 async function generateMessage() {
   const recipient = document.getElementById('w-recipient').value.trim();
   const occasion = document.getElementById('w-occasion').value;
