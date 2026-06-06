@@ -1,9 +1,15 @@
-export default async function handler(req, res) {
+const fetch = require('node-fetch');
+
+module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
   const { prompt } = req.body;
+
+  if (!prompt) {
+    return res.status(400).json({ error: 'No prompt provided' });
+  }
 
   try {
     const response = await fetch(
@@ -24,6 +30,6 @@ export default async function handler(req, res) {
 
     res.status(200).json({ result: text });
   } catch (e) {
-    res.status(500).json({ error: 'Gemini error' });
+    res.status(500).json({ error: e.message });
   }
-}
+};
