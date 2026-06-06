@@ -72,10 +72,7 @@
     margin-bottom: 12px;
   }
 
-  .main-title em {
-    font-style: italic;
-    color: var(--gold);
-  }
+  .main-title em { font-style: italic; color: var(--gold); }
 
   .subtitle {
     font-size: 11px;
@@ -131,10 +128,7 @@
     position: relative;
   }
 
-  .tab-btn.active {
-    color: var(--gold);
-    background: var(--gold-dim);
-  }
+  .tab-btn.active { color: var(--gold); background: var(--gold-dim); }
 
   .tab-btn.active::after {
     content: '';
@@ -291,16 +285,13 @@
   .btn-generate:disabled::before { display: none; }
 
   .loading { text-align: center; padding: 50px; display: none; }
-
   .loading-dots { display: flex; justify-content: center; gap: 8px; margin-bottom: 20px; }
-
   .loading-dots span {
     width: 6px; height: 6px;
     background: var(--gold);
     border-radius: 50%;
     animation: pulse 1.4s ease infinite;
   }
-
   .loading-dots span:nth-child(2) { animation-delay: 0.2s; }
   .loading-dots span:nth-child(3) { animation-delay: 0.4s; }
 
@@ -508,17 +499,10 @@
   }
 
   .btn-action:hover { border-color: var(--gold); color: var(--gold); }
-
-  .btn-action.primary {
-    border-color: var(--gold);
-    color: var(--gold);
-    background: var(--gold-dim);
-  }
-
+  .btn-action.primary { border-color: var(--gold); color: var(--gold); background: var(--gold-dim); }
   .btn-action.primary:hover { background: var(--gold); color: var(--black); }
 
   .reset-link { text-align: center; margin-top: 30px; }
-
   .reset-link button {
     background: none;
     border: none;
@@ -529,7 +513,6 @@
     cursor: pointer;
     transition: color 0.3s;
   }
-
   .reset-link button:hover { color: var(--gold); }
 
   .toast {
@@ -548,7 +531,6 @@
     z-index: 999;
     white-space: nowrap;
   }
-
   .toast.show { transform: translateX(-50%) translateY(0); }
 
   footer {
@@ -601,12 +583,10 @@
           <button class="lang-btn" onclick="setLang(this,'AR')">AR</button>
         </div>
       </div>
-
       <div class="form-group">
         <label class="form-label">Their Name — اسمهم</label>
         <input type="text" class="form-input" id="w-recipient" placeholder="Sarah...">
       </div>
-
       <div class="form-group">
         <label class="form-label">Occasion — المناسبة</label>
         <div class="select-wrap">
@@ -622,7 +602,6 @@
           </select>
         </div>
       </div>
-
       <button class="btn-generate" id="w-btn" onclick="generateMessage()">
         <span>✦ Generate Message — توليد رسالة</span>
       </button>
@@ -666,17 +645,14 @@
           <button class="lang-btn" onclick="setLang2(this,'AR')">AR</button>
         </div>
       </div>
-
       <div class="form-group">
         <label class="form-label">Your Name — اسمك</label>
         <input type="text" class="form-input" id="p-name1" placeholder="Mohammed...">
       </div>
-
       <div class="form-group">
         <label class="form-label">Their Name — اسمهم</label>
         <input type="text" class="form-input" id="p-name2" placeholder="Sarah...">
       </div>
-
       <button class="btn-generate" id="p-btn" onclick="generatePrediction()">
         <span>🔮 Reveal the Truth — اكشف الحقيقة</span>
       </button>
@@ -732,13 +708,12 @@
 </div>
 
 <div class="toast" id="toast"></div>
-
 <footer>Venus Fleur © 2025 — AI Love Tools — venusfleur.com/ai</footer>
 
 <script>
 const GEMINI_KEY = 'AIzaSyC37p0S8XK0nO7kQncIgBV7RPqCNgtDvsA';
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_KEY}`;
-  
+
 let writerLang = 'EN';
 let predictorLang = 'EN';
 
@@ -763,15 +738,21 @@ function switchTab(tab) {
 }
 
 async function callGemini(prompt) {
-  const res = await fetch('/api/generate', {
+  const res = await fetch(GEMINI_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ prompt })
+    body: JSON.stringify({
+      contents: [{ parts: [{ text: prompt }] }],
+      generationConfig: { temperature: 1.1, maxOutputTokens: 400 }
+    })
   });
   const data = await res.json();
-  if (data.result) return data.result;
+  if (data.candidates && data.candidates[0]) {
+    return data.candidates[0].content.parts[0].text.trim();
+  }
   throw new Error('No response');
 }
+
 async function generateMessage() {
   const recipient = document.getElementById('w-recipient').value.trim();
   const occasion = document.getElementById('w-occasion').value;
