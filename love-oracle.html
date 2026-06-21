@@ -711,8 +711,15 @@
 <footer>Venus Fleur © 2025 — AI Love Tools — venusfleur.com/ai</footer>
 
 <script>
-const GEMINI_KEY = 'AIzaSyC37p0S8XK0nO7kQncIgBV7RPqCNgtDvsA';
-const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_KEY}`;
+/* ============================================================
+   ⚠️ LOCAL TESTING ONLY — DO NOT DEPLOY TO PRODUCTION LIKE THIS
+   This key is visible to anyone who views the page source.
+   Before going live, move this call behind a backend/serverless
+   function so the key stays hidden. See chat for details.
+   ============================================================ */
+const BLUESMINDS_KEY = 'sk-7F3Yy4JKocbNXxPsPq2ZVwvQFPQSsDPKy2x79dTcsiLKRbs0';
+const BLUESMINDS_URL = 'https://api.bluesminds.com/v1/chat/completions';
+const BLUESMINDS_MODEL = 'gpt-4o-mini';
 
 let writerLang = 'EN';
 let predictorLang = 'EN';
@@ -737,20 +744,36 @@ function switchTab(tab) {
   document.getElementById(`panel-${tab}`).classList.add('active');
 }
 
-async function callGemini(prompt) {
-  const res = await fetch(GEMINI_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      contents: [{ parts: [{ text: prompt }] }],
-      generationConfig: { temperature: 1.1, maxOutputTokens: 400 }
-    })
-  });
-  const data = await res.json();
-  if (data.candidates && data.candidates[0]) {
-    return data.candidates[0].content.parts[0].text.trim();
+// OpenAI-compatible chat completion call (Bluesminds aggregator)
+async function callAI(prompt, { json = false } = {}) {
+  const body = {
+    model: BLUESMINDS_MODEL,
+    messages: [{ role: 'user', content: prompt }],
+    temperature: 1.1,
+    max_tokens: 400
+  };
+  if (json) {
+    body.response_format = { type: 'json_object' };
   }
-  throw new Error('No response');
+
+  const res = await fetch(BLUESMINDS_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${BLUESMINDS_KEY}`
+    },
+    body: JSON.stringify(body)
+  });
+
+  if (!res.ok) {
+    const errText = await res.text().catch(() => '');
+    throw new Error(`API error ${res.status}: ${errText}`);
+  }
+
+  const data = await res.json();
+  const text = data?.choices?.[0]?.message?.content;
+  if (!text) throw new Error('No response content');
+  return text.trim();
 }
 
 async function generateMessage() {
@@ -776,12 +799,13 @@ Make it emotional, elegant, and memorable. No hashtags, no emojis, no quotation 
 Return ONLY the message text, nothing else.`;
 
   try {
-    const message = await callGemini(prompt);
+    const message = await callAI(prompt);
     document.getElementById('w-card-occasion').textContent = occasion.toUpperCase();
     document.getElementById('w-card-recipient').textContent = writerLang === 'AR' ? `إلى ${recipient}` : `For ${recipient}`;
     document.getElementById('w-card-message').textContent = message;
     document.getElementById('w-output').style.display = 'block';
   } catch(e) {
+    console.error(e);
     showToast('Something went wrong. Try again.');
     btn.disabled = false;
     document.getElementById('writer-form').style.opacity = '1';
@@ -844,7 +868,7 @@ Respond ONLY with a valid JSON object, no markdown, no explanation:
 }`;
 
   try {
-    let raw = await callGemini(prompt);
+    let raw = await callAI(prompt, { json: true });
     raw = raw.replace(/```json|```/g, '').trim();
     const data = JSON.parse(raw);
 
@@ -857,6 +881,7 @@ Respond ONLY with a valid JSON object, no markdown, no explanation:
     document.getElementById('p-twist').textContent = '⚠️ ' + data.twist;
     document.getElementById('p-output').style.display = 'block';
   } catch(e) {
+    console.error(e);
     showToast('The oracle is confused. Try again 🔮');
     btn.disabled = false;
     document.getElementById('predictor-form').style.opacity = '1';
