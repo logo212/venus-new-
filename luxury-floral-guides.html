@@ -127,6 +127,134 @@
         .breadcrumb a:hover { color: #c6a75e; }
         .breadcrumb span { color: rgba(198,167,94,0.4); }
     </style>
+
+    <!-- ═══════ ADDED: WhatsApp + Pinterest styles ═══════ -->
+    <style>
+        #vf-float-stack {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            z-index: 9998;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 16px;
+        }
+        .vf-float-btn {
+            position: relative;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: #050505;
+            background: linear-gradient(135deg, #c6a75e 0%, #e6c97a 50%, #b8860b 100%);
+            box-shadow: 0 8px 30px rgba(198,167,94,0.35);
+            transition: transform 0.4s cubic-bezier(.2,.9,.3,1.4), box-shadow 0.4s;
+            cursor: none;
+        }
+        @media (pointer: coarse) { .vf-float-btn { cursor: pointer; } }
+        .vf-float-btn:hover {
+            transform: scale(1.12) translateY(-2px);
+            box-shadow: 0 12px 40px rgba(198,167,94,0.55);
+        }
+        .vf-float-ring {
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            border: 1px solid rgba(198,167,94,0.4);
+            animation: vfPulse 2.4s ease-out infinite;
+            pointer-events: none;
+        }
+        @keyframes vfPulse {
+            0%   { transform: scale(0.9); opacity: 0.8; }
+            80%  { transform: scale(1.6); opacity: 0; }
+            100% { opacity: 0; }
+        }
+        .vf-float-label {
+            position: absolute;
+            right: 68px;
+            top: 50%;
+            transform: translateY(-50%) translateX(4px);
+            background: #050505;
+            color: #c6a75e;
+            font-size: 10px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 8px 14px;
+            border-radius: 6px;
+            border: 1px solid rgba(198,167,94,0.2);
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+        .vf-float-btn:hover .vf-float-label {
+            opacity: 1;
+            transform: translateY(-50%) translateX(-4px);
+        }
+        .vf-pin-save {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(5,5,5,0.55);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(198,167,94,0.3);
+            color: #c6a75e;
+            font-size: 9px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            opacity: 0;
+            transform: translateY(-6px);
+            transition: opacity 0.35s, transform 0.35s;
+            z-index: 5;
+        }
+        .article-card:hover .vf-pin-save {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .vf-pin-save:hover {
+            border-color: #c6a75e;
+            color: #e6c97a;
+        }
+        @media (hover: none) {
+            .vf-pin-save {
+                opacity: 0.9;
+                transform: translateY(0);
+            }
+        }
+        .vf-pin-glow {
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+        }
+        .vf-pin-glow::before {
+            content: '';
+            position: absolute;
+            inset: -100%;
+            background: conic-gradient(from 0deg, transparent 0%, rgba(198,167,94,0.35) 12%, transparent 26%);
+            animation: vfSpin 7s linear infinite;
+            z-index: -1;
+        }
+        @keyframes vfSpin { to { transform: rotate(360deg); } }
+        .vf-pin-icon-orb {
+            width: 56px; height: 56px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            background: linear-gradient(135deg, #c6a75e, #e6c97a, #b8860b);
+            box-shadow: 0 0 40px rgba(198,167,94,0.35);
+            transition: transform 0.5s;
+        }
+        .vf-pin-glow:hover .vf-pin-icon-orb { transform: rotate(-8deg) scale(1.08); }
+    </style>
 </head>
 <body>
     <div class="site-frame hidden md:block"></div>
@@ -215,6 +343,11 @@
                          class="w-full h-full object-cover opacity-65"
                          alt="Luxury preserved rose arrangement in black gift box — Dubai luxury gifting guide 2026">
                 </div>
+                <!-- ═══════ ADDED: Save to Pinterest ═══════ -->
+                <a href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fvenusfleur.com%2Fluxury-floral-guides.html&media=https%3A%2F%2Fvenusfleur.com%2Fluxury-flower-delivery-dubai-preserved-roses.jpg&description=The%20Ultimate%20Guide%20to%20Luxury%20Gifting%20in%20Dubai%20%E2%80%94%20Venus%20Fleur"
+                   target="_blank" rel="noopener" class="vf-pin-save" aria-label="Save to Pinterest">
+                    <i class="fa-brands fa-pinterest"></i> Save
+                </a>
                 <div class="p-8">
                     <p class="text-[#c6a75e] text-[9px] tracking-[0.4em] uppercase mb-4">Gifting Etiquette</p>
                     <h2 class="luxury-serif italic text-xl mb-4 leading-snug group-hover:text-[#c6a75e] transition" style="font-size:1.2rem;">
@@ -238,6 +371,11 @@
                          class="w-full h-full object-cover opacity-65"
                          alt="Preserved eternal roses displayed in Palm Jumeirah villa interior — luxury floral decor Dubai">
                 </div>
+                <!-- ═══════ ADDED: Save to Pinterest ═══════ -->
+                <a href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fvenusfleur.com%2Fluxury-floral-guides.html&media=https%3A%2F%2Fvenusfleur.com%2Fluxury-preserved-roses-dubai.jpg&description=The%20Palm%20Jumeirah%20Standard%3A%20Eternal%20Rose%20Interiors%20%E2%80%94%20Venus%20Fleur"
+                   target="_blank" rel="noopener" class="vf-pin-save" aria-label="Save to Pinterest">
+                    <i class="fa-brands fa-pinterest"></i> Save
+                </a>
                 <div class="p-8">
                     <p class="text-[#c6a75e] text-[9px] tracking-[0.4em] uppercase mb-4">Interior Curation</p>
                     <h2 class="luxury-serif italic text-xl mb-4 leading-snug group-hover:text-[#c6a75e] transition" style="font-size:1.2rem;">
@@ -261,6 +399,11 @@
                          class="w-full h-full object-cover opacity-65"
                          alt="Multiple preserved rose colors for Dubai luxury gifting — rose color psychology and meaning in UAE">
                 </div>
+                <!-- ═══════ ADDED: Save to Pinterest ═══════ -->
+                <a href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fvenusfleur.com%2Fluxury-floral-guides.html&media=https%3A%2F%2Fvenusfleur.com%2Fluxury-apology-gifts-dubai.jpg&description=The%20Silent%20Language%3A%20Psychology%20of%20Rose%20Colors%20%E2%80%94%20Venus%20Fleur"
+                   target="_blank" rel="noopener" class="vf-pin-save" aria-label="Save to Pinterest">
+                    <i class="fa-brands fa-pinterest"></i> Save
+                </a>
                 <div class="p-8">
                     <p class="text-[#c6a75e] text-[9px] tracking-[0.4em] uppercase mb-4">Floral Intelligence</p>
                     <h2 class="luxury-serif italic text-xl mb-4 leading-snug group-hover:text-[#c6a75e] transition" style="font-size:1.2rem;">
@@ -333,6 +476,26 @@
         </div>
     </section>
 
+    <!-- ═══════ ADDED: Follow The Journal (Pinterest) ═══════ -->
+    <section class="px-6 md:px-20 max-w-4xl mx-auto pb-32" data-aos="fade-up">
+        <div class="glass p-10 md:p-16 rounded-3xl text-center vf-pin-glow">
+            <div class="vf-pin-icon-orb">
+                <i class="fa-brands fa-pinterest text-2xl" style="color:#050505;"></i>
+            </div>
+            <p class="text-[#c6a75e] text-[9px] tracking-[0.6em] uppercase mb-4">Follow The Journal</p>
+            <h2 class="luxury-serif italic text-3xl md:text-4xl text-white mb-6 font-light">Save Our Guides. Curate Your Inspiration.</h2>
+            <p class="text-gray-500 text-sm leading-relaxed mb-10 max-w-lg mx-auto">
+                Every guide, every interior, every rose — pinned for you. Follow
+                <strong style="color:rgba(255,255,255,0.7);">@venusfleurUAE</strong>
+                for weekly gifting inspiration and Dubai's most considered floral design.
+            </p>
+            <a href="https://pinterest.com/venusfleurUAE/" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-3 px-12 py-4 border border-[#c6a75e]/30 text-[#c6a75e] text-[9px] font-bold uppercase tracking-[0.4em] rounded-sm hover:border-[#c6a75e] hover:bg-[#c6a75e]/5 transition">
+                <i class="fa-brands fa-pinterest"></i> Follow on Pinterest
+            </a>
+        </div>
+    </section>
+
     <!-- FOOTER -->
     <footer class="py-24 px-10 md:px-20 bg-black text-center border-t border-white/5">
         <h2 class="luxury-serif text-3xl tracking-[0.3em] text-[#c6a75e] mb-16 font-light uppercase">Venus Fleur</h2>
@@ -348,6 +511,22 @@
         </div>
         <p class="text-[8px] tracking-[0.6em] text-gray-800 uppercase font-light">&copy; 2026 Venus Fleur Dubai. All Rights Reserved.</p>
     </footer>
+
+    <!-- ═══════ ADDED: Floating WhatsApp + Pinterest bubbles ═══════ -->
+    <div id="vf-float-stack">
+        <a href="https://pinterest.com/venusfleurUAE/" target="_blank" rel="noopener"
+           aria-label="Follow Venus Fleur on Pinterest" class="vf-float-btn">
+            <i class="fa-brands fa-pinterest"></i>
+            <span class="vf-float-ring"></span>
+            <span class="vf-float-label">Follow on Pinterest</span>
+        </a>
+        <a href="https://wa.me/212712648363" target="_blank" rel="noopener"
+           aria-label="Chat with Venus Fleur on WhatsApp" class="vf-float-btn">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span class="vf-float-ring"></span>
+            <span class="vf-float-label">Chat with us</span>
+        </a>
+    </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
