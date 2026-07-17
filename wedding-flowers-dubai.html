@@ -95,6 +95,26 @@
           "@type": "Question",
           "name": "How far in advance should I book wedding flowers?",
           "acceptedAnswer": { "@type": "Answer", "text": "For grand weddings, we recommend booking a consultation at least 6-8 weeks in advance to ensure personalized floral curation and venue site visits." }
+        },
+        {
+          "@type": "Question",
+          "name": "How much do wedding flowers cost in Dubai?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Dubai wedding florals typically range from AED 15,000 for an intimate ceremony with a bridal bouquet and small centerpieces, to AED 150,000+ for a grand venue installation with floral walls and large-scale arrangements. Pricing depends on venue size, installation complexity, and whether preserved or fresh flowers are used." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I choose the right wedding florist in Dubai?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Look for a florist with experience at your specific venue, a portfolio that matches your desired style, and transparency on pricing and timelines. Ask whether they offer a site visit before the wedding, and whether their flowers are suited to Dubai's heat and long event days." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you serve destination weddings in Dubai?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Many of our couples are planning a Dubai wedding from abroad. We coordinate the full floral design remotely via video consultation, so you don't need to be in the city until closer to your wedding date." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I ship my bridal bouquet home after the wedding?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Because we work with preserved eternal roses, your bridal bouquet can be professionally packed and shipped internationally as a lasting keepsake, typically arriving within 2-3 business days to destinations like the USA." }
         }
       ]
     }
@@ -120,6 +140,10 @@
         .article-section h2 { font-family: 'Playfair Display', serif; font-style: italic; color: #c6a75e; font-size: 2.2rem; margin-top: 4rem; margin-bottom: 1.5rem; }
         .article-section h3 { font-family: 'Playfair Display', serif; color: white; font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 1rem; }
         .article-section p { margin-bottom: 1.5rem; line-height: 1.9; color: rgba(255,255,255,0.7); font-weight: 300; }
+        .quiz-option { cursor: pointer; }
+        .quiz-option.selected { border-color: #c6a75e !important; background: rgba(198, 167, 94, 0.08) !important; }
+        .quiz-step { display: none; }
+        .quiz-step.active { display: block; }
     </style>
 </head>
 <body>
@@ -180,6 +204,76 @@
                 </a>
             </div>
 
+            <h2>How to Choose the Right Wedding Florist in Dubai</h2>
+            <p>
+                Dubai has no shortage of florists, but a <strong>wedding florist</strong> is a different discipline from a flower shop. Before you commit, four things are worth checking. <strong>Venue experience</strong> — has the florist actually worked at your venue before, and do they know its lighting, heat exposure, and load-in logistics? <strong>Portfolio fit</strong> — does their past work match the style you want, or are you hoping they'll do something new for you? <strong>Pricing transparency</strong> — will they give you a clear breakdown before the deposit, or only a vague estimate? And <strong>climate suitability</strong> — do they understand that fresh flowers behave very differently under Dubai's heat and long event days than they would in a cooler climate?
+            </p>
+            <p>
+                This last point is where most Dubai weddings quietly go wrong. A florist who hasn't planned for the heat will often under-promise on how the flowers will actually look by the reception's second hour.
+            </p>
+
+            <h2>What Do Wedding Flowers Cost in Dubai? A Transparent Guide</h2>
+            <p>
+                Wedding floral budgets in Dubai vary widely, and most florists are reluctant to give a straight number. Here's a realistic range: an <strong>intimate ceremony</strong> (bridal bouquet, boutonnieres, small centerpieces) typically starts around <strong>AED 15,000–25,000</strong>. A <strong>mid-scale wedding</strong> with venue decor, an aisle installation, and full table centerpieces for 100-150 guests generally runs <strong>AED 40,000–80,000</strong>. A <strong>grand-scale wedding</strong> with floral walls, large installations, and a guest list in the hundreds can reach <strong>AED 150,000 and above</strong>.
+            </p>
+            <p>
+                One factor most couples don't budget for: <strong>fresh flowers for a large installation often need replacing if the event runs long</strong>, quietly adding cost. Preserved eternal roses remove that variable entirely — the price you're quoted for the installation is the price you pay, with no risk of wilting mid-event inflating the final bill.
+            </p>
+
+            <h2>Planning a Destination Wedding in Dubai? We'll Ship Your Bouquet Home</h2>
+            <p>
+                A growing number of our brides are planning their Dubai wedding from abroad — the <strong>United States</strong>, the UK, and across Europe. We handle the full floral design process remotely through video consultation, so you don't need to be on the ground in Dubai until your wedding week.
+            </p>
+            <p>
+                And because your bridal bouquet is built from <strong>preserved eternal roses</strong>, it doesn't have to stay behind. After the wedding, we professionally pack your bouquet and ship it internationally as a keepsake — typically arriving within <strong>2-3 business days</strong> to the USA, fully tracked. It's a detail most Dubai florists can't offer, since fresh bouquets simply can't survive the journey. Yours will look exactly as it did on the day you carried it down the aisle.
+            </p>
+
+            <div class="glass p-12 my-20 border-[#c6a75e]/20 text-center rounded-3xl relative">
+                <p class="text-[#c6a75e] text-[10px] tracking-[0.5em] uppercase mb-4 font-bold">Destination Brides</p>
+                <h3 class="mt-0 mb-8 italic">Planning from abroad? Let's talk, wherever you are.</h3>
+                <a href="https://wa.me/971649401747" target="_blank" class="border border-[#c6a75e] text-[#c6a75e] px-10 py-4 font-bold uppercase text-[9px] tracking-[0.4em] inline-block hover:bg-[#c6a75e] hover:text-black transition-all duration-300">
+                    Send Now
+                </a>
+            </div>
+
+            <h2>Find Your Wedding Floral Style</h2>
+            <p>Answer two quick questions and we'll recommend the floral direction that fits your day.</p>
+
+            <div class="glass rounded-3xl p-8 md:p-12 my-12">
+                <div class="quiz-step active" id="wq-step-1">
+                    <h3 class="mt-0 text-lg">What's the setting for your wedding?</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                        <div class="quiz-option glass rounded-xl p-5 text-sm border border-white/10" data-wq="venue" data-wv="beach">Beachfront / Outdoor Resort</div>
+                        <div class="quiz-option glass rounded-xl p-5 text-sm border border-white/10" data-wq="venue" data-wv="ballroom">Grand Ballroom</div>
+                        <div class="quiz-option glass rounded-xl p-5 text-sm border border-white/10" data-wq="venue" data-wv="desert">Desert / Private Villa</div>
+                        <div class="quiz-option glass rounded-xl p-5 text-sm border border-white/10" data-wq="venue" data-wv="rooftop">Rooftop / Modern Terrace</div>
+                    </div>
+                </div>
+
+                <div class="quiz-step" id="wq-step-2">
+                    <h3 class="mt-0 text-lg">What's the scale of your wedding?</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                        <div class="quiz-option glass rounded-xl p-5 text-sm border border-white/10" data-wq="scale" data-wv="intimate">Intimate (under 60 guests)</div>
+                        <div class="quiz-option glass rounded-xl p-5 text-sm border border-white/10" data-wq="scale" data-wv="mid">Mid-Size (60-150 guests)</div>
+                        <div class="quiz-option glass rounded-xl p-5 text-sm border border-white/10" data-wq="scale" data-wv="grand">Grand (150+ guests)</div>
+                    </div>
+                </div>
+
+                <div class="quiz-step" id="wq-step-result">
+                    <p class="text-[#c6a75e] text-[10px] tracking-[0.5em] uppercase mb-4 font-bold text-center">Your Floral Direction</p>
+                    <h3 class="mt-0 text-2xl italic text-center" id="wq-result-title">—</h3>
+                    <p class="text-center max-w-lg mx-auto" id="wq-result-text">—</p>
+                    <div class="text-center mt-8">
+                        <a href="https://wa.me/971505106523" target="_blank" class="gold-gradient px-10 py-4 text-black font-bold uppercase text-[9px] tracking-[0.4em] inline-block shadow-2xl">
+                            Book Wedding Consultation
+                        </a>
+                    </div>
+                    <div class="text-center mt-6">
+                        <button onclick="wqRestart()" class="text-[9px] tracking-[0.3em] uppercase text-gray-500 hover:text-white transition">Start Over</button>
+                    </div>
+                </div>
+            </div>
+
             <h2>Venue Decor & Grand Installations</h2>
             <p>
                 Whether you are planning an intimate desert ceremony or a thousand-guest gala in <strong>Zabeel</strong>, our team handles grand-scale floral installations. We specialize in centerpieces that don't wilt or drop petals, ensuring that the last toast is as beautiful as the first. 
@@ -218,6 +312,22 @@
                 <div>
                     <h3 class="text-[#c6a75e] uppercase tracking-widest mb-3">How far in advance should I book?</h3>
                     <p class="text-gray-500 leading-relaxed font-light">For grand weddings, we recommend booking a consultation at least 6-8 weeks in advance to ensure personalized floral curation and venue site visits.</p>
+                </div>
+                <div>
+                    <h3 class="text-[#c6a75e] uppercase tracking-widest mb-3">How much do wedding flowers cost in Dubai?</h3>
+                    <p class="text-gray-500 leading-relaxed font-light">Intimate ceremonies typically start around AED 15,000-25,000. Mid-scale weddings run AED 40,000-80,000. Grand-scale installations for large guest lists can reach AED 150,000+.</p>
+                </div>
+                <div>
+                    <h3 class="text-[#c6a75e] uppercase tracking-widest mb-3">How do I choose the right wedding florist?</h3>
+                    <p class="text-gray-500 leading-relaxed font-light">Check venue experience, portfolio fit, pricing transparency, and whether they understand how Dubai's heat affects fresh flowers over a long event day.</p>
+                </div>
+                <div>
+                    <h3 class="text-[#c6a75e] uppercase tracking-widest mb-3">Do you serve destination weddings?</h3>
+                    <p class="text-gray-500 leading-relaxed font-light">Yes. We coordinate the full floral design remotely via video consultation, so you don't need to be in Dubai until your wedding week.</p>
+                </div>
+                <div>
+                    <h3 class="text-[#c6a75e] uppercase tracking-widest mb-3">Can I ship my bridal bouquet home after the wedding?</h3>
+                    <p class="text-gray-500 leading-relaxed font-light">Yes. Your preserved bouquet can be shipped internationally as a keepsake, typically arriving within 2-3 business days to the USA, fully tracked.</p>
                 </div>
             </div>
         </div>
@@ -275,6 +385,66 @@
             el.addEventListener('mouseenter', () => { cursor.classList.add('cursor-active'); follower.style.opacity = "0"; });
             el.addEventListener('mouseleave', () => { cursor.classList.remove('cursor-active'); follower.style.opacity = "1"; });
         });
+
+        // ---- WEDDING STYLE FINDER QUIZ ----
+        const wqAnswers = { venue: null, scale: null };
+
+        document.querySelectorAll('[data-wq]').forEach(opt => {
+            opt.addEventListener('click', () => {
+                const q = opt.dataset.wq;
+                const v = opt.dataset.wv;
+                wqAnswers[q] = v;
+
+                document.querySelectorAll(`[data-wq="${q}"]`).forEach(sib => sib.classList.remove('selected'));
+                opt.classList.add('selected');
+
+                setTimeout(() => {
+                    if (q === 'venue') wqGoToStep(2);
+                    else if (q === 'scale') wqShowResult();
+                }, 250);
+            });
+        });
+
+        function wqGoToStep(n) {
+            document.querySelectorAll('#wq-step-1, #wq-step-2, #wq-step-result').forEach(s => s.classList.remove('active'));
+            document.getElementById(`wq-step-${n}`).classList.add('active');
+        }
+
+        function wqShowResult() {
+            const { venue, scale } = wqAnswers;
+            let title = "Timeless Eternal Rose Elegance";
+            let text = "A refined, classic direction built around preserved white and blush roses — suits nearly any Dubai venue beautifully.";
+
+            if (venue === 'beach') {
+                title = "Coastal Romance";
+                text = "Soft blush and champagne tones with flowing, organic arrangements that echo the open horizon.";
+            } else if (venue === 'ballroom') {
+                title = "Grand Opulence";
+                text = "Dramatic floral walls, oversized centerpieces, and deep red or white eternal roses built for scale.";
+            } else if (venue === 'desert') {
+                title = "Desert Bloom";
+                text = "Warm, earthy tones with sculptural arrangements that feel at home against open sky and sand.";
+            } else if (venue === 'rooftop') {
+                title = "Modern Minimalist";
+                text = "Clean lines, monochrome white or champagne roses, and architectural arrangements suited to skyline views.";
+            }
+
+            if (scale === 'grand') {
+                text += " Given your guest count, expect floral walls and large-scale installations to anchor the design.";
+            } else if (scale === 'intimate') {
+                text += " At your scale, we'll focus the budget on a few striking, high-impact pieces rather than spreading it thin.";
+            }
+
+            document.getElementById('wq-result-title').textContent = title;
+            document.getElementById('wq-result-text').textContent = text;
+            wqGoToStep('result');
+        }
+
+        function wqRestart() {
+            wqAnswers.venue = null; wqAnswers.scale = null;
+            document.querySelectorAll('[data-wq]').forEach(o => o.classList.remove('selected'));
+            wqGoToStep(1);
+        }
     </script>
 </body>
 </html>
